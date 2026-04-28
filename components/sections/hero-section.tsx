@@ -5,15 +5,19 @@ import { motion } from "framer-motion"
 const agenda = [
   {
     step: "01",
-    label: "Del chat al agente",
+    label: "Del chat al workflow",
   },
   {
     step: "02",
-    label: "Qué delegar y qué supervisar",
+    label: "Pensar el proceso",
   },
   {
     step: "03",
-    label: "Microsoft 365 en la práctica",
+    label: "Orquestar agentes",
+  },
+  {
+    step: "04",
+    label: "Controlar para escalar",
   },
 ]
 
@@ -31,27 +35,27 @@ export function HeroSection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <span className="inline-flex rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium uppercase tracking-[0.18em] text-primary">
-            Charla 2 · Agentes de IA y Microsoft 365
+            Charla 3 - Workflow con IA
           </span>
         </motion.div>
 
         <motion.h1
-          className="mt-10 max-w-5xl text-5xl font-bold tracking-tight text-foreground text-balance md:text-7xl lg:text-[5.5rem]"
+          className="mt-10 max-w-5xl text-5xl font-bold tracking-tight text-balance text-foreground md:text-7xl lg:text-[5.4rem]"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.08, ease: "easeOut" }}
         >
-          Agentes de IA: de la conversación a la acción
+          Como orquestar agentes para trabajar mejor
         </motion.h1>
 
         <motion.p
-          className="mt-8 max-w-3xl text-xl leading-relaxed text-foreground/78 text-balance md:text-2xl"
+          className="mt-8 max-w-3xl text-xl leading-relaxed text-balance text-foreground/78 md:text-2xl"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.16, ease: "easeOut" }}
         >
-          Qué son, qué tareas pueden apoyar, qué límites debemos ponerles y cómo encajan en el trabajo diario con
-          Microsoft 365.
+          Empezamos usando un chat. Luego aprendimos a estructurar mejor los prompts. Despues llegaron los agentes.
+          Hoy toca el siguiente salto: orquestarlos dentro de un workflow.
         </motion.p>
 
         <motion.div
@@ -60,14 +64,27 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.24, ease: "easeOut" }}
         >
-          <p className="text-2xl font-semibold leading-snug text-foreground text-balance md:text-3xl">
-            Un agente no es una IA mágica ni un compañero autónomo. Es una ayuda configurada con objetivo, contexto,
-            reglas y herramientas para trabajar sobre tareas concretas.
+          <p className="text-2xl font-semibold leading-snug text-balance text-foreground md:text-3xl">
+            La evolucion es clara: chat, prompt, agente y workflow. Cada paso aumenta control, especializacion y
+            capacidad de producir una salida util y fiable.
           </p>
         </motion.div>
 
         <motion.div
-          className="mt-16 grid gap-4 md:grid-cols-3"
+          className="mt-10 flex flex-wrap gap-3 text-sm font-medium uppercase tracking-[0.16em] text-primary/90"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.28, ease: "easeOut" }}
+        >
+          {["Chat", "Prompt", "Agente", "Workflow", "Control humano"].map((item) => (
+            <span key={item} className="rounded-full border border-primary/20 bg-background/35 px-4 py-2">
+              {item}
+            </span>
+          ))}
+        </motion.div>
+
+        <motion.div
+          className="mt-16 grid gap-4 md:grid-cols-2 xl:grid-cols-4"
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.32, ease: "easeOut" }}

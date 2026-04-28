@@ -2,25 +2,26 @@
 
 import { motion } from "framer-motion"
 
-const keyTakeaways = [
-  {
-    title: "Encargo",
-    description: "Un agente necesita un objetivo claro.",
-  },
-  {
-    title: "Límite",
-    description: "Puede ayudar, pero no asumir responsabilidad.",
-  },
-  {
-    title: "Contexto",
-    description: "Microsoft 365 aporta parte del contexto diario.",
-  },
+const controls = [
+  "Definir el objetivo y el criterio de calidad antes de empezar.",
+  "Separar bien que hace la IA y que valida la persona.",
+  "Revisar puntos sensibles: cliente, normativa, compromisos y decisiones.",
+  "Mantener trazabilidad de fuentes, supuestos y versiones.",
+  "Escalar solo los flujos que ya funcionan de forma consistente.",
 ]
 
-const memorableIdeas = [
-  "Un agente es útil cuando el encargo está claro, el contexto es suficiente y la salida se puede revisar.",
-  "Si esas tres cosas fallan, la IA puede producir más ruido que ayuda.",
-  "Si están bien diseñadas, puede acelerar trabajo sin sustituir criterio.",
+const risks = [
+  "Errores pequenos que se encadenan entre fases.",
+  "Perdida de contexto entre agentes o herramientas.",
+  "Salidas demasiado genericas para un caso concreto.",
+  "Exceso de confianza en un borrador convincente.",
+  "Datos sensibles mal compartidos o mal interpretados.",
+]
+
+const finalIdeas = [
+  "La IA aporta mas valor cuando entra en el workflow, no cuando se queda en un chat.",
+  "Orquestar agentes es disenar trabajo, no solo lanzar prompts.",
+  "La ventaja real sigue estando en el criterio humano que define, supervisa y valida.",
 ]
 
 export function ClosingSection() {
@@ -31,74 +32,89 @@ export function ClosingSection() {
 
       <div className="relative z-10 mx-auto w-full max-w-6xl px-6">
         <motion.div
-          className="mb-20 text-center"
+          className="mb-16 text-center"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <span className="mb-4 block text-sm font-medium uppercase tracking-[0.2em] text-primary">
-            Cierre
-          </span>
-          <h2 className="mb-8 text-4xl font-bold text-foreground text-balance md:text-5xl lg:text-6xl">
-            La idea final
+          <span className="mb-4 block text-sm font-medium uppercase tracking-[0.2em] text-primary">Bloque 4</span>
+          <h2 className="mb-8 text-4xl font-bold text-balance text-foreground md:text-5xl lg:text-6xl">
+            Control, limites y criterio
           </h2>
           <p className="mx-auto max-w-3xl text-xl leading-relaxed text-foreground/76 md:text-2xl">
-            Agentes sí, pero con una regla simple: delegar tareas preparatorias y mantener criterio, revisión y
-            responsabilidad.
+            Cuanto mas largo es el flujo, mas importante es controlar que pasa en cada fase y quien valida el resultado.
           </p>
         </motion.div>
 
         <motion.div
-          className="mb-16 rounded-[2rem] border border-primary/25 bg-primary/10 p-8 text-center"
+          className="grid gap-6 lg:grid-cols-2 lg:items-start"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6 }}
         >
-          <div className="mx-auto max-w-5xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">Para recordar</p>
-            <div className="mt-8 grid gap-4 lg:grid-cols-3">
-              {keyTakeaways.map((item) => (
-                <div key={item.title} className="rounded-[1.5rem] border border-primary/20 bg-background/35 px-6 py-8">
-                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">{item.title}</p>
-                  <p className="mt-4 text-2xl font-semibold leading-tight text-foreground text-balance md:text-3xl">
-                    {item.description}
-                  </p>
+          <div className="rounded-[2rem] border border-primary/25 bg-primary/10 p-8 md:p-10">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Puntos de control</p>
+            <div className="mt-6 grid gap-3">
+              {controls.map((item, index) => (
+                <div
+                  key={item}
+                  className={`rounded-[1.25rem] border px-5 py-4 text-lg text-foreground ${
+                    index === 1 || index === 3 ? "border-primary/25 bg-background/35" : "border-primary/20 bg-primary/8"
+                  }`}
+                >
+                  {item}
                 </div>
               ))}
             </div>
           </div>
+
+          <div className="rounded-[2rem] border border-border/70 bg-card/90 p-8 md:p-10">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Riesgos a vigilar</p>
+            <div className="mt-6 grid gap-3">
+              {risks.map((item, index) => (
+                <div
+                  key={item}
+                  className={`rounded-[1.25rem] border px-5 py-4 text-lg text-foreground ${
+                    index === 2 ? "border-primary/25 bg-primary/8" : "border-border/60 bg-background/35"
+                  }`}
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
+            <p className="mt-6 rounded-[1.5rem] border border-primary/20 bg-primary/8 p-5 text-xl font-semibold leading-relaxed text-foreground">
+              Automatizar sin control no escala productividad. Escala riesgo.
+            </p>
+          </div>
         </motion.div>
 
         <motion.div
-          className="mb-16 grid gap-4"
+          className="mt-8 rounded-[2rem] border border-primary/25 bg-primary/10 p-8 text-center md:p-10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.45 }}
         >
-          {memorableIdeas.map((idea, index) => (
-            <div
-              key={idea}
-              className={`rounded-[1.5rem] border px-6 py-5 text-xl font-semibold leading-relaxed text-foreground md:text-2xl ${
-                index === 0 ? "border-primary/25 bg-primary/8" : "border-border/70 bg-card/90"
-              }`}
-            >
-              {idea}
-            </div>
-          ))}
-        </motion.div>
-
-        <motion.div
-          className="mx-auto max-w-4xl text-center"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
-        >
-          <p className="text-2xl font-semibold leading-relaxed text-foreground text-balance md:text-3xl">
-            Delegar mejor empieza por diseñar bien el encargo.
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Cierre</p>
+          <div className="mt-8 grid gap-4 lg:grid-cols-3">
+            {finalIdeas.map((idea, index) => (
+              <div
+                key={idea}
+                className={`rounded-[1.5rem] border px-6 py-8 ${
+                  index === 1 ? "border-primary/30 bg-background/35" : "border-primary/20 bg-primary/8"
+                }`}
+              >
+                <p className="text-2xl font-semibold leading-tight text-balance text-foreground md:text-3xl">{idea}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mx-auto mt-10 max-w-4xl text-3xl font-semibold leading-relaxed text-balance text-foreground md:text-4xl">
+            La ventaja no sera tener IA. La ventaja sera saber dirigir trabajo con IA.
+          </p>
+          <p className="mx-auto mt-6 max-w-3xl text-xl leading-relaxed text-foreground/78 md:text-2xl">
+            Y ahora, mejor que seguir explicandolo, vamos a verlo en un ejemplo real.
           </p>
         </motion.div>
       </div>

@@ -1,4 +1,4 @@
-﻿"use client"
+"use client"
 
 import { SectionDivider } from "@/components/section-divider"
 import { AIFoundationsSection } from "@/components/sections/ai-foundations-section"
@@ -11,13 +11,13 @@ export default function Home() {
   return (
     <main className="min-h-screen overflow-x-hidden bg-background text-foreground">
       <HeroSection />
-      <SectionDivider label="Del chat al agente" />
+      <SectionDivider label="Del uso al sistema" />
       <AIFoundationsSection />
-      <SectionDivider label="Qué delegar y qué supervisar" />
+      <SectionDivider label="Pensar el proceso" />
       <TokenContextSection />
-      <SectionDivider label="Microsoft 365 en la práctica" />
+      <SectionDivider label="Repartir el trabajo" />
       <PromptSection />
-      <SectionDivider label="Idea final" />
+      <SectionDivider label="Controlar para escalar" />
       <ClosingSection />
     </main>
   )
