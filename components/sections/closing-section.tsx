@@ -19,9 +19,9 @@ const risks = [
 ]
 
 const finalIdeas = [
-  "La IA aporta mas valor cuando entra en el workflow, no cuando se queda en un chat.",
-  "Orquestar agentes es disenar trabajo, no solo lanzar prompts.",
-  "La ventaja real sigue estando en el criterio humano que define, supervisa y valida.",
+  "La IA ayuda mas cuando deja de ser una conversacion suelta y pasa a formar parte de un proceso.",
+  "Antes de automatizar, hay que entender bien que pasos importan y que salida buscamos.",
+  "No se trata de que un agente haga todo, sino de que cada parte quede en las manos adecuadas.",
 ]
 
 export function ClosingSection() {
