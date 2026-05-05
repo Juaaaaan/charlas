@@ -4,20 +4,20 @@ import { motion } from "framer-motion"
 
 const agenda = [
   {
-    step: "01",
-    label: "Del chat al workflow",
+    label: "Integrar la IA en el proceso",
+    detail: "Pasar del flujo manual al sistema que se activa, interpreta y avanza dentro de la operativa.",
   },
   {
-    step: "02",
-    label: "Pensar el proceso",
+    label: "Elegir el nivel adecuado",
+    detail: "Distinguir cuándo basta un chat y cuándo tiene sentido llegar a agente, equipo o automatización.",
   },
   {
-    step: "03",
-    label: "Orquestar agentes",
+    label: "Diseñar con control",
+    detail: "Definir trigger, decisión, acción y supervisión para escalar sin perder criterio.",
   },
   {
-    step: "04",
-    label: "Controlar para escalar",
+    label: "Poner límites claros",
+    detail: "Asegurar trazabilidad, revisión y criterio antes de llevar la automatización a entorno real.",
   },
 ]
 
@@ -35,66 +35,61 @@ export function HeroSection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <span className="inline-flex rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium uppercase tracking-[0.18em] text-primary">
-            Charla 3 - Workflow con IA
+            Charla 4 - Automatización con IA
           </span>
         </motion.div>
 
         <motion.h1
-          className="mt-10 max-w-5xl text-5xl font-bold tracking-tight text-balance text-foreground md:text-7xl lg:text-[5.4rem]"
+          className="mt-10 max-w-5xl text-5xl font-bold tracking-tight text-balance text-foreground md:text-7xl lg:text-[5.1rem]"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.08, ease: "easeOut" }}
         >
-          Como orquestar agentes para trabajar mejor
+          Automatización con IA
         </motion.h1>
 
         <motion.p
-          className="mt-8 max-w-3xl text-xl leading-relaxed text-balance text-foreground/78 md:text-2xl"
+          className="mt-8 max-w-4xl text-xl leading-relaxed text-balance text-foreground/78 md:text-2xl"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.16, ease: "easeOut" }}
         >
-          Empezamos usando un chat. Luego aprendimos a estructurar mejor los prompts. Despues llegaron los agentes.
-          Hoy toca el siguiente salto: orquestarlos dentro de un workflow.
+          No va de añadir más herramientas. Va de decidir dónde entra la IA en el proceso, qué hace por sí sola y
+          cómo se supervisa.
         </motion.p>
 
         <motion.div
-          className="mt-12 max-w-4xl rounded-[1.75rem] border border-primary/20 bg-primary/8 px-6 py-6"
+          className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-4"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.24, ease: "easeOut" }}
         >
-          <p className="text-2xl font-semibold leading-snug text-balance text-foreground md:text-3xl">
-            La evolucion es clara: chat, prompt, agente y workflow. Cada paso aumenta control, especializacion y
-            capacidad de producir una salida util y fiable.
-          </p>
+          {agenda.map((item, index) => (
+            <div
+              key={item.label}
+              className="rounded-[1.75rem] border border-border/70 bg-card/70 px-6 py-7 backdrop-blur"
+            >
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-primary/90">
+                Bloque {index + 1}
+              </p>
+              <h2 className="mt-5 text-3xl font-semibold leading-tight text-balance text-foreground">
+                {item.label}
+              </h2>
+              <p className="mt-4 text-base leading-relaxed text-foreground/72 md:text-lg">{item.detail}</p>
+            </div>
+          ))}
         </motion.div>
 
         <motion.div
-          className="mt-10 flex flex-wrap gap-3 text-sm font-medium uppercase tracking-[0.16em] text-primary/90"
+          className="mt-10 max-w-4xl rounded-[1.75rem] border border-primary/20 bg-primary/8 px-6 py-6"
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.28, ease: "easeOut" }}
         >
-          {["Chat", "Prompt", "Agente", "Workflow", "Control humano"].map((item) => (
-            <span key={item} className="rounded-full border border-primary/20 bg-background/35 px-4 py-2">
-              {item}
-            </span>
-          ))}
-        </motion.div>
-
-        <motion.div
-          className="mt-16 grid gap-4 md:grid-cols-2 xl:grid-cols-4"
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.32, ease: "easeOut" }}
-        >
-          {agenda.map((item) => (
-            <div key={item.step} className="rounded-[1.5rem] border border-border/70 bg-card/70 px-5 py-5 backdrop-blur">
-              <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-primary">{item.step}</p>
-              <h2 className="mt-3 text-2xl font-semibold text-foreground">{item.label}</h2>
-            </div>
-          ))}
+          <p className="text-2xl font-semibold leading-snug text-balance text-foreground md:text-3xl">
+            La pregunta no es solo qué puede hacer la IA. La pregunta es cómo entra en el trabajo real sin perder
+            control.
+          </p>
         </motion.div>
       </div>
     </section>

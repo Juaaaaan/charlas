@@ -11,13 +11,13 @@ export default function Home() {
   return (
     <main className="min-h-screen overflow-x-hidden bg-background text-foreground">
       <HeroSection />
-      <SectionDivider label="Del uso al sistema" />
+      <SectionDivider label="Del flujo manual al sistema" />
       <AIFoundationsSection />
-      <SectionDivider label="Pensar el proceso" />
+      <SectionDivider label="Elegir el nivel adecuado" />
       <TokenContextSection />
-      <SectionDivider label="Repartir el trabajo" />
+      <SectionDivider label="Diseñar con control" />
       <PromptSection />
-      <SectionDivider label="Controlar para escalar" />
+      <SectionDivider label="Escalar sin perder criterio" />
       <ClosingSection />
     </main>
   )

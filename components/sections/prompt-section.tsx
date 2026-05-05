@@ -1,64 +1,55 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Bot, GitBranch, Search, ShieldCheck, Sparkles, Users, Workflow } from "lucide-react"
+import { BellRing, GitBranch, PlayCircle, ShieldCheck, Waypoints, Wrench } from "lucide-react"
 
-const roles = [
+const automationPieces = [
   {
-    icon: Search,
-    title: "Explorador",
-    description: "Busca contexto, documentos y senales relevantes.",
+    icon: PlayCircle,
+    title: "Trigger",
+    description: "Algo activa el flujo: un correo, un formulario, un archivo o un evento de negocio.",
   },
   {
-    icon: Sparkles,
-    title: "Sintetizador",
-    description: "Reduce ruido y ordena el material antes de decidir.",
+    icon: Waypoints,
+    title: "Ruta",
+    description: "La IA interpreta la entrada y decide qué camino seguir según criterios definidos.",
   },
   {
-    icon: Bot,
-    title: "Analista",
-    description: "Detecta impacto, patrones, excepciones y riesgos.",
-  },
-  {
-    icon: Workflow,
-    title: "Redactor",
-    description: "Convierte conclusiones en entregables utilizables.",
+    icon: Wrench,
+    title: "Acción",
+    description: "El sistema ejecuta tareas concretas sobre herramientas, datos o comunicaciones.",
   },
   {
     icon: ShieldCheck,
-    title: "Revisor",
-    description: "Valida coherencia, limites y puntos sensibles.",
+    title: "Supervisión",
+    description: "Se define dónde hace falta aprobación humana, excepción o parada segura.",
   },
 ]
 
-const orchestrationPatterns = [
+const controlPatterns = [
   {
-    title: "Secuencial",
-    description: "Cada fase prepara la siguiente cuando el orden importa.",
-    example: "Explorar -> analizar -> redactar -> revisar.",
+    title: "Automático con aviso",
+    description: "Sirve para tareas de bajo riesgo donde lo importante es velocidad y seguimiento.",
   },
   {
-    title: "Paralelo",
-    description: "Varios agentes atacan partes independientes al mismo tiempo.",
-    example: "Analizar tres documentos o tres riesgos a la vez.",
+    title: "Automático con aprobación",
+    description: "La IA prepara y propone, pero una persona confirma antes de ejecutar el paso sensible.",
   },
   {
-    title: "Supervisor + especialistas",
-    description: "Un rol central reparte trabajo y consolida resultados.",
-    example: "Un coordinador pide piezas y construye la respuesta final.",
+    title: "Automático con excepciones",
+    description: "El flujo avanza solo salvo cuando detecta un caso dudoso o fuera de patrón.",
   },
   {
-    title: "Generador + revisor",
-    description: "Una fase produce borrador y otra comprueba calidad.",
-    example: "Redactar una propuesta y pasarla por control posterior.",
+    title: "Automático con trazabilidad",
+    description: "Cada decisión deja registro para revisar qué pasó, por qué y con qué resultado.",
   },
 ]
 
-const decisionRules = [
-  "Un solo agente si el trabajo es corto, lineal y con poco riesgo.",
-  "Varios agentes si hay funciones distintas o criterios de revision claros.",
-  "Cuaderno si el valor esta en mantener contexto comun y materiales de referencia.",
-  "Persona supervisando si hay impacto en cliente, normativa o decisiones relevantes.",
+const designRules = [
+  "No mezclar interpretación, decisión y acción sin saber quién responde en cada fase.",
+  "No automatizar una salida si antes no puedes definir cuándo está bien y cuándo está mal.",
+  "No hablar de autonomía sin hablar también de supervisión, registro y excepciones.",
+  "No pensar primero en la herramienta. Pensar primero en el proceso y después en la implementación.",
 ]
 
 export function PromptSection() {
@@ -76,11 +67,11 @@ export function PromptSection() {
         >
           <span className="mb-4 block text-sm font-medium uppercase tracking-[0.2em] text-primary">Bloque 3</span>
           <h2 className="mb-8 text-4xl font-bold text-balance text-foreground md:text-5xl lg:text-6xl">
-            Orquestar el equipo de IA
+            Diseñar automatización con control
           </h2>
           <p className="text-xl leading-relaxed text-foreground/76 md:text-2xl">
-            Orquestar agentes no es abrir muchos chats. Es repartir bien responsabilidades y controlar como circula el
-            contexto.
+            El sistema no tiene que hacerlo todo solo. Tiene que saber avanzar bien, pedir ayuda cuando toca y dejar
+            huella de lo que ha hecho.
           </p>
         </motion.div>
 
@@ -93,22 +84,22 @@ export function PromptSection() {
             transition={{ duration: 0.5 }}
           >
             <div className="max-w-4xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Roles posibles</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Arquitectura mínima</p>
               <h3 className="mt-4 text-4xl font-semibold leading-tight text-balance text-foreground md:text-5xl">
-                No estas creando un chatbot. Estas montando un pequeno equipo digital para ti.
+                Una automatización útil combina evento, interpretación, decisión, acción y supervisión.
               </h3>
               <p className="mt-6 text-xl leading-relaxed text-foreground/82 md:text-2xl">
-                No siempre necesitas cinco agentes reales. A veces basta un agente con varias fases. Otras veces
-                conviene repartir el trabajo para ganar claridad y control.
+                Si falta una de estas piezas, normalmente no tienes una automatización madura. Tienes solo una llamada
+                al modelo dentro de un proceso mal definido.
               </p>
             </div>
 
-            <div className="mt-10 grid gap-4 lg:grid-cols-5">
-              {roles.map((item, index) => (
+            <div className="mt-10 grid gap-4 lg:grid-cols-4">
+              {automationPieces.map((item, index) => (
                 <motion.div
                   key={item.title}
                   className={`rounded-[1.5rem] border p-6 ${
-                    index === 1 || index === 4 ? "border-primary/30 bg-background/35" : "border-primary/20 bg-primary/8"
+                    index === 1 || index === 3 ? "border-primary/30 bg-background/35" : "border-primary/20 bg-primary/8"
                   }`}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -136,21 +127,20 @@ export function PromptSection() {
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/12">
                 <GitBranch className="h-6 w-6 text-primary" />
               </div>
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Patrones de orquestacion</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Patrones de control</p>
               <h3 className="mt-3 text-4xl font-semibold leading-tight text-balance text-foreground md:text-5xl">
-                No hay una unica forma correcta de repartir el trabajo.
+                Automatizar no significa quitar a la persona del mapa.
               </h3>
               <div className="mt-8 grid gap-4">
-                {orchestrationPatterns.map((item, index) => (
+                {controlPatterns.map((item, index) => (
                   <div
                     key={item.title}
                     className={`rounded-[1.35rem] border px-5 py-5 ${
-                      index === 2 ? "border-primary/25 bg-primary/8" : "border-border/60 bg-background/35"
+                      index === 1 || index === 3 ? "border-primary/25 bg-primary/8" : "border-border/60 bg-background/35"
                     }`}
                   >
                     <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">{item.title}</p>
                     <p className="mt-2 text-2xl font-semibold leading-snug text-foreground">{item.description}</p>
-                    <p className="mt-3 text-base leading-relaxed text-muted-foreground">{item.example}</p>
                   </div>
                 ))}
               </div>
@@ -158,18 +148,18 @@ export function PromptSection() {
 
             <div className="rounded-[2rem] border border-primary/25 bg-primary/10 p-8 md:p-10">
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-background/35">
-                <Users className="h-6 w-6 text-primary" />
+                <BellRing className="h-6 w-6 text-primary" />
               </div>
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Criterio de reparto</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Disciplina de diseño</p>
               <h3 className="mt-3 text-4xl font-semibold leading-tight text-balance text-foreground md:text-5xl">
-                Repartir bien el trabajo importa mas que multiplicar agentes.
+                La automatización buena se parece más a un proceso bien pensado que a una demo brillante.
               </h3>
               <div className="mt-8 grid gap-4">
-                {decisionRules.map((item, index) => (
+                {designRules.map((item, index) => (
                   <div
                     key={item}
                     className={`rounded-[1.35rem] border px-5 py-5 ${
-                      index === 1 || index === 3 ? "border-primary/25 bg-background/35" : "border-primary/20 bg-primary/8"
+                      index === 0 || index === 2 ? "border-primary/25 bg-background/35" : "border-primary/20 bg-primary/8"
                     }`}
                   >
                     <p className="text-lg font-semibold leading-snug text-foreground">{item}</p>
@@ -177,7 +167,9 @@ export function PromptSection() {
                 ))}
               </div>
               <p className="mt-8 text-2xl font-semibold leading-relaxed text-balance text-foreground md:text-3xl">
-                Orquestar agentes no es multiplicar chats. Es repartir bien responsabilidades.
+                La autonomía sin control no es madurez.
+                <br />
+                Es fragilidad.
               </p>
             </div>
           </motion.div>

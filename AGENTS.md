@@ -1,8 +1,8 @@
-﻿# AGENTS.md
+# AGENTS.md
 
 ## Proposito del proyecto
 
-Esta web sustituye a unas diapositivas para una charla interna sobre IA generativa orientada a negocio y tecnologia dentro de una division de Seguros.
+Esta web sustituye a unas diapositivas para una charla interna sobre IA generativa orientada a negocio y tecnologia para una audiencia amplia dentro de la empresa.
 
 La experiencia debe servir como apoyo visual a una exposicion de unos 30 minutos. Tiene que funcionar bien proyectada en directo, con mensajes muy jerarquizados, bloques grandes y ritmo claro, sin parecer una landing comercial ni un articulo largo.
 
@@ -10,14 +10,14 @@ La experiencia debe servir como apoyo visual a una exposicion de unos 30 minutos
 
 La charla activa es:
 
-`Charla 3 - Workflows de IA`
+`Charla 4 - Automatizacion con IA`
 
 El foco no es vender herramientas ni hacer una demo aislada. El objetivo es ayudar a la audiencia a entender con criterio:
 
-- como evolucionar desde un chat puntual hasta un workflow bien disenado
-- por que un proceso bien dividido da mejores resultados que una conversacion aislada
-- como repartir trabajo entre persona, prompt, agente y herramientas
-- que papel tiene la orquestacion en la calidad, trazabilidad y reutilizacion
+- como evolucionar desde un chat puntual hasta un sistema automatizado
+- por que un workflow manual no es lo mismo que una automatizacion operativa
+- como elegir entre chat, prompt, agente, equipo de agentes o automatizacion
+- que papel tienen el trigger, la decision, la accion y la supervision
 - como cerrar la parte conceptual antes de pasar a una demo en vivo
 
 ## Estructura narrativa vigente
@@ -25,71 +25,71 @@ El foco no es vender herramientas ni hacer una demo aislada. El objetivo es ayud
 La web debe seguir esta narrativa salvo decision consciente de rediseño:
 
 1. Hero / portada
-2. Bloque 1 - Del chat al workflow
-3. Bloque 2 - Pensar el proceso
-4. Bloque 3 - Orquestar agentes
+2. Bloque 1 - Del equipo de agentes a la automatizacion
+3. Bloque 2 - Elegir el nivel correcto
+4. Bloque 3 - Disenar automatizacion con control
 5. Cierre
 
 ## Guion editorial por bloques
 
-### Bloque 1 - Del chat al workflow
+### Bloque 1 - Del equipo de agentes a la automatizacion
 
 Debe cubrir de forma clara y visual:
 
-- que el uso habitual empieza en un chat y por que eso tiene limites rapidos
-- como mejora el resultado cuando pasamos de preguntar a estructurar prompts
-- cuando tiene sentido crear un agente con una funcion mas estable
-- por que el siguiente salto es orquestar varios pasos dentro de un workflow
-- que esta evolucion aumenta control, claridad y consistencia
+- que la charla anterior ya permitia resolver trabajo complejo con agentes coordinados
+- que ese flujo seguia dependiendo de la persona para arrancar, pasar informacion y decidir el siguiente paso
+- por que el siguiente salto natural es integrar la IA dentro del proceso
+- que automatizar con IA no es solo poner reglas, sino disenar un sistema que se activa, interpreta, decide y actua
+- que la autonomia siempre debe formularse junto con supervision y trazabilidad
 
 Idea de cierre del bloque:
 
-`La evolucion natural con IA va del chat al prompt, del prompt al agente y del agente al workflow.`
+`El salto no es tener mas agentes. El salto es integrar la IA en el proceso correcto.`
 
 Transicion esperada al bloque 2:
 
-`Si queremos que la IA ayude de verdad, primero tenemos que pensar bien el proceso.`
+`No todo necesita automatizacion. Primero hay que elegir el nivel adecuado.`
 
-### Bloque 2 - Pensar el proceso
+### Bloque 2 - Elegir el nivel correcto
 
 Debe explicar de forma sencilla:
 
-- que un workflow empieza por definir objetivo, entradas, pasos y criterio de salida
-- por que dividir una tarea compleja en etapas mejora control y calidad
-- que una mala secuencia arrastra errores aunque el modelo sea bueno
-- como identificar dependencias, validaciones y puntos de decision humana
-- ejemplos breves aplicados a Seguros: normativa, siniestros, polizas o seguimiento interno
+- que no hay una unica forma de usar IA
+- los cinco niveles: chat, prompt estructurado, agente individual, equipo de agentes y automatizacion
+- que cada nivel aporta una mezcla distinta de rapidez, control y escalabilidad
+- por que automatizar demasiado pronto suele ser un error
+- que la automatizacion es un nivel de madurez, no el punto de partida
 
 Idea de cierre del bloque:
 
-`Muchas veces el problema no es la herramienta. Es que el proceso todavia no esta bien pensado.`
+`La clave no es automatizar todo. Es elegir el nivel adecuado.`
 
-### Bloque 3 - Orquestar agentes
+### Bloque 3 - Disenar automatizacion con control
 
 Debe aterrizar de forma practica:
 
-- que no todo lo tiene que hacer el mismo agente ni la misma persona
-- como distinguir entre tareas de leer, resumir, comparar, redactar y revisar
-- cuando conviene usar un agente unico y cuando conviene repartir funciones
+- que una automatizacion util combina trigger, interpretacion, decision, accion y supervision
+- que no todo lo tiene que hacer el sistema sin intervencion humana
+- cuando conviene aviso, aprobacion, excepcion o trazabilidad reforzada
 - importancia del control humano en decisiones, riesgos y tono final
-- errores tipicos: pedir todo de golpe, mezclar fases o no definir responsable de revision
+- errores tipicos: mezclar fases, automatizar sin criterio de calidad o no definir responsable de revision
 
 Idea de cierre del bloque:
 
-`Orquestar bien no es automatizarlo todo. Es repartir cada tarea donde tiene mas sentido.`
+`La autonomia sin control no es madurez. Es fragilidad.`
 
 ### Cierre
 
 Debe reforzar tres ideas memorables:
 
-1. La IA aporta mas valor cuando se integra en un proceso, no cuando se usa como truco puntual.
-2. La calidad depende mucho de como se divide, secuencia y revisa el trabajo.
-3. Orquestar bien significa combinar contexto, fases, herramientas y control humano.
-4. La demo viene despues: la presentacion debe dejar preparado el criterio para entenderla.
+1. El chat ayuda a pensar.
+2. Los agentes ayudan a hacer tareas.
+3. La automatizacion ayuda a escalar trabajo.
+4. El valor no esta en usar IA, sino en decidir cuando debe trabajar por ti y cuando no.
 
 ## Objetivo editorial
 
-La charla debe ayudar a perfiles funcionales y tecnicos a construir una base comun sobre como disenar workflows de IA aplicables a la empresa.
+La charla debe ayudar a perfiles funcionales y tecnicos a construir una base comun sobre como disenar automatizaciones con IA aplicables a la empresa.
 
 No es el lugar para profundizar todavia en:
 
@@ -110,12 +110,7 @@ No es el lugar para profundizar todavia en:
   - como encaja en el proceso
   - que sigue necesitando control humano
   - donde aporta valor real
-- En el contexto de Seguros, priorizar ejemplos breves y utiles sobre:
-  - polizas
-  - siniestros
-  - normativa
-  - procedimientos internos
-  - comunicaciones con cliente
+- Priorizar ejemplos y formulaciones validas para una audiencia amplia de empresa, no solo para un area concreta.
 
 ## Criterios de diseno
 

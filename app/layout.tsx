@@ -7,9 +7,9 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Charla 3 | Workflows de IA",
+  title: "Charla 4 | Automatización con IA",
   description:
-    "Charla interna sobre workflows de IA, procesos asistidos y trabajo con Copilot 365 en un contexto de Seguros.",
+    "Charla interna sobre automatización con IA, niveles de uso, control operativo y procesos asistidos en entorno corporativo.",
   generator: "v0.app",
   icons: {
     icon: [

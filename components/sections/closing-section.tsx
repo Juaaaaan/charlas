@@ -2,26 +2,26 @@
 
 import { motion } from "framer-motion"
 
-const controls = [
-  "Definir el objetivo y el criterio de calidad antes de empezar.",
-  "Separar bien que hace la IA y que valida la persona.",
-  "Revisar puntos sensibles: cliente, normativa, compromisos y decisiones.",
-  "Mantener trazabilidad de fuentes, supuestos y versiones.",
-  "Escalar solo los flujos que ya funcionan de forma consistente.",
+const noAutomation = [
+  "No lo automatices si no sabes explicar cómo funciona el proceso.",
+  "No lo automatices si el caso cambia tanto que no puedes definir un patrón estable.",
+  "No lo automatices si el error es crítico y aún no has definido control humano.",
+  "No lo automatices si ocurre tan poco que no compensa el esfuerzo.",
+  "No lo automatices si no puedes auditar qué hizo el sistema y por qué.",
 ]
 
-const risks = [
-  "Errores pequenos que se encadenan entre fases.",
-  "Perdida de contexto entre agentes o herramientas.",
-  "Salidas demasiado genericas para un caso concreto.",
-  "Exceso de confianza en un borrador convincente.",
-  "Datos sensibles mal compartidos o mal interpretados.",
+const requiredControls = [
+  "Registro de eventos, decisiones y acciones.",
+  "Avisos o escalado cuando haya excepciones.",
+  "Revisión humana en pasos sensibles.",
+  "Medidas de calidad para saber si mejora de verdad.",
+  "Salida segura cuando el sistema no tiene suficiente confianza.",
 ]
 
 const finalIdeas = [
-  "La IA ayuda mas cuando deja de ser una conversacion suelta y pasa a formar parte de un proceso.",
-  "Antes de automatizar, hay que entender bien que pasos importan y que salida buscamos.",
-  "No se trata de que un agente haga todo, sino de que cada parte quede en las manos adecuadas.",
+  "La clave no es automatizar todo. Es elegir el nivel adecuado.",
+  "La automatización sin control no es madurez. Es fragilidad.",
+  "Automatizar con sentido exige límites, trazabilidad y responsabilidad.",
 ]
 
 export function ClosingSection() {
@@ -40,10 +40,11 @@ export function ClosingSection() {
         >
           <span className="mb-4 block text-sm font-medium uppercase tracking-[0.2em] text-primary">Bloque 4</span>
           <h2 className="mb-8 text-4xl font-bold text-balance text-foreground md:text-5xl lg:text-6xl">
-            Control, limites y criterio
+            Límites, trazabilidad y criterio
           </h2>
           <p className="mx-auto max-w-3xl text-xl leading-relaxed text-foreground/76 md:text-2xl">
-            Cuanto mas largo es el flujo, mas importante es controlar que pasa en cada fase y quien valida el resultado.
+            La pregunta importante no es solo qué se puede automatizar. La pregunta importante es qué conviene
+            automatizar y bajo qué control.
           </p>
         </motion.div>
 
@@ -55,25 +56,28 @@ export function ClosingSection() {
           transition={{ duration: 0.6 }}
         >
           <div className="rounded-[2rem] border border-primary/25 bg-primary/10 p-8 md:p-10">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Puntos de control</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Cuando no</p>
             <div className="mt-6 grid gap-3">
-              {controls.map((item, index) => (
+              {noAutomation.map((item, index) => (
                 <div
                   key={item}
                   className={`rounded-[1.25rem] border px-5 py-4 text-lg text-foreground ${
-                    index === 1 || index === 3 ? "border-primary/25 bg-background/35" : "border-primary/20 bg-primary/8"
+                    index === 0 || index === 4 ? "border-primary/25 bg-background/35" : "border-primary/20 bg-primary/8"
                   }`}
                 >
                   {item}
                 </div>
               ))}
             </div>
+            <p className="mt-6 rounded-[1.5rem] border border-primary/20 bg-background/35 p-5 text-xl font-semibold leading-relaxed text-foreground">
+              Automatizar sin control no es eficiencia. Es riesgo.
+            </p>
           </div>
 
           <div className="rounded-[2rem] border border-border/70 bg-card/90 p-8 md:p-10">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Riesgos a vigilar</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Lo mínimo exigible</p>
             <div className="mt-6 grid gap-3">
-              {risks.map((item, index) => (
+              {requiredControls.map((item, index) => (
                 <div
                   key={item}
                   className={`rounded-[1.25rem] border px-5 py-4 text-lg text-foreground ${
@@ -84,9 +88,14 @@ export function ClosingSection() {
                 </div>
               ))}
             </div>
-            <p className="mt-6 rounded-[1.5rem] border border-primary/20 bg-primary/8 p-5 text-xl font-semibold leading-relaxed text-foreground">
-              Automatizar sin control no escala productividad. Escala riesgo.
-            </p>
+            <div className="mt-6 rounded-[1.5rem] border border-primary/20 bg-primary/8 p-5">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Aterrizaje</p>
+              <p className="mt-3 text-xl leading-relaxed text-foreground">
+                Para llevar esto a entorno real hace falta una capa que conecte eventos, IA y acciones. Copilot
+                Studio encaja aquí: no como un bot aislado, sino como una forma de automatizar procesos con IA dentro
+                de la empresa.
+              </p>
+            </div>
           </div>
         </motion.div>
 
@@ -111,10 +120,9 @@ export function ClosingSection() {
             ))}
           </div>
           <p className="mx-auto mt-10 max-w-4xl text-3xl font-semibold leading-relaxed text-balance text-foreground md:text-4xl">
-            La ventaja no sera tener IA. La ventaja sera saber dirigir trabajo con IA.
-          </p>
-          <p className="mx-auto mt-6 max-w-3xl text-xl leading-relaxed text-foreground/78 md:text-2xl">
-            Y ahora, mejor que seguir explicandolo, vamos a verlo en un ejemplo real.
+            El valor no está en automatizar por automatizar.
+            <br />
+            Está en decidir bien dónde entra, cómo se controla y cuándo no debe avanzar sola.
           </p>
         </motion.div>
       </div>
