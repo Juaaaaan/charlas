@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { BellRing, GitBranch, PlayCircle, ShieldCheck, Waypoints, Wrench } from "lucide-react"
+import { GitBranch, PlayCircle, ShieldCheck, Waypoints, Wrench } from "lucide-react"
 
 const automationPieces = [
   {
@@ -43,13 +43,6 @@ const controlPatterns = [
     title: "Automático con trazabilidad",
     description: "Cada decisión deja registro para revisar qué pasó, por qué y con qué resultado.",
   },
-]
-
-const designRules = [
-  "No mezclar interpretación, decisión y acción sin saber quién responde en cada fase.",
-  "No automatizar una salida si antes no puedes definir cuándo está bien y cuándo está mal.",
-  "No hablar de autonomía sin hablar también de supervisión, registro y excepciones.",
-  "No pensar primero en la herramienta. Pensar primero en el proceso y después en la implementación.",
 ]
 
 export function PromptSection() {
@@ -117,7 +110,7 @@ export function PromptSection() {
           </motion.div>
 
           <motion.div
-            className="grid gap-6 lg:grid-cols-[0.94fr_1.06fr]"
+            className="grid gap-6"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
@@ -144,33 +137,6 @@ export function PromptSection() {
                   </div>
                 ))}
               </div>
-            </div>
-
-            <div className="rounded-[2rem] border border-primary/25 bg-primary/10 p-8 md:p-10">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-background/35">
-                <BellRing className="h-6 w-6 text-primary" />
-              </div>
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Disciplina de diseño</p>
-              <h3 className="mt-3 text-4xl font-semibold leading-tight text-balance text-foreground md:text-5xl">
-                La automatización buena se parece más a un proceso bien pensado que a una demo brillante.
-              </h3>
-              <div className="mt-8 grid gap-4">
-                {designRules.map((item, index) => (
-                  <div
-                    key={item}
-                    className={`rounded-[1.35rem] border px-5 py-5 ${
-                      index === 0 || index === 2 ? "border-primary/25 bg-background/35" : "border-primary/20 bg-primary/8"
-                    }`}
-                  >
-                    <p className="text-lg font-semibold leading-snug text-foreground">{item}</p>
-                  </div>
-                ))}
-              </div>
-              <p className="mt-8 text-2xl font-semibold leading-relaxed text-balance text-foreground md:text-3xl">
-                La autonomía sin control no es madurez.
-                <br />
-                Es fragilidad.
-              </p>
             </div>
           </motion.div>
         </div>
