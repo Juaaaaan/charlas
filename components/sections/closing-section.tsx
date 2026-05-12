@@ -2,26 +2,26 @@
 
 import { motion } from "framer-motion"
 
-const noAutomation = [
-  "No lo automatices si no sabes explicar cómo funciona el proceso.",
-  "No lo automatices si el caso cambia tanto que no puedes definir un patrón estable.",
-  "No lo automatices si el error es crítico y aún no has definido control humano.",
-  "No lo automatices si ocurre tan poco que no compensa el esfuerzo.",
-  "No lo automatices si no puedes auditar qué hizo el sistema y por qué.",
+const localLimits = [
+  "No esperes la misma calidad que en los mejores modelos cloud.",
+  "El hardware manda: RAM, VRAM y CPU/GPU cambian completamente la experiencia.",
+  "Más privacidad no significa seguridad automática: siguen importando permisos, logs y archivos.",
+  "Los modelos locales también inventan, se equivocan y necesitan revisión.",
+  "Mantener modelos, versiones y configuración tiene coste operativo.",
 ]
 
-const requiredControls = [
-  "Registro de eventos, decisiones y acciones.",
-  "Avisos o escalado cuando haya excepciones.",
-  "Revisión humana en pasos sensibles.",
-  "Medidas de calidad para saber si mejora de verdad.",
-  "Salida segura cuando el sistema no tiene suficiente confianza.",
+const validationChecklist = [
+  "Elegir un modelo razonable para la máquina disponible.",
+  "Probar una tarea concreta, no una pregunta genérica.",
+  "Observar velocidad, memoria usada y calidad de respuesta.",
+  "Comparar resultados con el objetivo real de negocio o tecnología.",
+  "Decidir si el caso pide local, cloud o una combinación.",
 ]
 
 const finalIdeas = [
-  "La clave no es automatizar todo. Es elegir el nivel adecuado.",
-  "La automatización sin control no es madurez. Es fragilidad.",
-  "Automatizar con sentido exige límites, trazabilidad y responsabilidad.",
+  "La IA local da control, no magia.",
+  "El modelo se elige por tarea, datos y máquina.",
+  "Local y cloud no compiten siempre: muchas veces conviven.",
 ]
 
 export function ClosingSection() {
@@ -40,11 +40,11 @@ export function ClosingSection() {
         >
           <span className="mb-4 block text-sm font-medium uppercase tracking-[0.2em] text-primary">Bloque 4</span>
           <h2 className="mb-8 text-4xl font-bold text-balance text-foreground md:text-5xl lg:text-6xl">
-            Límites, trazabilidad y criterio
+            Límites para decidir con criterio
           </h2>
           <p className="mx-auto max-w-3xl text-xl leading-relaxed text-foreground/76 md:text-2xl">
-            La pregunta importante no es solo qué se puede automatizar. La pregunta importante es qué conviene
-            automatizar y bajo qué control.
+            La IA local tiene valor cuando encaja con una tarea, unos datos y una máquina concreta. Antes de adoptarla,
+            conviene saber qué puede resolver, qué exige y dónde empieza a quedarse corta.
           </p>
         </motion.div>
 
@@ -56,9 +56,9 @@ export function ClosingSection() {
           transition={{ duration: 0.6 }}
         >
           <div className="rounded-[2rem] border border-primary/25 bg-primary/10 p-8 md:p-10">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Cuando no</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Límites</p>
             <div className="mt-6 grid gap-3">
-              {noAutomation.map((item, index) => (
+              {localLimits.map((item, index) => (
                 <div
                   key={item}
                   className={`rounded-[1.25rem] border px-5 py-4 text-lg text-foreground ${
@@ -70,14 +70,14 @@ export function ClosingSection() {
               ))}
             </div>
             <p className="mt-6 rounded-[1.5rem] border border-primary/20 bg-background/35 p-5 text-xl font-semibold leading-relaxed text-foreground">
-              Automatizar sin control no es eficiencia. Es riesgo.
+              Ejecutar en local reduce dependencias, pero no elimina el criterio humano.
             </p>
           </div>
 
           <div className="rounded-[2rem] border border-border/70 bg-card/90 p-8 md:p-10">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Lo mínimo exigible</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Cómo validar</p>
             <div className="mt-6 grid gap-3">
-              {requiredControls.map((item, index) => (
+              {validationChecklist.map((item, index) => (
                 <div
                   key={item}
                   className={`rounded-[1.25rem] border px-5 py-4 text-lg text-foreground ${
@@ -91,9 +91,8 @@ export function ClosingSection() {
             <div className="mt-6 rounded-[1.5rem] border border-primary/20 bg-primary/8 p-5">
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Aterrizaje</p>
               <p className="mt-3 text-xl leading-relaxed text-foreground">
-                Para llevar esto a entorno real hace falta una capa que conecte eventos, IA y acciones. Copilot
-                Studio encaja aquí: no como un bot aislado, sino como una forma de automatizar procesos con IA dentro
-                de la empresa.
+                La decisión no sale de la ficha técnica. Sale de probar una tarea real, medir el resultado y entender
+                qué se gana y qué se sacrifica frente a un servicio cloud.
               </p>
             </div>
           </div>
@@ -120,9 +119,9 @@ export function ClosingSection() {
             ))}
           </div>
           <p className="mx-auto mt-10 max-w-4xl text-3xl font-semibold leading-relaxed text-balance text-foreground md:text-4xl">
-            El valor no está en automatizar por automatizar.
+            El valor no está en ejecutar IA en local por defecto.
             <br />
-            Está en decidir bien dónde entra, cómo se controla y cuándo no debe avanzar sola.
+            Está en saber cuándo debe estar cerca de tus datos, cuándo conviene usar cloud y cómo validar la decisión.
           </p>
         </motion.div>
       </div>

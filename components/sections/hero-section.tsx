@@ -4,20 +4,20 @@ import { motion } from "framer-motion"
 
 const agenda = [
   {
-    label: "Integrar la IA en el proceso",
-    detail: "Pasar del flujo manual al sistema que se activa, interpreta y avanza dentro de la operativa.",
+    label: "Qué es la IA en local",
+    detail: "Entender qué cambia cuando el modelo se ejecuta en tu equipo y no como servicio externo.",
   },
   {
-    label: "Elegir el nivel adecuado",
-    detail: "Distinguir cuándo basta un chat y cuándo tiene sentido llegar a agente, equipo o automatización.",
+    label: "Diferenciar modelos",
+    detail: "Leer tamaño, especialización, cuantización, contexto y requisitos sin perderse en nombres.",
   },
   {
-    label: "Diseñar con control",
-    detail: "Definir trigger, decisión, acción y supervisión para escalar sin perder criterio.",
+    label: "Usos con sentido",
+    detail: "Ver dónde aporta valor: privacidad, pruebas, código, documentos internos y RAG local.",
   },
   {
-    label: "Poner límites claros",
-    detail: "Asegurar trazabilidad, revisión y criterio antes de llevar la automatización a entorno real.",
+    label: "Límites y cierre",
+    detail: "Aterrizar qué no resuelve la IA local y quedarse con criterios claros de decisión.",
   },
 ]
 
@@ -35,7 +35,7 @@ export function HeroSection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <span className="inline-flex rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium uppercase tracking-[0.18em] text-primary">
-            Charla 4 - Automatización con IA
+            Charla 5 - IA en local
           </span>
         </motion.div>
 
@@ -45,7 +45,7 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.08, ease: "easeOut" }}
         >
-          Automatización con IA
+          IA en local
         </motion.h1>
 
         <motion.p
@@ -54,8 +54,8 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.16, ease: "easeOut" }}
         >
-          No va de añadir más herramientas. Va de decidir dónde entra la IA en el proceso, qué hace por sí sola y
-          cómo se supervisa.
+          Ejecutar modelos cerca de tus datos cambia la conversación: más control, más responsabilidad y límites
+          técnicos que conviene entender antes de usarlo en serio.
         </motion.p>
 
         <motion.div
@@ -87,8 +87,8 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.28, ease: "easeOut" }}
         >
           <p className="text-2xl font-semibold leading-snug text-balance text-foreground md:text-3xl">
-            La pregunta no es solo qué puede hacer la IA. La pregunta es cómo entra en el trabajo real sin perder
-            control.
+            La pregunta no es si la IA local sustituye a la cloud. La pregunta es qué cargas de trabajo conviene
+            acercar a tu equipo, tus datos y tus restricciones.
           </p>
         </motion.div>
       </div>

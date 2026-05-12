@@ -1,23 +1,23 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Bot, Users } from "lucide-react"
+import { Cloud, MonitorCog } from "lucide-react"
 
 const comparisonCards = [
   {
-    icon: Users,
-    eyebrow: "Lo que ya teníamos",
-    title: "Equipo de agentes",
+    icon: Cloud,
+    eyebrow: "Uso habitual",
+    title: "IA como servicio",
     description:
-      "Puede resolver trabajo complejo, pero alguien tiene que arrancar el flujo, pasar contexto y decidir el siguiente paso.",
+      "Accedes a un modelo remoto desde una web, una API o una herramienta corporativa. La potencia está fuera de tu equipo.",
     tone: "border-border/70 bg-background/40",
   },
   {
-    icon: Bot,
-    eyebrow: "El siguiente salto",
-    title: "Automatización con IA",
+    icon: MonitorCog,
+    eyebrow: "Cambio de enfoque",
+    title: "IA ejecutada en local",
     description:
-      "La capacidad ya no depende de una persona en cada paso. Entra dentro del proceso y avanza con criterios definidos.",
+      "Descargas un modelo y lo ejecutas en tu máquina o en infraestructura propia. Ganas control, pero asumes límites y configuración.",
     tone: "border-primary/30 bg-primary/10",
   },
 ]
@@ -37,12 +37,11 @@ export function AIFoundationsSection() {
         >
           <span className="mb-4 block text-sm font-medium uppercase tracking-[0.2em] text-primary">Bloque 1</span>
           <h2 className="text-4xl font-bold text-balance text-foreground md:text-5xl lg:text-6xl">
-            Del equipo de agentes a la automatización
+            Qué significa usar IA en local
           </h2>
           <p className="mt-8 text-xl leading-relaxed text-foreground/76 md:text-2xl">
-            La charla anterior ya nos dejaba algo potente: trabajo complejo resuelto con agentes coordinados. El
-            límite es que el flujo seguía dependiendo de nosotros para arrancar, pasar información y decidir cuándo
-            continuar.
+            No hablamos de entrenar un modelo desde cero. Hablamos de descargar un modelo ya creado y ejecutarlo cerca
+            del usuario, de los documentos o del entorno donde se quiere probar.
           </p>
         </motion.div>
 
@@ -55,7 +54,9 @@ export function AIFoundationsSection() {
         >
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">La idea clave</p>
           <p className="mt-3 max-w-3xl text-2xl font-semibold leading-tight text-balance text-foreground md:text-3xl">
-            El salto no es tener más agentes. El salto es integrar la IA en el proceso correcto.
+            IA en local no significa IA privada por arte de magia.
+            <br />
+            Significa cambiar dónde se ejecuta el modelo y quién controla el entorno.
           </p>
         </motion.div>
 
@@ -90,11 +91,11 @@ export function AIFoundationsSection() {
         >
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Transición</p>
           <h3 className="mt-3 text-2xl font-semibold leading-tight text-balance text-foreground md:text-3xl">
-            Pero no todo necesita automatización.
+            El primer reto es saber qué modelo tienes delante.
           </h3>
           <p className="mt-3 max-w-3xl text-base leading-relaxed text-foreground/74 md:text-lg">
-            Antes de meter la IA dentro de un proceso, hay que elegir bien el nivel de uso. A veces basta un chat. A
-            veces tiene sentido llegar mucho más lejos.
+            En local aparecen nombres, tamaños, formatos y cuantizaciones. Si no sabes leer esas señales, es fácil
+            elegir un modelo demasiado lento, demasiado pequeño o inadecuado para la tarea.
           </p>
         </motion.div>
       </div>

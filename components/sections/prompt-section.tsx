@@ -1,47 +1,47 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { GitBranch, PlayCircle, ShieldCheck, Waypoints, Wrench } from "lucide-react"
+import { Code2, Database, FileText, Server, ShieldCheck } from "lucide-react"
 
 const automationPieces = [
   {
-    icon: PlayCircle,
-    title: "Trigger",
-    description: "Algo activa el flujo: un correo, un formulario, un archivo o un evento de negocio.",
-  },
-  {
-    icon: Waypoints,
-    title: "Ruta",
-    description: "La IA interpreta la entrada y decide qué camino seguir según criterios definidos.",
-  },
-  {
-    icon: Wrench,
-    title: "Acción",
-    description: "El sistema ejecuta tareas concretas sobre herramientas, datos o comunicaciones.",
-  },
-  {
     icon: ShieldCheck,
-    title: "Supervisión",
-    description: "Se define dónde hace falta aprobación humana, excepción o parada segura.",
+    title: "Documentos sensibles",
+    description: "Resumir, clasificar o extraer información cuando no conviene enviar contenido a un servicio externo.",
+  },
+  {
+    icon: Code2,
+    title: "Ayuda técnica",
+    description: "Generar scripts, revisar fragmentos de código o prototipar asistentes sin depender de una API.",
+  },
+  {
+    icon: Database,
+    title: "RAG local",
+    description: "Preguntar sobre documentación propia manteniendo modelo, índice y archivos bajo control.",
+  },
+  {
+    icon: FileText,
+    title: "Transformación de texto",
+    description: "Normalizar entradas, preparar borradores o convertir formatos repetitivos con revisión humana.",
   },
 ]
 
 const controlPatterns = [
   {
-    title: "Automático con aviso",
-    description: "Sirve para tareas de bajo riesgo donde lo importante es velocidad y seguimiento.",
+    title: "Local",
+    description: "Tiene sentido cuando pesan privacidad, offline, coste fijo o control de versión.",
   },
   {
-    title: "Automático con aprobación",
-    description: "La IA prepara y propone, pero una persona confirma antes de ejecutar el paso sensible.",
+    title: "Cloud",
+    description: "Suele ganar cuando necesitas máxima calidad, modelos punteros, escala o menos mantenimiento.",
   },
   {
-    title: "Automático con excepciones",
-    description: "El flujo avanza solo salvo cuando detecta un caso dudoso o fuera de patrón.",
+    title: "Híbrido",
+    description: "En empresa lo normal es combinar: local para ciertos datos y cloud para tareas más exigentes.",
   },
   {
-    title: "Automático con trazabilidad",
-    description: "Cada decisión deja registro para revisar qué pasó, por qué y con qué resultado.",
+    title: "Decisión práctica",
+    description: "Elige por carga de trabajo, datos, riesgo, calidad esperada y coste operativo.",
   },
 ]
 
@@ -60,11 +60,11 @@ export function PromptSection() {
         >
           <span className="mb-4 block text-sm font-medium uppercase tracking-[0.2em] text-primary">Bloque 3</span>
           <h2 className="mb-8 text-4xl font-bold text-balance text-foreground md:text-5xl lg:text-6xl">
-            Diseñar automatización con control
+            Usos reales de la IA en local
           </h2>
           <p className="text-xl leading-relaxed text-foreground/76 md:text-2xl">
-            El sistema no tiene que hacerlo todo solo. Tiene que saber avanzar bien, pedir ayuda cuando toca y dejar
-            huella de lo que ha hecho.
+            El valor aparece cuando la ejecución local encaja con una restricción concreta: datos, coste, disponibilidad,
+            velocidad de prueba o control del entorno.
           </p>
         </motion.div>
 
@@ -77,13 +77,13 @@ export function PromptSection() {
             transition={{ duration: 0.5 }}
           >
             <div className="max-w-4xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Arquitectura mínima</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Dónde aporta</p>
               <h3 className="mt-4 text-4xl font-semibold leading-tight text-balance text-foreground md:text-5xl">
-                Una automatización útil combina evento, interpretación, decisión, acción y supervisión.
+                IA local no es una categoría abstracta. Es una forma de resolver trabajos concretos con más control.
               </h3>
               <p className="mt-6 text-xl leading-relaxed text-foreground/82 md:text-2xl">
-                Si falta una de estas piezas, normalmente no tienes una automatización madura. Tienes solo una llamada
-                al modelo dentro de un proceso mal definido.
+                No hace falta empezar por casos enormes. Tiene sentido probar con tareas acotadas, repetibles y fáciles
+                de validar con ejemplos reales.
               </p>
             </div>
 
@@ -92,7 +92,7 @@ export function PromptSection() {
                 <motion.div
                   key={item.title}
                   className={`rounded-[1.5rem] border p-6 ${
-                    index === 1 || index === 3 ? "border-primary/30 bg-background/35" : "border-primary/20 bg-primary/8"
+                    index === 0 || index === 2 ? "border-primary/30 bg-background/35" : "border-primary/20 bg-primary/8"
                   }`}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -118,11 +118,11 @@ export function PromptSection() {
           >
             <div className="rounded-[2rem] border border-border/70 bg-card/90 p-8 md:p-10">
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/12">
-                <GitBranch className="h-6 w-6 text-primary" />
+                <Server className="h-6 w-6 text-primary" />
               </div>
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Patrones de control</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Local frente a cloud</p>
               <h3 className="mt-3 text-4xl font-semibold leading-tight text-balance text-foreground md:text-5xl">
-                Automatizar no significa quitar a la persona del mapa.
+                La clave no es local o cloud. Es qué necesita la tarea.
               </h3>
               <div className="mt-8 grid gap-4">
                 {controlPatterns.map((item, index) => (

@@ -1,51 +1,55 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Bot, Layers3, MessageSquare, NotebookPen, Target, Workflow } from "lucide-react"
+import { Code2, Cpu, Database, Gauge, Layers3, Ruler } from "lucide-react"
 
 const usageLevels = [
   {
-    icon: MessageSquare,
-    title: "Nivel 1",
-    label: "Chat",
-    description: "Sirve para pensar mejor, explorar una idea o resolver algo puntual.",
-    takeaway: "Perfecto para apoyo inmediato. No para automatizar.",
-  },
-  {
-    icon: NotebookPen,
-    title: "Nivel 2",
-    label: "Prompt estructurado",
-    description: "Define rol, criterios y formato para convertir una conversación en un procedimiento.",
-    takeaway: "Reduce improvisación y hace la salida más consistente.",
-  },
-  {
-    icon: Bot,
-    title: "Nivel 3",
-    label: "Agente individual",
-    description: "Crea una pieza especializada que resuelve siempre el mismo tipo de trabajo.",
-    takeaway: "Una función clara. Una respuesta más estable.",
+    icon: Code2,
+    title: "Tarea",
+    label: "¿Qué necesito que haga?",
+    description:
+      "No todos los modelos sirven para lo mismo: hay modelos generalistas, de código, de razonamiento, de documentos, de visión o de idiomas.",
+    takeaway: "El mejor modelo no es el más famoso, es el más adecuado para la tarea.",
   },
   {
     icon: Layers3,
-    title: "Nivel 4",
-    label: "Equipo de agentes",
-    description: "Reparte tareas distintas entre varios roles, pero con coordinación humana.",
-    takeaway: "El humano deja de hacer todo y pasa a dirigir.",
+    title: "Tamaño",
+    label: "¿Qué escala tiene?",
+    description:
+      "3B, 7B, 13B o 70B indican una escala aproximada del modelo. Normalmente, cuanto más grande, más capacidad tiene, pero también necesita más máquina.",
+    takeaway: "Más grande puede responder mejor, pero no siempre compensa.",
   },
   {
-    icon: Workflow,
-    title: "Nivel 5",
-    label: "Automatización",
-    description: "El sistema se activa por un trigger, interpreta, decide y actúa dentro del proceso.",
-    takeaway: "Aquí la IA ya trabaja para ti.",
+    icon: Gauge,
+    title: "Cuantización",
+    label: "¿Qué versión estoy ejecutando?",
+    description:
+      "Q4, Q5 o Q8 son versiones más ligeras del modelo. Reducen peso y consumo para poder ejecutarlo en un ordenador normal.",
+    takeaway: "Q4 tiende a ser más rápido y ligero; Q8 tiende a conservar más calidad, pero pesa más.",
+  },
+  {
+    icon: Ruler,
+    title: "Contexto",
+    label: "¿Cuánto puede leer de una vez?",
+    description:
+      "El contexto marca cuánta información puede tener presente el modelo: documentos, instrucciones, historial o código.",
+    takeaway: "Más contexto ayuda con documentos largos, pero no arregla una mala tarea.",
+  },
+  {
+    icon: Cpu,
+    title: "Hardware",
+    label: "¿Mi equipo puede moverlo bien?",
+    description: "CPU, RAM, GPU y VRAM condicionan si el modelo carga, si responde fluido o si va demasiado lento.",
+    takeaway: "La experiencia depende tanto del modelo como del equipo.",
   },
 ]
 
 const selectionRules = [
-  "Sube de nivel cuando haya repetición, volumen y un proceso ya entendido.",
-  "No subas de nivel solo porque la herramienta lo permita.",
-  "Si el riesgo es alto, añade revisión humana antes de automatizar.",
-  "Si la tarea cambia cada vez, probablemente aún no toca automatizar.",
+  "Empieza por un modelo pequeño o medio.",
+  "Prueba con una tarea real y ejemplos representativos.",
+  "Mide si responde con la calidad y velocidad que necesitas.",
+  "Sube tamaño solo si realmente necesitas más calidad.",
 ]
 
 export function TokenContextSection() {
@@ -54,7 +58,7 @@ export function TokenContextSection() {
       <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(100,150,255,0.08),transparent_70%)]" />
 
-      <div className="relative z-10 mx-auto w-full max-w-6xl px-6">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-6">
         <motion.div
           className="mx-auto mb-16 max-w-4xl text-center"
           initial={{ opacity: 0, y: 30 }}
@@ -64,11 +68,11 @@ export function TokenContextSection() {
         >
           <span className="mb-4 block text-sm font-medium uppercase tracking-[0.2em] text-primary">Bloque 2</span>
           <h2 className="mb-8 text-4xl font-bold text-balance text-foreground md:text-5xl lg:text-6xl">
-            No hay una sola forma de usar IA
+            Cómo diferenciar modelos locales
           </h2>
           <p className="text-xl leading-relaxed text-foreground/76 md:text-2xl">
-            Uno de los errores más comunes es intentar automatizar demasiado pronto. Antes hay que saber qué nivel de
-            solución necesita de verdad cada problema.
+            En local el nombre del modelo no basta. Hay que mirar tamaño, formato, contexto y máquina disponible para
+            saber si encaja con el caso de uso.
           </p>
         </motion.div>
 
@@ -80,34 +84,39 @@ export function TokenContextSection() {
           transition={{ duration: 0.6 }}
         >
           <div className="max-w-4xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Escalera de madurez</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Lectura rápida</p>
             <h3 className="mt-4 text-4xl font-semibold leading-tight text-balance text-foreground md:text-5xl">
-              Chat, prompt, agente, equipo de agentes y automatización.
+              No busques “el mejor modelo”. Busca el modelo que encaja.
             </h3>
             <p className="mt-5 text-xl leading-relaxed text-foreground/82 md:text-2xl">
-              No son alternativas enfrentadas. Son niveles distintos de estructura, control y capacidad de escalar.
+              Un modelo local se elige respondiendo a tres preguntas: ¿para qué lo quiero?, ¿qué calidad necesito? y
+              ¿qué puede mover mi equipo?
             </p>
           </div>
 
-          <div className="mt-10 grid gap-4 xl:grid-cols-5">
+          <div className="mt-10 grid gap-4">
             {usageLevels.map((item, index) => (
               <motion.div
                 key={item.label}
-                className={`rounded-[1.5rem] border p-6 ${
-                  index === 4 ? "border-primary/30 bg-background/35" : "border-primary/20 bg-primary/8"
+                className={`grid gap-5 rounded-[1.5rem] border p-5 md:grid-cols-[13rem_1fr_20rem] md:items-center md:p-6 ${
+                  index === 0 || index === 4 ? "border-primary/30 bg-background/35" : "border-primary/20 bg-primary/8"
                 }`}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.35, delay: index * 0.05 }}
               >
-                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/12">
-                  <item.icon className="h-5 w-5 text-primary" />
+                <div className="flex items-center gap-4">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/12">
+                    <item.icon className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">{item.title}</p>
+                    <h4 className="mt-2 text-xl font-semibold leading-tight text-foreground">{item.label}</h4>
+                  </div>
                 </div>
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">{item.title}</p>
-                <h4 className="mt-3 text-2xl font-semibold text-foreground">{item.label}</h4>
-                <p className="mt-3 text-base leading-relaxed text-muted-foreground">{item.description}</p>
-                <p className="mt-5 rounded-[1.1rem] border border-primary/20 bg-background/35 px-4 py-3 text-base font-semibold text-foreground">
+                <p className="text-base leading-relaxed text-muted-foreground md:text-lg">{item.description}</p>
+                <p className="rounded-[1.1rem] border border-primary/20 bg-background/35 px-4 py-3 text-base font-semibold leading-snug text-foreground">
                   {item.takeaway}
                 </p>
               </motion.div>
@@ -125,23 +134,23 @@ export function TokenContextSection() {
           <div className="rounded-[2rem] border border-border/70 bg-card/90 p-8 md:p-10">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Idea clave</p>
             <h3 className="mt-4 text-4xl font-semibold leading-tight text-balance text-foreground md:text-5xl">
-              El objetivo no es llegar siempre al nivel 5.
+              Elegir modelo es decidir una renuncia.
             </h3>
             <p className="mt-6 text-xl leading-relaxed text-foreground/82 md:text-2xl">
-              La clave no es automatizar todo. La clave es elegir el nivel adecuado según el tipo de trabajo, el riesgo
-              y la frecuencia con la que ocurre.
+              Si priorizas privacidad y control, aceptas más configuración. Si priorizas calidad máxima, quizá el cloud
+              siga siendo mejor. Si priorizas velocidad local, quizá necesites un modelo más pequeño.
             </p>
             <div className="mt-8 rounded-[1.5rem] border border-primary/20 bg-primary/8 p-5">
               <p className="text-lg leading-relaxed text-foreground/84">
-                Una buena decisión de nivel evita dos errores muy caros: quedarse corto cuando el proceso necesita más
-                estructura o automatizar demasiado pronto cuando aún no hay criterio suficiente.
+                La comparación útil no es “este modelo es bueno o malo”. Es “para esta tarea, en esta máquina, con
+                estos datos, responde lo bastante bien”.
               </p>
             </div>
           </div>
 
           <div className="rounded-[2rem] border border-primary/25 bg-primary/10 p-8 md:p-10">
             <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-background/35">
-              <Target className="h-6 w-6 text-primary" />
+              <Database className="h-6 w-6 text-primary" />
             </div>
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Criterio de elección</p>
             <div className="mt-8 grid gap-4">
@@ -157,9 +166,9 @@ export function TokenContextSection() {
               ))}
             </div>
             <p className="mt-8 text-2xl font-semibold leading-relaxed text-balance text-foreground md:text-3xl">
-              La automatización no es el punto de partida.
+              Regla práctica: empieza pequeño, prueba con una tarea real y sube tamaño solo si necesitas más calidad.
               <br />
-              Es un nivel de madurez.
+              La ficha técnica orienta. La prueba real decide.
             </p>
           </div>
         </motion.div>

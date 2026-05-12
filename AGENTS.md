@@ -4,99 +4,99 @@
 
 Esta web sustituye a unas diapositivas para una charla interna sobre IA generativa orientada a negocio y tecnologia para una audiencia amplia dentro de la empresa.
 
-La experiencia debe servir como apoyo visual a una exposicion de unos 30 minutos. Tiene que funcionar bien proyectada en directo, con mensajes muy jerarquizados, bloques grandes y ritmo claro, sin parecer una landing comercial ni un articulo largo.
+La experiencia debe servir como apoyo visual a una exposicion de unos 20 minutos. Tiene que funcionar bien proyectada en directo, con mensajes muy jerarquizados, bloques grandes y ritmo claro, sin parecer una landing comercial ni un articulo largo.
 
 ## Charla actual
 
 La charla activa es:
 
-`Charla 4 - Automatizacion con IA`
+`Charla 5 - IA en local`
 
-El foco no es vender herramientas ni hacer una demo aislada. El objetivo es ayudar a la audiencia a entender con criterio:
+El foco no es vender herramientas ni hacer una comparativa extensa de proveedores. El objetivo es ayudar a la audiencia a entender con criterio:
 
-- como evolucionar desde un chat puntual hasta un sistema automatizado
-- por que un workflow manual no es lo mismo que una automatizacion operativa
-- como elegir entre chat, prompt, agente, equipo de agentes o automatizacion
-- que papel tienen el trigger, la decision, la accion y la supervision
-- como cerrar la parte conceptual antes de pasar a una demo en vivo
+- que significa ejecutar IA en local frente a usar IA como servicio cloud
+- como diferenciar modelos por tamano, especializacion, cuantizacion, contexto y hardware
+- que usos practicos tienen sentido en local dentro de una empresa
+- cuando conviene local, cloud o una combinacion de ambos
+- cuales son los limites tecnicos y operativos antes de decidir si encaja en un caso real
 
 ## Estructura narrativa vigente
 
 La web debe seguir esta narrativa salvo decision consciente de rediseño:
 
 1. Hero / portada
-2. Bloque 1 - Del equipo de agentes a la automatizacion
-3. Bloque 2 - Elegir el nivel correcto
-4. Bloque 3 - Disenar automatizacion con control
+2. Bloque 1 - Que es la IA en local
+3. Bloque 2 - Diferenciar modelos locales
+4. Bloque 3 - Usos reales y decision local frente a cloud
 5. Cierre
 
 ## Guion editorial por bloques
 
-### Bloque 1 - Del equipo de agentes a la automatizacion
+### Bloque 1 - Que es la IA en local
 
 Debe cubrir de forma clara y visual:
 
-- que la charla anterior ya permitia resolver trabajo complejo con agentes coordinados
-- que ese flujo seguia dependiendo de la persona para arrancar, pasar informacion y decidir el siguiente paso
-- por que el siguiente salto natural es integrar la IA dentro del proceso
-- que automatizar con IA no es solo poner reglas, sino disenar un sistema que se activa, interpreta, decide y actua
-- que la autonomia siempre debe formularse junto con supervision y trazabilidad
+- que IA en local no significa entrenar un modelo desde cero
+- que un modelo puede descargarse y ejecutarse en el equipo o infraestructura propia
+- que cambia respecto a usar ChatGPT, Copilot u otros servicios online
+- que se gana en control y se asume en configuracion, hardware y mantenimiento
+- que local no significa automaticamente privado o seguro
 
 Idea de cierre del bloque:
 
-`El salto no es tener mas agentes. El salto es integrar la IA en el proceso correcto.`
+`IA en local no significa IA privada por arte de magia. Significa cambiar donde se ejecuta el modelo y quien controla el entorno.`
 
 Transicion esperada al bloque 2:
 
-`No todo necesita automatizacion. Primero hay que elegir el nivel adecuado.`
+`El primer reto es saber que modelo tienes delante.`
 
-### Bloque 2 - Elegir el nivel correcto
+### Bloque 2 - Diferenciar modelos locales
 
 Debe explicar de forma sencilla:
 
-- que no hay una unica forma de usar IA
-- los cinco niveles: chat, prompt estructurado, agente individual, equipo de agentes y automatizacion
-- que cada nivel aporta una mezcla distinta de rapidez, control y escalabilidad
-- por que automatizar demasiado pronto suele ser un error
-- que la automatizacion es un nivel de madurez, no el punto de partida
+- como interpretar tamanos como 3B, 7B, 13B o 70B
+- la diferencia entre modelos generalistas, codigo, razonamiento, embeddings o vision
+- que significa cuantizacion: Q4, Q5, Q8
+- por que el contexto importa pero no arregla una mala tarea
+- que papel tienen CPU, GPU, RAM y VRAM en la experiencia
 
 Idea de cierre del bloque:
 
-`La clave no es automatizar todo. Es elegir el nivel adecuado.`
+`La ficha tecnica orienta. La prueba real decide.`
 
-### Bloque 3 - Disenar automatizacion con control
+### Bloque 3 - Usos reales y decision local frente a cloud
 
 Debe aterrizar de forma practica:
 
-- que una automatizacion util combina trigger, interpretacion, decision, accion y supervision
-- que no todo lo tiene que hacer el sistema sin intervencion humana
-- cuando conviene aviso, aprobacion, excepcion o trazabilidad reforzada
-- importancia del control humano en decisiones, riesgos y tono final
-- errores tipicos: mezclar fases, automatizar sin criterio de calidad o no definir responsable de revision
+- usos con sentido: documentos sensibles, ayuda tecnica, RAG local y transformacion de texto
+- que la IA local encaja bien con privacidad, offline, coste fijo o control de version
+- que el cloud suele ganar en maxima calidad, escala, modelos punteros y menor mantenimiento
+- que en empresa lo habitual puede ser una decision hibrida
+- que hay que validar con ejemplos reales antes de sacar conclusiones
 
 Idea de cierre del bloque:
 
-`La autonomia sin control no es madurez. Es fragilidad.`
+`La clave no es local o cloud. Es que necesita la tarea.`
 
 ### Cierre
 
-Debe reforzar tres ideas memorables:
+Debe reforzar tres ideas memorables y cerrar la charla:
 
-1. El chat ayuda a pensar.
-2. Los agentes ayudan a hacer tareas.
-3. La automatizacion ayuda a escalar trabajo.
-4. El valor no esta en usar IA, sino en decidir cuando debe trabajar por ti y cuando no.
+1. La IA local da control, no magia.
+2. El modelo se elige por tarea, datos y maquina.
+3. Local y cloud no compiten siempre: muchas veces conviven.
+4. El valor esta en saber cuando debe estar cerca de tus datos, cuando conviene usar cloud y como validar la decision.
 
 ## Objetivo editorial
 
-La charla debe ayudar a perfiles funcionales y tecnicos a construir una base comun sobre como disenar automatizaciones con IA aplicables a la empresa.
+La charla debe ayudar a perfiles funcionales y tecnicos a construir una base comun sobre como evaluar IA en local y decidir cuando tiene sentido aplicarla en la empresa.
 
 No es el lugar para profundizar todavia en:
 
-- arquitecturas multiagente complejas
-- integraciones tecnicas avanzadas
-- automatizaciones end-to-end de alto riesgo
-- comparativas extensas entre proveedores
+- entrenamiento o fine-tuning avanzado
+- despliegues productivos complejos
+- arquitecturas RAG avanzadas
+- comparativas extensas entre herramientas locales
 
 ## Criterios de contenido
 
@@ -161,7 +161,7 @@ Comandos utiles:
 
 Existen componentes antiguos como `why-now-section.tsx`, `what-is-ai-section.tsx`, `model-llm-section.tsx`, `how-llm-works-section.tsx`, `limitations-section.tsx`, `use-cases-section.tsx` o `series-roadmap-section.tsx`.
 
-`components/sections/copilot-workflow-section.tsx` existe, pero ahora mismo queda fuera del flujo principal porque el ejemplo se ensena despues en demo en vivo.
+`components/sections/copilot-workflow-section.tsx` existe, pero ahora mismo queda fuera del flujo principal porque no forma parte de la charla activa.
 
 Ahora mismo no forman parte del flujo principal. No deben reintroducirse en `app/page.tsx` salvo decision consciente.
 
