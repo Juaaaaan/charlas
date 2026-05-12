@@ -1,23 +1,23 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Code2, Database, FileText, Server, ShieldCheck } from "lucide-react"
+import { Code2, FileSearch, FileText, Server, ShieldCheck } from "lucide-react"
 
 const automationPieces = [
   {
     icon: ShieldCheck,
-    title: "Documentos sensibles",
-    description: "Resumir, clasificar o extraer información cuando no conviene enviar contenido a un servicio externo.",
+    title: "Documentación interna",
+    description: "Preguntar, resumir o buscar en contenido sensible sin sacarlo del entorno corporativo.",
+  },
+  {
+    icon: FileSearch,
+    title: "Contratos e informes",
+    description: "Extraer riesgos, obligaciones, fechas y puntos clave para preparar la revisión humana.",
   },
   {
     icon: Code2,
-    title: "Ayuda técnica",
-    description: "Generar scripts, revisar fragmentos de código o prototipar asistentes sin depender de una API.",
-  },
-  {
-    icon: Database,
-    title: "RAG local",
-    description: "Preguntar sobre documentación propia manteniendo modelo, índice y archivos bajo control.",
+    title: "Desarrollo y prototipos",
+    description: "Generar borradores, utilidades y pruebas rápidas cuando interesa mantener control local.",
   },
   {
     icon: FileText,

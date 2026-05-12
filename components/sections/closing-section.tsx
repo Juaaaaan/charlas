@@ -19,9 +19,9 @@ const validationChecklist = [
 ]
 
 const finalIdeas = [
-  "La IA local da control, no magia.",
+  "Local significa control del entorno.",
   "El modelo se elige por tarea, datos y máquina.",
-  "Local y cloud no compiten siempre: muchas veces conviven.",
+  "La decisión no es local contra cloud: es qué necesita el caso de uso.",
 ]
 
 export function ClosingSection() {
