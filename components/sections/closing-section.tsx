@@ -5,17 +5,17 @@ import { motion } from "framer-motion"
 const localLimits = [
   "No esperes la misma calidad que en los mejores modelos cloud.",
   "El hardware manda: RAM, VRAM y CPU/GPU cambian completamente la experiencia.",
-  "Más privacidad no significa seguridad automática: siguen importando permisos, logs y archivos.",
+  "Ejecutar en local da más control, pero la seguridad depende de accesos, registros y ficheros.",
   "Los modelos locales también inventan, se equivocan y necesitan revisión.",
   "Mantener modelos, versiones y configuración tiene coste operativo.",
 ]
 
-const validationChecklist = [
-  "Elegir un modelo razonable para la máquina disponible.",
-  "Probar una tarea concreta, no una pregunta genérica.",
-  "Observar velocidad, memoria usada y calidad de respuesta.",
-  "Comparar resultados con el objetivo real de negocio o tecnología.",
-  "Decidir si el caso pide local, cloud o una combinación.",
+const adoptionQuestions = [
+  "¿Quién instala, actualiza y mantiene el modelo?",
+  "¿Dónde quedan prompts, documentos, respuestas y registros?",
+  "¿Qué calidad mínima hace aceptable el caso?",
+  "¿Qué pasa si el modelo va lento, falla o inventa?",
+  "¿Cuándo se escala a cloud o a revisión humana?",
 ]
 
 const finalIdeas = [
@@ -75,9 +75,9 @@ export function ClosingSection() {
           </div>
 
           <div className="rounded-[2rem] border border-border/70 bg-card/90 p-8 md:p-10">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Cómo validar</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Antes de adoptarlo</p>
             <div className="mt-6 grid gap-3">
-              {validationChecklist.map((item, index) => (
+              {adoptionQuestions.map((item, index) => (
                 <div
                   key={item}
                   className={`rounded-[1.25rem] border px-5 py-4 text-lg text-foreground ${
@@ -91,8 +91,8 @@ export function ClosingSection() {
             <div className="mt-6 rounded-[1.5rem] border border-primary/20 bg-primary/8 p-5">
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Aterrizaje</p>
               <p className="mt-3 text-xl leading-relaxed text-foreground">
-                La decisión no sale de la ficha técnica. Sale de probar una tarea real, medir el resultado y entender
-                qué se gana y qué se sacrifica frente a un servicio cloud.
+                El límite no es solo técnico. También es operativo: responsabilidades, trazabilidad, soporte y criterio
+                para parar o escalar.
               </p>
             </div>
           </div>
@@ -121,7 +121,7 @@ export function ClosingSection() {
           <p className="mx-auto mt-10 max-w-4xl text-3xl font-semibold leading-relaxed text-balance text-foreground md:text-4xl">
             El valor no está en ejecutar IA en local por defecto.
             <br />
-            Está en saber cuándo debe estar cerca de tus datos, cuándo conviene usar cloud y cómo validar la decisión.
+            Está en saber cuándo debe estar cerca de tus datos, cuándo conviene usar cloud y cómo sostener la decisión.
           </p>
         </motion.div>
       </div>
