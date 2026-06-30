@@ -7,9 +7,9 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Charla 5 | IA en local",
+  title: "Context Engineering | Cómo preparar el terreno para la IA",
   description:
-    "Charla interna sobre IA en local, modelos, casos de uso, límites y criterios para decidir entre ejecución local y cloud.",
+    "Charla interna sobre qué es el contexto en IA, por qué importa, contexto temporal y persistente, contexto en proyectos y costes.",
   generator: "v0.app",
   icons: {
     icon: [

@@ -4,24 +4,24 @@ import { motion } from "framer-motion"
 
 const agenda = [
   {
-    label: "Más allá del prompt",
-    detail: "Entender que el prompt es una pieza del sistema, no todo el sistema.",
+    label: "El problema",
+    detail: "La IA vive en una burbuja: no sabe cómo trabajáis y no puede actuar fuera del chat.",
   },
   {
-    label: "Diseñar contexto útil",
-    detail: "Decidir qué entra, qué no entra, con qué autoridad y cómo se valida.",
+    label: "Skills",
+    detail: "El arnés de comportamiento. Lo que la IA ya sabe sobre vuestro equipo antes de que le pidáis nada.",
   },
   {
-    label: "Contexto en proyectos",
-    detail: "Usar el repositorio para que Copilot y los agentes no tengan que improvisar.",
+    label: "MCPs",
+    detail: "El arnés de integración. El estándar que conecta la IA con las herramientas donde ya ocurre el trabajo.",
   },
   {
-    label: "Cierre",
-    detail: "Quedarnos con criterios simples para preparar contexto sin meter ruido.",
+    label: "Demo en vivo",
+    detail: "Claude conectado a Jira en tiempo real: leer sprints, generar task.md y usar Claude Code para realizar la issue.",
   },
 ]
 
-export function HeroSection() {
+export function HeroSectionMCP() {
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(74,145,255,0.22),transparent_30%),linear-gradient(180deg,rgba(7,10,18,1)_0%,rgba(9,13,21,0.98)_54%,rgba(12,16,26,1)_100%)]" />
@@ -35,7 +35,7 @@ export function HeroSection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <span className="inline-flex rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium uppercase tracking-[0.18em] text-primary">
-            Charla 6 - Context Engineering
+            Charla 8 — Skills y MCPs
           </span>
         </motion.div>
 
@@ -45,7 +45,7 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.08, ease: "easeOut" }}
         >
-          Context Engineering
+          El arnés completo
         </motion.h1>
 
         <motion.p
@@ -54,8 +54,8 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.16, ease: "easeOut" }}
         >
-          La IA no responde solo a lo que escribimos en el chat. Responde a todo lo que puede ver: instrucciones,
-          historial, documentos, ejemplos, archivos del proyecto y reglas persistentes.
+          El SDD os dio el arnés documental. Hoy añadimos las dos piezas que lo completan: la que define cómo
+          se comporta la IA de forma persistente y la que le da acceso a las herramientas donde ya ocurre vuestro trabajo.
         </motion.p>
 
         <motion.div
@@ -70,7 +70,7 @@ export function HeroSection() {
               className="rounded-[1.75rem] border border-border/70 bg-card/70 px-6 py-7 backdrop-blur"
             >
               <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-primary/90">
-                Bloque {index + 1}
+                {index === 3 ? "Demo" : `Bloque ${index + 1}`}
               </p>
               <h2 className="mt-5 text-3xl font-semibold leading-tight text-balance text-foreground">
                 {item.label}
@@ -87,8 +87,8 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.28, ease: "easeOut" }}
         >
           <p className="text-2xl font-semibold leading-snug text-balance text-foreground md:text-3xl">
-            La idea de hoy es sencilla: preparar buen contexto para que la IA entienda mejor la tarea, el proyecto y los
-            límites antes de pedirle trabajo.
+            El arnés documental le dice qué hacer. Los Skills le dicen cómo comportarse. Los MCPs le permiten actuar.
+            Los tres juntos son el arnés completo.
           </p>
         </motion.div>
       </div>

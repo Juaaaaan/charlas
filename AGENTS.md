@@ -10,93 +10,97 @@ La experiencia debe servir como apoyo visual a una exposicion de unos 20 minutos
 
 La charla activa es:
 
-`Charla 5 - IA en local`
+`Charla 6 - Context Engineering`
 
-El foco no es vender herramientas ni hacer una comparativa extensa de proveedores. El objetivo es ayudar a la audiencia a entender con criterio:
+El foco no es repetir prompt engineering ni vender herramientas. El objetivo es ayudar a la audiencia a entender con criterio:
 
-- que significa ejecutar IA en local frente a usar IA como servicio cloud
-- como diferenciar modelos por tamano, especializacion, cuantizacion, contexto y hardware
-- que usos practicos tienen sentido en local dentro de una empresa
-- cuando conviene local, cloud o una combinacion de ambos
-- cuales son los limites tecnicos y operativos antes de decidir si encaja en un caso real
+- que context engineering va mas alla de escribir un prompt estructurado
+- como decidir que informacion necesita ver la IA para resolver una tarea
+- como estructurar objetivo, instrucciones, datos, ejemplos, restricciones y validacion
+- como aterrizarlo en repositorios y GitHub Copilot
+- que riesgos aparecen con contexto excesivo, obsoleto, contradictorio o sensible
 
 ## Estructura narrativa vigente
 
 La web debe seguir esta narrativa salvo decision consciente de rediseño:
 
 1. Hero / portada
-2. Bloque 1 - Que es la IA en local
-3. Bloque 2 - Diferenciar modelos locales
-4. Bloque 3 - Usos reales y decision local frente a cloud
+2. Bloque 1 - Mas alla del prompt
+3. Bloque 2 - Disenar contexto util
+4. Bloque 3 - Contexto para desarrolladores y GitHub Copilot
 5. Cierre
 
 ## Guion editorial por bloques
 
-### Bloque 1 - Que es la IA en local
+### Bloque 1 - Mas alla del prompt
 
 Debe cubrir de forma clara y visual:
 
-- que IA en local no significa entrenar un modelo desde cero
-- que un modelo puede descargarse y ejecutarse en el equipo o infraestructura propia
-- que cambia respecto a usar ChatGPT, Copilot u otros servicios online
-- que se gana en control y se asume en configuracion, hardware y mantenimiento
-- que local no significa automaticamente privado o seguro
+- que ya se ha hablado antes de prompt estructurado: rol, contexto, tarea, especificaciones, formato y ejemplos
+- que esta charla no debe repetir esa base, sino subir de escala
+- que el prompt es una pieza del sistema, no el sistema completo
+- que context engineering diseña que informacion entra, de donde viene, que autoridad tiene, cuanto dura y como se valida
+- que hay contexto de peticion, de sesion y de sistema/proceso
 
 Idea de cierre del bloque:
 
-`IA en local no significa IA privada por arte de magia. Significa cambiar donde se ejecuta el modelo y quien controla el entorno.`
+`La pregunta deja de ser solo que le digo a la IA. Pasa a ser que necesita ver para resolver bien esta tarea.`
 
 Transicion esperada al bloque 2:
 
-`El primer reto es saber que modelo tienes delante.`
+`El siguiente reto es disenar ese contexto sin meter ruido.`
 
-### Bloque 2 - Diferenciar modelos locales
+### Bloque 2 - Disenar contexto util
 
 Debe explicar de forma sencilla:
 
-- como interpretar tamanos como 3B, 7B, 13B o 70B
-- la diferencia entre modelos generalistas, codigo, razonamiento, embeddings o vision
-- que significa cuantizacion: Q4, Q5, Q8
-- por que el contexto importa pero no arregla una mala tarea
-- que papel tienen CPU, GPU, RAM y VRAM en la experiencia
+- definir la tarea real antes de buscar informacion
+- separar instrucciones de datos
+- priorizar fuentes fiables, recientes y aprobadas
+- ordenar objetivo, reglas, fuentes, datos y formato esperado
+- pedir trazabilidad cuando importe
+- mantener control humano en decisiones relevantes
 
 Idea de cierre del bloque:
 
-`La ficha tecnica orienta. La prueba real decide.`
+`Mas contexto no significa mejor contexto. La calidad esta en la relevancia, la estructura y la autoridad.`
 
-### Bloque 3 - Usos reales y decision local frente a cloud
+### Bloque 3 - Contexto para desarrolladores y GitHub Copilot
 
 Debe aterrizar de forma practica:
 
-- usos con sentido: documentos sensibles, ayuda tecnica, RAG local y transformacion de texto
-- que la IA local encaja bien con privacidad, offline, coste fijo o control de version
-- que el cloud suele ganar en maxima calidad, escala, modelos punteros y menor mantenimiento
-- que en empresa lo habitual puede ser una decision hibrida
-- que hay que validar con ejemplos reales antes de sacar conclusiones
+- que en desarrollo el contexto vive en el repositorio
+- que GitHub Copilot funciona mejor cuando el repo explica stack, convenciones, comandos y limites
+- que `README.md` explica proyecto, ejecucion y estructura
+- que `.github/copilot-instructions.md` contiene instrucciones generales para Copilot
+- que `.github/instructions/*.instructions.md` puede contener reglas por ruta, lenguaje o tipo de tarea
+- que `.github/prompts/*.prompt.md` puede guardar prompts reutilizables
+- que `AGENTS.md`, `CONTRIBUTING.md`, `ARCHITECTURE.md`, `SECURITY.md` y `docs/adr/*.md` convierten conocimiento tribal en contexto versionado
 
 Idea de cierre del bloque:
 
-`La clave no es local o cloud. Es que necesita la tarea.`
+`Si el repositorio no explica como se trabaja, Copilot improvisa mas.`
 
 ### Cierre
 
 Debe reforzar tres ideas memorables y cerrar la charla:
 
-1. La IA local da control, no magia.
-2. El modelo se elige por tarea, datos y maquina.
-3. Local y cloud no compiten siempre: muchas veces conviven.
-4. El valor esta en saber cuando debe estar cerca de tus datos, cuando conviene usar cloud y como validar la decision.
+1. El prompt no es el sistema.
+2. Mas contexto no significa mejor contexto.
+3. En desarrollo, el repositorio tambien habla con la IA.
+4. El valor esta en saber que necesita saber la IA, de que fuentes puede fiarse y como validamos lo que devuelve.
 
 ## Objetivo editorial
 
-La charla debe ayudar a perfiles funcionales y tecnicos a construir una base comun sobre como evaluar IA en local y decidir cuando tiene sentido aplicarla en la empresa.
+La charla debe ayudar a perfiles funcionales y tecnicos a construir una base comun sobre como disenar el contexto que rodea a una IA y decidir cuando ese contexto esta ayudando realmente a la tarea.
 
 No es el lugar para profundizar todavia en:
 
 - entrenamiento o fine-tuning avanzado
 - despliegues productivos complejos
 - arquitecturas RAG avanzadas
-- comparativas extensas entre herramientas locales
+- comparativas extensas entre herramientas de IA
+- tutoriales detallados de GitHub Copilot
 
 ## Criterios de contenido
 
