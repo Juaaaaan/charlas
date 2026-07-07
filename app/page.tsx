@@ -7,7 +7,12 @@ import { BonusSection } from "@/components/sections/bonus-section";
 import { ClosingSectionCopilot } from "@/components/sections/closing-section-copilot";
 import { DemoSectionCopilot } from "@/components/sections/demo-section-copilot";
 import { ProblemSectionCopilot } from "@/components/sections/problem-section-copilot";
-import { HeroSectionCopilot } from "@/components/sections/hero-section-copilot";
+// import { HeroSectionCopilot } from "@/components/sections/hero-section-copilot";
+import { HeroSectionLLM } from "@/components/sections/hero-section-llm";
+import { AIFoundationsSectionLLM } from "@/components/sections/ai-foundations-section-llm";
+import { TokenContextSectionLLM } from "@/components/sections/token-context-section-llm";
+import { PromptSectionLLM } from "@/components/sections/prompt-section-llm";
+import { ClosingSectionLLM } from "@/components/sections/closing-section-llm";
 
 // Charla 7 (Skills y MCPs) - archivado, no reintroducir sin decisión consciente
 // import { HeroSectionMCP } from "@/components/sections/hero-section-mcp";
@@ -18,19 +23,15 @@ import { HeroSectionCopilot } from "@/components/sections/hero-section-copilot";
 export default function Home() {
   return (
     <main className="min-h-screen overflow-x-hidden bg-background text-foreground">
-      <HeroSectionCopilot />
-      <SectionDivider label="Bloque 1 - El problema" />
-      <ProblemSectionCopilot />
-      <SectionDivider label="Bloque 2 - La solución" />
-      <SolutionSection />
-      <SectionDivider label="Bloque 3 - .github/ para Copilot" />
-      <GithubStructureSection />
-      <SectionDivider label="Demo en vivo" />
-      <DemoSectionCopilot />
-      <SectionDivider label="Bonus - .claude/" />
-      <BonusSection />
+      <HeroSectionLLM />
+      <SectionDivider label="Qué es un Wiki LLM" />
+      <AIFoundationsSectionLLM />
+      <SectionDivider label="Demo: Proyecto" />
+      <TokenContextSectionLLM />
+      <SectionDivider label="Demo: Equipo" />
+      <PromptSectionLLM  />
       <SectionDivider label="Cierre" />
-      <ClosingSectionCopilot />
+      <ClosingSectionLLM />
     </main>
   );
 }
