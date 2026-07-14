@@ -1,15 +1,15 @@
-﻿import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
-import "./globals.css"
+﻿import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import "./globals.css";
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+const _geist = Geist({ subsets: ["latin"] });
+const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Context Engineering | Cómo preparar el terreno para la IA",
+  title: "Charla 12 | El mapa de la IA",
   description:
-    "Charla interna sobre qué es el contexto en IA, por qué importa, contexto temporal y persistente, contexto en proyectos y costes.",
+    "Charla interna sobre los cuatro niveles de madurez en IA: fundamentos, los diez conceptos clave, dónde ya estáis sin saberlo y hacia dónde va esto.",
   generator: "v0.app",
   icons: {
     icon: [
@@ -28,12 +28,12 @@ export const metadata: Metadata = {
     ],
     apple: "/apple-icon.png",
   },
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="es">
@@ -42,6 +42,5 @@ export default function RootLayout({
         {process.env.NODE_ENV === "production" && <Analytics />}
       </body>
     </html>
-  )
+  );
 }
-

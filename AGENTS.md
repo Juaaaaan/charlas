@@ -10,97 +10,73 @@ La experiencia debe servir como apoyo visual a una exposicion de unos 20 minutos
 
 La charla activa es:
 
-`Charla 6 - Context Engineering`
+`Charla 12 - El mapa de la IA`
 
-El foco no es repetir prompt engineering ni vender herramientas. El objetivo es ayudar a la audiencia a entender con criterio:
+El foco no es presentar contenido nuevo aislado, sino dar un marco de cuatro niveles de madurez que conecta todo lo visto en charlas anteriores (SDD, Skills, Wiki LLM, agentes developer/reviewer, RAG con el vault) y muestra hacia donde va la IA a corto plazo. El objetivo es que la audiencia entienda:
 
-- que context engineering va mas alla de escribir un prompt estructurado
-- como decidir que informacion necesita ver la IA para resolver una tarea
-- como estructurar objetivo, instrucciones, datos, ejemplos, restricciones y validacion
-- como aterrizarlo en repositorios y GitHub Copilot
-- que riesgos aparecen con contexto excesivo, obsoleto, contradictorio o sensible
+- que ya tiene una base solida construida en las charlas previas (Nivel 1)
+- diez conceptos intermedios de vocabulario de IA, con ejemplos de su trabajo diario (Nivel 2)
+- que ya esta trabajando en un nivel avanzado sin saberlo: agentic workflows, memoria, knowledge graphs, orquestacion y defensa ante prompt injection (Nivel 3)
+- hacia donde se dirige la IA a 12-18 meses: computer use, reasoning models, agentes de codigo autonomos y gobernanza (Nivel 4)
 
 ## Estructura narrativa vigente
 
 La web debe seguir esta narrativa salvo decision consciente de rediseño:
 
-1. Hero / portada
-2. Bloque 1 - Mas alla del prompt
-3. Bloque 2 - Disenar contexto util
-4. Bloque 3 - Contexto para desarrolladores y GitHub Copilot
-5. Cierre
+1. Hero - El mapa de los cuatro niveles
+2. Nivel 1 - Lo que ya habeis construido (repaso relampago)
+3. Nivel 2 - Los 10 conceptos que os faltan
+4. Nivel 3 - El momento wow (ya estais aqui)
+5. Nivel 4 + Cierre - Hacia donde va esto y tres ideas finales
 
 ## Guion editorial por bloques
 
-### Bloque 1 - Mas alla del prompt
+### Hero - El mapa
 
-Debe cubrir de forma clara y visual:
+Debe mostrar los cuatro niveles como tarjetas de agenda (Nivel 1 Fundamentos, Nivel 2 Intermedios, Nivel 3 Avanzados, Nivel 4 Frontera) y cerrar con la idea de que no hace falta saber como esta hecho el motor para saber conducir, pero ayuda saber en que marcha se esta.
 
-- que ya se ha hablado antes de prompt estructurado: rol, contexto, tarea, especificaciones, formato y ejemplos
-- que esta charla no debe repetir esa base, sino subir de escala
-- que el prompt es una pieza del sistema, no el sistema completo
-- que context engineering diseña que informacion entra, de donde viene, que autoridad tiene, cuanto dura y como se valida
-- que hay contexto de peticion, de sesion y de sistema/proceso
+### Nivel 1 - Lo que ya habeis construido
+
+Repaso relampago de la base ya construida en charlas anteriores: SDD, Skills, Wiki LLM + OKF y el arnes completo que las conecta. No se profundiza, solo se ancla como punto de partida.
 
 Idea de cierre del bloque:
 
-`La pregunta deja de ser solo que le digo a la IA. Pasa a ser que necesita ver para resolver bien esta tarea.`
+`Esto ya lo teneis. No hace falta repetirlo. Es la base sobre la que se construye todo lo demas.`
 
-Transicion esperada al bloque 2:
+### Nivel 2 - Los 10 conceptos que os faltan
 
-`El siguiente reto es disenar ese contexto sin meter ruido.`
-
-### Bloque 2 - Disenar contexto util
-
-Debe explicar de forma sencilla:
-
-- definir la tarea real antes de buscar informacion
-- separar instrucciones de datos
-- priorizar fuentes fiables, recientes y aprobadas
-- ordenar objetivo, reglas, fuentes, datos y formato esperado
-- pedir trazabilidad cuando importe
-- mantener control humano en decisiones relevantes
+Diez conceptos con icono, descripcion breve y frase de cierre (takeaway), todos con ejemplo ligado al trabajo diario o a una charla anterior: system prompt, context engineering, RAG, embeddings, function calling, temperature, chain-of-thought, multimodal, structured output y context window management.
 
 Idea de cierre del bloque:
 
-`Mas contexto no significa mejor contexto. La calidad esta en la relevancia, la estructura y la autoridad.`
+`El vocabulario importa. Diez conceptos, un objetivo: que sepais que palanca tocar.`
 
-### Bloque 3 - Contexto para desarrolladores y GitHub Copilot
+### Nivel 3 - El momento wow
 
-Debe aterrizar de forma practica:
-
-- que en desarrollo el contexto vive en el repositorio
-- que GitHub Copilot funciona mejor cuando el repo explica stack, convenciones, comandos y limites
-- que `README.md` explica proyecto, ejecucion y estructura
-- que `.github/copilot-instructions.md` contiene instrucciones generales para Copilot
-- que `.github/instructions/*.instructions.md` puede contener reglas por ruta, lenguaje o tipo de tarea
-- que `.github/prompts/*.prompt.md` puede guardar prompts reutilizables
-- que `AGENTS.md`, `CONTRIBUTING.md`, `ARCHITECTURE.md`, `SECURITY.md` y `docs/adr/*.md` convierten conocimiento tribal en contexto versionado
+Revela que la audiencia ya lleva semanas trabajando en el Nivel 3 sin saberlo: agentic workflows (Charla 8), memory corto/largo plazo (Charla 11), knowledge graphs (Charla 8 bonus), orchestration patterns (Supervisor Pattern) y prompt injection (bloqueado por Copilot en una prueba real).
 
 Idea de cierre del bloque:
 
-`Si el repositorio no explica como se trabaja, Copilot improvisa mas.`
+`El Nivel 3 no es algo que tengais que alcanzar. Es algo que ya estais haciendo.`
 
-### Cierre
+### Nivel 4 + Cierre - Hacia donde va esto
 
-Debe reforzar tres ideas memorables y cerrar la charla:
+Frontera a 12-18 meses: computer use, reasoning models, autonomous coding agents y AI Governance (EU AI Act). Cierra con tres ideas para llevarse y la frase final sobre tener el mapa completo.
 
-1. El prompt no es el sistema.
-2. Mas contexto no significa mejor contexto.
-3. En desarrollo, el repositorio tambien habla con la IA.
-4. El valor esta en saber que necesita saber la IA, de que fuentes puede fiarse y como validamos lo que devuelve.
+Idea de cierre del bloque:
+
+`El Nivel 4 no es el futuro. Es el presente de los que van un paso por delante.`
 
 ## Objetivo editorial
 
-La charla debe ayudar a perfiles funcionales y tecnicos a construir una base comun sobre como disenar el contexto que rodea a una IA y decidir cuando ese contexto esta ayudando realmente a la tarea.
+La charla debe dar a la audiencia un marco compartido para situar cualquier concepto de IA que escuchen en el futuro, y reforzar que ya estan mas avanzados de lo que creen.
 
 No es el lugar para profundizar todavia en:
 
-- entrenamiento o fine-tuning avanzado
-- despliegues productivos complejos
-- arquitecturas RAG avanzadas
-- comparativas extensas entre herramientas de IA
-- tutoriales detallados de GitHub Copilot
+- implementacion tecnica detallada de cada concepto del Nivel 2
+- arquitecturas RAG o de agentes a nivel de codigo
+- comparativas extensas de modelos o proveedores
+- detalle legal exhaustivo del EU AI Act
 
 ## Criterios de contenido
 
@@ -109,12 +85,8 @@ No es el lugar para profundizar todavia en:
 - Evitar claims grandilocuentes o absolutos.
 - Evitar bloques de texto largos.
 - Cada seccion debe sostener la exposicion con pocos mensajes, bien jerarquizados.
-- Siempre que se hable de IA, aterrizar en:
-  - que parte del trabajo hace
-  - como encaja en el proceso
-  - que sigue necesitando control humano
-  - donde aporta valor real
-- Priorizar ejemplos y formulaciones validas para una audiencia amplia de empresa, no solo para un area concreta.
+- Siempre que se hable de un concepto del Nivel 2, cerrar con una frase corta y memorable (takeaway).
+- Anclar cada concepto avanzado a una charla o demo real ya vista, no a teoria abstracta.
 
 ## Criterios de diseno
 
@@ -155,15 +127,15 @@ Comandos utiles:
 
 ## Componentes activos
 
-- `components/sections/hero-section.tsx`
-- `components/sections/ai-foundations-section.tsx`
-- `components/sections/token-context-section.tsx`
-- `components/sections/prompt-section.tsx`
-- `components/sections/closing-section.tsx`
+- `components/sections/hero-section.tsx` - Hero: el mapa de los cuatro niveles
+- `components/sections/ai-foundations-section.tsx` - Nivel 1: repaso relampago
+- `components/sections/token-context-section.tsx` - Nivel 2: los 10 conceptos
+- `components/sections/prompt-section.tsx` - Nivel 3: el momento wow
+- `components/sections/closing-section.tsx` - Nivel 4 + cierre
 
 ## Secciones legacy
 
-Existen componentes antiguos como `why-now-section.tsx`, `what-is-ai-section.tsx`, `model-llm-section.tsx`, `how-llm-works-section.tsx`, `limitations-section.tsx`, `use-cases-section.tsx` o `series-roadmap-section.tsx`.
+Existen componentes antiguos como `why-now-section.tsx`, `what-is-ai-section.tsx`, `model-llm-section.tsx`, `how-llm-works-section.tsx`, `limitations-section.tsx`, `use-cases-section.tsx`, `series-roadmap-section.tsx` o `ai-evolution-section.tsx`.
 
 `components/sections/copilot-workflow-section.tsx` existe, pero ahora mismo queda fuera del flujo principal porque no forma parte de la charla activa.
 
