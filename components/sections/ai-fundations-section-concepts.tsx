@@ -51,7 +51,7 @@ export function AIFoundationsSectionConcepts() {
             Nivel 1
           </span>
           <h2 className="text-4xl font-bold text-balance text-foreground md:text-5xl lg:text-6xl">
-            Lo que ya habéis construido
+            Lo que ya hemos construido
           </h2>
           <p className="mt-8 text-xl leading-relaxed text-foreground/76 md:text-2xl">
             Llevamos meses trabajando con IA: hemos conectado Claude a Jira,
@@ -71,7 +71,7 @@ export function AIFoundationsSectionConcepts() {
             La idea clave
           </p>
           <p className="mt-3 max-w-3xl text-2xl font-semibold leading-tight text-balance text-foreground md:text-3xl">
-            Esto ya lo tenéis. No hace falta repetirlo.
+            Esto ya lo tenemos. No hace falta repetirlo.
             <br />
             Está aquí porque es la base sobre la que se construye todo lo demás.
           </p>

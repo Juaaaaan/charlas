@@ -15,7 +15,7 @@ export default function Home() {
       <AIFoundationsSectionConcepts />
       <SectionDivider label="Nivel 2 · Los 10 conceptos" />
       <TokenContextSectionConcept />
-      <SectionDivider label="Nivel 3 · El momento wow" />
+      <SectionDivider label="Nivel 3 · Nuestro momento" />
       <PromptSectionConcept />
       <SectionDivider label="Nivel 4 · Hacia dónde va esto" />
       <ClosingSectionConcept />

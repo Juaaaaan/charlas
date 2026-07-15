@@ -70,11 +70,11 @@ export function PromptSectionConcept() {
             Nivel 3
           </span>
           <h2 className="mb-8 text-4xl font-bold text-balance text-foreground md:text-5xl lg:text-6xl">
-            Ya estáis en el Nivel 3 sin saberlo
+            Ya estamos en el Nivel 3 sin saberlo
           </h2>
           <p className="text-xl leading-relaxed text-foreground/76 md:text-2xl">
-            Creíais que estabais en el Nivel 2. Pero lleváis semanas trabajando
-            en el Nivel 3 sin que os lo dijera.
+            Creíamos que estábamos en el Nivel 2. Pero llevamos semanas trabajando
+            en el Nivel 3 sin que nos lo dijeran.
           </p>
         </motion.div>
 
@@ -91,11 +91,11 @@ export function PromptSectionConcept() {
                 El momento
               </p>
               <h3 className="mt-4 text-4xl font-semibold leading-tight text-balance text-foreground md:text-5xl">
-                No estáis en el Nivel 2 mirando el Nivel 3 desde fuera. Estáis
+                No estamos en el Nivel 2 mirando el Nivel 3 desde fuera. Estamos
                 dentro.
               </h3>
               <p className="mt-6 text-xl leading-relaxed text-foreground/82 md:text-2xl">
-                Id concepto a concepto: cada uno ya ha pasado por vuestras manos
+                Id concepto a concepto: cada uno ya ha pasado por nuestras manos
                 en una charla anterior.
               </p>
             </div>

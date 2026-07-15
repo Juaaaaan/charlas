@@ -11,12 +11,12 @@ const agenda = [
   {
     label: "Nivel 2 — Intermedios",
     detail:
-      "Diez conceptos clave, con ejemplos de vuestro trabajo diario, que vemos hoy en detalle.",
+      "Diez conceptos clave, con ejemplos de nuestro trabajo diario, que vemos hoy en detalle.",
   },
   {
     label: "Nivel 3 — Avanzados",
     detail:
-      "Donde ya estáis sin saberlo: agentic workflows, memoria, knowledge graphs y más.",
+      "Donde ya estamos sin saberlo: agentic workflows, memoria, knowledge graphs y más.",
   },
   {
     label: "Nivel 4 — Frontera",
@@ -58,8 +58,8 @@ export function HeroSectionConcept() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.16, ease: "easeOut" }}
         >
-          Cuatro niveles de madurez para entender dónde estáis con la IA y
-          descubrir que estáis más avanzados de lo que creéis.
+          Cuatro niveles de madurez para entender dónde estamos con la IA y
+          descubrir que estamos más avanzados de lo que creemos.
         </motion.p>
 
         <motion.div
@@ -94,7 +94,7 @@ export function HeroSectionConcept() {
         >
           <p className="text-2xl font-semibold leading-snug text-balance text-foreground md:text-3xl">
             No hace falta saber cómo está hecho el motor para saber conducir.
-            Pero sí ayuda saber en qué marcha estás.
+            Pero sí ayuda saber en qué marcha estamos.
           </p>
         </motion.div>
       </div>
