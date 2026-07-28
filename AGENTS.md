@@ -10,73 +10,103 @@ La experiencia debe servir como apoyo visual a una exposicion de unos 20 minutos
 
 La charla activa es:
 
-`Charla 12 - El mapa de la IA`
+`Charla 14 - Gobernanza de IA`
 
-El foco no es presentar contenido nuevo aislado, sino dar un marco de cuatro niveles de madurez que conecta todo lo visto en charlas anteriores (SDD, Skills, Wiki LLM, agentes developer/reviewer, RAG con el vault) y muestra hacia donde va la IA a corto plazo. El objetivo es que la audiencia entienda:
+El foco no es hacer una charla juridica ni un manual de compliance. El objetivo es que la audiencia entienda con criterio:
 
-- que ya tiene una base solida construida en las charlas previas (Nivel 1)
-- diez conceptos intermedios de vocabulario de IA, con ejemplos de su trabajo diario (Nivel 2)
-- que ya esta trabajando en un nivel avanzado sin saberlo: agentic workflows, memoria, knowledge graphs, orquestacion y defensa ante prompt injection (Nivel 3)
-- hacia donde se dirige la IA a 12-18 meses: computer use, reasoning models, agentes de codigo autonomos y gobernanza (Nivel 4)
+- que el Shadow AI no nace de mala fe, nace de falta de reglas claras
+- que no toda IA tiene el mismo riesgo (marco del EU AI Act traducido a ejemplos)
+- que la gobernanza no pesa igual para cada rol de la empresa
+- que existe una politica accionable que responde a cuatro preguntas practicas
+- que ya hay dentro de la empresa una forma de medir el nivel de madurez en gobernanza (framework de 8 dimensiones)
 
 ## Estructura narrativa vigente
 
 La web debe seguir esta narrativa salvo decision consciente de rediseño:
 
-1. Hero - El mapa de los cuatro niveles
-2. Nivel 1 - Lo que ya habeis construido (repaso relampago)
-3. Nivel 2 - Los 10 conceptos que os faltan
-4. Nivel 3 - El momento wow (ya estais aqui)
-5. Nivel 4 + Cierre - Hacia donde va esto y tres ideas finales
+1. Hero - Gobernanza de IA (agenda de la charla)
+2. Bloque 1 - Casos reales de falta de gobernanza (Samsung, Air Canada, autoridad italiana)
+3. Bloque 2 - Niveles de riesgo del EU AI Act + ejercicio interactivo de clasificacion
+4. Bloque 3 - Que significa la gobernanza segun tu rol (developer, comercial, RRHH, management)
+5. Bloque 4 - La politica de uso punto por punto con casos aplicados
+6. Bloque 5 + Cierre - Autoevaluacion con el framework de 8 dimensiones, tres ideas y checklist accionable
 
 ## Guion editorial por bloques
 
-### Hero - El mapa
+### Hero - Agenda
 
-Debe mostrar los cuatro niveles como tarjetas de agenda (Nivel 1 Fundamentos, Nivel 2 Intermedios, Nivel 3 Avanzados, Nivel 4 Frontera) y cerrar con la idea de que no hace falta saber como esta hecho el motor para saber conducir, pero ayuda saber en que marcha se esta.
-
-### Nivel 1 - Lo que ya habeis construido
-
-Repaso relampago de la base ya construida en charlas anteriores: SDD, Skills, Wiki LLM + OKF y el arnes completo que las conecta. No se profundiza, solo se ancla como punto de partida.
+Debe mostrar los cuatro bloques principales como tarjetas y cerrar con la idea de que el Shadow AI no es mala fe, es falta de reglas claras.
 
 Idea de cierre del bloque:
 
-`Esto ya lo teneis. No hace falta repetirlo. Es la base sobre la que se construye todo lo demas.`
+`El Shadow AI no es mala fe. Es falta de reglas claras. Hoy las damos.`
 
-### Nivel 2 - Los 10 conceptos que os faltan
+### Bloque 1 - Casos reales
 
-Diez conceptos con icono, descripcion breve y frase de cierre (takeaway), todos con ejemplo ligado al trabajo diario o a una charla anterior: system prompt, context engineering, RAG, embeddings, function calling, temperature, chain-of-thought, multimodal, structured output y context window management.
-
-Idea de cierre del bloque:
-
-`El vocabulario importa. Diez conceptos, un objetivo: que sepais que palanca tocar.`
-
-### Nivel 3 - El momento wow
-
-Revela que la audiencia ya lleva semanas trabajando en el Nivel 3 sin saberlo: agentic workflows (Charla 8), memory corto/largo plazo (Charla 11), knowledge graphs (Charla 8 bonus), orchestration patterns (Supervisor Pattern) y prompt injection (bloqueado por Copilot en una prueba real).
+Tres casos publicos y verificables que muestren lo que cuesta la falta de gobernanza: Samsung (2023, codigo fuente en ChatGPT), Air Canada (2024, responsabilidad del chatbot en tribunal) y la autoridad italiana (2023, bloqueo temporal de ChatGPT). Cada caso lleva un takeaway corto.
 
 Idea de cierre del bloque:
 
-`El Nivel 3 no es algo que tengais que alcanzar. Es algo que ya estais haciendo.`
+`No hubo mala fe. Hubo falta de reglas claras. Gobernar antes es mucho mas barato que gobernar despues.`
 
-### Nivel 4 + Cierre - Hacia donde va esto
+### Bloque 2 - Niveles de riesgo
 
-Frontera a 12-18 meses: computer use, reasoning models, autonomous coding agents y AI Governance (EU AI Act). Cierra con tres ideas para llevarse y la frase final sobre tener el mapa completo.
+Las cuatro categorias del EU AI Act (inaceptable, alto, limitado, minimo) traducidas a ejemplos cotidianos y aplicadas al sector. Cierra con un ejercicio de cinco casos que la audiencia clasifica en voz alta antes de revelar la respuesta.
 
 Idea de cierre del bloque:
 
-`El Nivel 4 no es el futuro. Es el presente de los que van un paso por delante.`
+`La pregunta no es "puedo usar IA". Es "que esta en juego si me equivoco".`
+
+### Bloque 3 - Segun tu rol
+
+Cuatro roles tipo de la sala (developer, comercial, RRHH, management) y que le toca vigilar especialmente a cada uno. Conecta con las dimensiones 2, 5, 7 y 8 del framework de madurez.
+
+Idea de cierre del bloque:
+
+`La gobernanza no es un documento que lee una persona de compliance. Es una responsabilidad repartida.`
+
+### Bloque 4 - La politica, punto por punto
+
+Cuatro preguntas practicas:
+
+1. Que datos puedo compartir con que herramienta (tabla comparativa IA publica / IA corporativa)
+2. Que herramientas estan aprobadas (listado interno pendiente de completar)
+3. Quien revisa el output antes de que llegue a un cliente (tabla por tipo de output)
+4. Que hacer si algo ya ha salido mal (canal de escalado interno pendiente de completar)
+
+Cada punto lleva uno o dos casos aplicados reales o realistas.
+
+Idea de cierre del bloque:
+
+`Una politica no existe para frenaros. Existe para que sepais que hacer sin tener que adivinarlo.`
+
+### Bloque 5 + Cierre - Autoevaluacion y tres ideas
+
+Recuerdo rapido de la escala 0-4 del framework interno. Dos senales de interpretacion clave: score bajo en Dim. 7 = formacion urgente; score alto en Dim. 8 = candidato a champion. Cierra con tres ideas para llevarse y un checklist accionable de cuatro puntos.
+
+Idea de cierre final:
+
+`La semana pasada aprendimos a medir. Hoy hemos aprendido a poner las reglas.`
 
 ## Objetivo editorial
 
-La charla debe dar a la audiencia un marco compartido para situar cualquier concepto de IA que escuchen en el futuro, y reforzar que ya estan mas avanzados de lo que creen.
+La charla debe dar a la audiencia un marco compartido para usar la IA con criterio dentro de la empresa, aterrizado en casos concretos y en una politica accionable que puedan aplicar al dia siguiente. No es una sesion tecnica ni una clase de derecho.
 
 No es el lugar para profundizar todavia en:
 
-- implementacion tecnica detallada de cada concepto del Nivel 2
-- arquitecturas RAG o de agentes a nivel de codigo
-- comparativas extensas de modelos o proveedores
-- detalle legal exhaustivo del EU AI Act
+- detalle articulado del EU AI Act, ISO 42001 o NIST AI RMF (queda referenciado como lectura)
+- configuraciones tecnicas de DLP o auditoria
+- casos internos concretos sin haberlos anonimizado antes
+- politicas de otros marcos regulatorios (SOX, GDPR, etc.) mas alla de mencionarlos
+
+## Contenido pendiente de completar antes de la charla
+
+Antes del miercoles hay que revisar los ficheros internos de la empresa sobre gobernanza de IA y sustituir los marcadores `TODO` visibles en:
+
+- `components/sections/politica-uso-section.tsx` (herramientas aprobadas, matriz de datos, canal de escalado)
+- `components/sections/niveles-riesgo-section.tsx` (ejemplo real del sector banca/seguros en la tabla y el ejercicio)
+
+Si algun matiz interno cambia la narrativa, actualizar tambien el bloque afectado del guion arriba.
 
 ## Criterios de contenido
 
@@ -85,8 +115,8 @@ No es el lugar para profundizar todavia en:
 - Evitar claims grandilocuentes o absolutos.
 - Evitar bloques de texto largos.
 - Cada seccion debe sostener la exposicion con pocos mensajes, bien jerarquizados.
-- Siempre que se hable de un concepto del Nivel 2, cerrar con una frase corta y memorable (takeaway).
-- Anclar cada concepto avanzado a una charla o demo real ya vista, no a teoria abstracta.
+- Todos los casos y ejemplos deben ser verificables o marcarse claramente como hipoteticos.
+- Cuando se cite una empresa o un caso, incluir el ano.
 
 ## Criterios de diseno
 
@@ -98,6 +128,7 @@ No es el lugar para profundizar todavia en:
   - contraste alto
 - Las animaciones deben acompanar la exposicion, no distraer.
 - Mantener lenguaje visual oscuro con acentos azules salvo rediseño consciente.
+- Usar el color destructive con moderacion, reservado para senales de alerta (nivel de riesgo inaceptable, score bajo en gobernanza, "Nunca" en la matriz de datos).
 - Evitar widgets o interaccion compleja si no aporta valor durante la charla.
 - Reutilizar componentes y estructura existentes antes de crear piezas nuevas.
 
@@ -127,19 +158,18 @@ Comandos utiles:
 
 ## Componentes activos
 
-- `components/sections/hero-section.tsx` - Hero: el mapa de los cuatro niveles
-- `components/sections/ai-foundations-section.tsx` - Nivel 1: repaso relampago
-- `components/sections/token-context-section.tsx` - Nivel 2: los 10 conceptos
-- `components/sections/prompt-section.tsx` - Nivel 3: el momento wow
-- `components/sections/closing-section.tsx` - Nivel 4 + cierre
+- `components/sections/hero-section-14.tsx` - Hero: agenda de la charla
+- `components/sections/casos-reales-section.tsx` - Bloque 1: casos reales
+- `components/sections/niveles-riesgo-section.tsx` - Bloque 2: niveles de riesgo + ejercicio
+- `components/sections/segun-rol-section.tsx` - Bloque 3: gobernanza segun rol
+- `components/sections/politica-uso-section.tsx` - Bloque 4: politica de uso punto por punto
+- `components/sections/closing-section-14.tsx` - Bloque 5 + cierre
 
 ## Secciones legacy
 
-Existen componentes antiguos como `why-now-section.tsx`, `what-is-ai-section.tsx`, `model-llm-section.tsx`, `how-llm-works-section.tsx`, `limitations-section.tsx`, `use-cases-section.tsx`, `series-roadmap-section.tsx` o `ai-evolution-section.tsx`.
+Existen componentes de charlas anteriores (`hero-section-13.tsx`, `copilot-studio-section.tsx`, `demo-section-13.tsx`, `metrics-section.tsx`, `closing-section-13.tsx`, `hero-section-concept.tsx`, `ai-fundations-section-concepts.tsx`, `token-context-section.tsx`, `prompt-section-concept.tsx`, `closing-section-concept.tsx`, y otros mas antiguos como `why-now-section.tsx`, `what-is-ai-section.tsx`, `model-llm-section.tsx`, `how-llm-works-section.tsx`, `limitations-section.tsx`, `use-cases-section.tsx`, `series-roadmap-section.tsx`, `ai-evolution-section.tsx`, `copilot-workflow-section.tsx`).
 
-`components/sections/copilot-workflow-section.tsx` existe, pero ahora mismo queda fuera del flujo principal porque no forma parte de la charla activa.
-
-Ahora mismo no forman parte del flujo principal. No deben reintroducirse en `app/page.tsx` salvo decision consciente.
+No forman parte del flujo principal. No deben reintroducirse en `app/page.tsx` salvo decision consciente.
 
 ## Como editar
 
@@ -166,7 +196,7 @@ Ahora mismo no forman parte del flujo principal. No deben reintroducirse en `app
 - Si se corrige copy, guardar siempre en UTF-8 y revisar que no aparezca mojibake.
 - `app/layout.tsx` debe mantenerse con `lang="es"`.
 - Si `next build` falla por bloqueo de `.next/trace`, revisar si hay un `next dev` abierto o algun proceso `node` usando `.next`.
-- El nombre visible de la charla y la documentacion deben mantenerse alineados entre `AGENTS.md`, `app/layout.tsx` y `components/sections/hero-section.tsx`.
+- El nombre visible de la charla y la documentacion deben mantenerse alineados entre `AGENTS.md`, `app/layout.tsx` y `components/sections/hero-section-14.tsx`.
 
 ## Que haria un agente antes de tocar nada
 

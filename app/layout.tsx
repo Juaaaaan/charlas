@@ -7,9 +7,9 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Charla 12 | El mapa de la IA",
+  title: "Charla 14 | Gobernanza de IA",
   description:
-    "Charla interna sobre los cuatro niveles de madurez en IA: fundamentos, los diez conceptos clave, dónde ya estáis sin saberlo y hacia dónde va esto.",
+    "Charla interna sobre gobernanza de IA: casos reales, niveles de riesgo del EU AI Act, política de uso y autoevaluación del nivel de madurez.",
   generator: "v0.app",
   icons: {
     icon: [
