@@ -2,20 +2,19 @@
 
 import { motion } from "framer-motion";
 
-const riskLevels = [
+const euRiskLevels = [
   {
     level: "Inaceptable",
     tone: "critical",
     example: "Scoring social, vigilancia masiva",
-    context: "Prohibido por definición. No debería aparecer en nuestro trabajo.",
+    context:
+      "Prohibido por definición. No debería aparecer en nuestro trabajo.",
   },
   {
     level: "Alto riesgo",
     tone: "high",
-    example:
-      "Selección de personal, diagnóstico médico, scoring crediticio",
-    context:
-      "TODO: aterrizar en un ejemplo real de banca/seguros (scoring, detección de fraude, admisión) tras revisar la política interna.",
+    example: "Selección de personal, diagnóstico médico, scoring crediticio",
+    context: "Ver detalle abajo en la política interna.",
   },
   {
     level: "Riesgo limitado",
@@ -31,29 +30,46 @@ const riskLevels = [
   },
 ];
 
-const exerciseCases = [
+const internalRiskLevels = [
   {
-    situation: "Usar IA para autocompletar código mientras programas",
-    answer: "Riesgo mínimo",
+    level: "Prohibido",
+    tone: "critical",
+    criterios: "TODO",
+    ejemplos: "TODO",
+    aprobacion: "TODO",
+    evidencia: "TODO",
   },
   {
-    situation:
-      "Un agente en Teams que responde dudas de onboarding al personal nuevo",
-    answer: "Riesgo limitado — debe identificarse como IA",
+    level: "Crítico",
+    tone: "critical",
+    criterios: "TODO",
+    ejemplos: "TODO",
+    aprobacion: "TODO",
+    evidencia: "TODO",
   },
   {
-    situation:
-      "Usar IA para preseleccionar candidatos en un proceso de contratación",
-    answer: "Riesgo alto — impacta directamente a personas",
+    level: "Alto",
+    tone: "high",
+    criterios: "TODO",
+    ejemplos: "TODO",
+    aprobacion: "TODO",
+    evidencia: "TODO",
   },
   {
-    situation: "Pedir a una IA que redacte el borrador de un email interno",
-    answer: "Riesgo mínimo",
+    level: "Medio",
+    tone: "medium",
+    criterios: "TODO",
+    ejemplos: "TODO",
+    aprobacion: "TODO",
+    evidencia: "TODO",
   },
   {
-    situation:
-      "TODO: sustituir por un caso real del sector banca/seguros (p. ej. IA aplicada a scoring de riesgo o detección de fraude)",
-    answer: "Alto riesgo casi con seguridad",
+    level: "Bajo",
+    tone: "low",
+    criterios: "TODO",
+    ejemplos: "TODO",
+    aprobacion: "TODO",
+    evidencia: "TODO",
   },
 ];
 
@@ -84,7 +100,7 @@ export function NivelesRiesgoSection() {
         </motion.div>
 
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-          {riskLevels.map((r, index) => (
+          {euRiskLevels.map((r, index) => (
             <motion.div
               key={r.level}
               className={`rounded-[1.75rem] border px-6 py-8 ${
@@ -137,43 +153,111 @@ export function NivelesRiesgoSection() {
         </motion.div>
 
         <motion.div
-          className="mt-20 mb-8"
+          className="mt-24 mb-10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
+          <span className="mb-4 block text-sm font-medium uppercase tracking-[0.2em] text-primary">
+            Política interna
+          </span>
           <h3 className="text-3xl font-bold text-foreground md:text-4xl">
-            Clasifica el riesgo
+            Nuestros 5 niveles de riesgo
           </h3>
-          <p className="mt-4 text-xl text-foreground/70">
-            Ejercicio con la sala. Cinco situaciones. Vosotros decidís el nivel
-            en voz alta. Después revelamos la respuesta.
+          <p className="mt-4 max-w-3xl text-xl leading-relaxed text-foreground/72">
+            El EU AI Act es el marco legal. Internamente lo aterrizamos en 5
+            niveles operativos con criterios claros, aprobación mínima y
+            evidencia esperada.
           </p>
         </motion.div>
 
         <div className="grid gap-4">
-          {exerciseCases.map((ex, index) => (
+          {internalRiskLevels.map((r, index) => (
             <motion.div
-              key={index}
-              className="grid gap-4 rounded-[1.5rem] border border-border/60 bg-card/70 p-6 md:grid-cols-[auto_1fr_auto] md:items-center md:p-8"
+              key={r.level}
+              className={`rounded-[1.75rem] border p-6 md:p-8 ${
+                r.tone === "critical"
+                  ? "border-destructive/40 bg-destructive/8"
+                  : r.tone === "high"
+                    ? "border-primary/30 bg-primary/10"
+                    : "border-border/60 bg-card/70"
+              }`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-30px" }}
               transition={{ duration: 0.4, delay: index * 0.06 }}
             >
-              <p className="font-mono text-sm font-semibold uppercase tracking-[0.22em] text-primary/90">
-                Caso {String(index + 1).padStart(2, "0")}
-              </p>
-              <p className="text-lg leading-relaxed text-foreground md:text-xl">
-                {ex.situation}
-              </p>
-              <p className="rounded-[1rem] border border-primary/25 bg-primary/10 px-4 py-2 text-sm font-semibold text-primary md:text-base">
-                {ex.answer}
-              </p>
+              <div className="flex items-baseline gap-4">
+                <p
+                  className={`font-mono text-xs font-semibold uppercase tracking-[0.22em] ${
+                    r.tone === "critical"
+                      ? "text-destructive"
+                      : r.tone === "high"
+                        ? "text-primary"
+                        : "text-primary/80"
+                  }`}
+                >
+                  Nivel {String(index + 1).padStart(2, "0")}
+                </p>
+                <h4 className="text-2xl font-semibold text-foreground md:text-3xl">
+                  {r.level}
+                </h4>
+              </div>
+              <div className="mt-5 grid gap-3 md:grid-cols-2 lg:grid-cols-4">
+                {[
+                  { label: "Criterios", value: r.criterios },
+                  { label: "Ejemplos", value: r.ejemplos },
+                  { label: "Aprobación mínima", value: r.aprobacion },
+                  { label: "Evidencia", value: r.evidencia },
+                ].map((col) => (
+                  <div
+                    key={col.label}
+                    className="rounded-[1rem] border border-border/50 bg-background/40 px-4 py-4"
+                  >
+                    <p className="font-mono text-xs font-semibold uppercase tracking-[0.16em] text-foreground/55">
+                      {col.label}
+                    </p>
+                    <p
+                      className={`mt-2 text-sm leading-relaxed md:text-base ${
+                        col.value === "TODO"
+                          ? "font-mono uppercase tracking-[0.14em] text-foreground/40"
+                          : "text-foreground/85"
+                      }`}
+                    >
+                      {col.value}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          className="mt-10 rounded-[2rem] border border-border/60 bg-card/70 p-8 md:p-10"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <p className="text-xl leading-relaxed text-foreground/85 md:text-2xl">
+            Fijaos en el detalle importante: cuanto más alto el nivel, no solo
+            cambia lo que podéis o no hacer. Cambia{" "}
+            <span className="font-semibold text-primary">
+              quién tiene que aprobarlo
+            </span>{" "}
+            y{" "}
+            <span className="font-semibold text-primary">
+              qué prueba hay que dejar
+            </span>{" "}
+            de que la decisión se tomó bien.
+          </p>
+          <p className="mt-4 text-lg text-foreground/70">
+            Esto es lo que separa una política real de un cartel
+            bienintencionado.
+          </p>
+        </motion.div>
       </div>
     </section>
   );

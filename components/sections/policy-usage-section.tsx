@@ -2,74 +2,143 @@
 
 import { motion } from "framer-motion";
 
-const dataPolicy = [
+const escenariosFases = [
   {
-    dataType: "Código propio sin datos de cliente",
-    publicAI: "TODO",
-    corpAI: "TODO",
+    fase: "Ideación, discovery y business analysis",
+    permitido: "TODO",
+    condicionado: "TODO",
+    prohibido: "TODO",
   },
   {
-    dataType: "Datos de cliente (nombres, cuentas, contratos)",
-    publicAI: "Nunca",
-    corpAI: "TODO — depende de configuración DLP",
+    fase: "Diseño y arquitectura",
+    permitido: "TODO",
+    condicionado: "TODO",
+    prohibido: "TODO",
   },
   {
-    dataType: "Información pública o genérica",
-    publicAI: "Sí",
-    corpAI: "Sí",
+    fase: "Desarrollo y generación de código",
+    permitido: "TODO",
+    condicionado: "TODO",
+    prohibido: "TODO",
   },
   {
-    dataType: "Credenciales, claves, tokens",
-    publicAI: "Nunca",
-    corpAI: "Nunca",
-  },
-];
-
-const reviewMatrix = [
-  { output: "Borrador interno, uso propio", review: "No obligatoria" },
-  { output: "Comunicación a cliente", review: "Sí, siempre" },
-  {
-    output: "Código que va a producción",
-    review: "Sí — igual que cualquier código, con o sin IA",
-  },
-  {
-    output: "Documento con validez contractual o legal",
-    review: "Sí, con la persona responsable",
+    fase: "Pruebas y QA",
+    permitido: "TODO",
+    condicionado: "TODO",
+    prohibido: "TODO",
   },
 ];
 
-const policyPoints = [
+const datosPermitidos = [
   {
-    number: "01",
-    title: "Qué datos puedo compartir con qué herramienta",
-    caseApplied:
-      "Un compañero pide a una IA que le ayude a mejorar el tono de un email a cliente. El texto que él ha escrito, sí. El nombre y los datos bancarios del cliente para «que quede más personalizado», no.",
-    caseApplied2:
-      "RRHH quiere que la IA le ayude a redactar el feedback de una evaluación. El texto genérico sobre feedback constructivo, sin problema. Pegar el historial de rendimiento real del empleado, no.",
+    clase: "TODO — Ej.: datos técnicos internos",
+    publico: "TODO",
+    cliente: "TODO",
+    condiciones: "TODO",
   },
   {
-    number: "02",
-    title: "Qué herramientas están aprobadas",
-    caseApplied:
-      "Instalarse una extensión de IA de una tienda de navegador porque parece útil, sin pasar por el canal oficial — eso es Shadow AI, aunque la intención sea buena.",
-    caseApplied2:
-      "Un equipo descubre una herramienta gratuita para transcribir reuniones y la usa en llamadas con clientes sin consultar. La grabación puede estar pasando por servidores fuera de cualquier control.",
+    clase: "TODO — Ej.: datos de cliente identificables",
+    publico: "TODO",
+    cliente: "TODO",
+    condiciones: "TODO",
   },
   {
-    number: "03",
-    title: "Quién revisa el output antes de que llegue a un cliente",
-    caseApplied:
-      "Un agente puede equivocarse — vimos la semana pasada que lo bueno es cuando reconoce que no sabe algo. Pero la responsabilidad final de lo que sale hacia un cliente sigue siendo humana.",
-    caseApplied2: null,
+    clase: "TODO — Ej.: información pública / no sensible",
+    publico: "TODO",
+    cliente: "TODO",
+    condiciones: "TODO",
   },
   {
-    number: "04",
-    title: "Qué hacer si algo ya ha salido mal",
-    caseApplied:
-      "TODO: definir aquí el canal real de escalado en la empresa. ¿A quién se avisa si alguien detecta que se compartió un dato sensible con una IA no aprobada? Sin este punto, la política se queda coja.",
-    caseApplied2: null,
+    clase: "TODO — Ej.: credenciales, claves, tokens",
+    publico: "TODO",
+    cliente: "TODO",
+    condiciones: "TODO",
   },
 ];
+
+const revisionHumana = [
+  {
+    output: "TODO — Ej.: comunicación a cliente",
+    revision: "TODO",
+    aprobador: "TODO",
+    evidencia: "TODO",
+  },
+  {
+    output: "TODO — Ej.: código a producción",
+    revision: "TODO",
+    aprobador: "TODO",
+    evidencia: "TODO",
+  },
+  {
+    output: "TODO — Ej.: documento contractual o legal",
+    revision: "TODO",
+    aprobador: "TODO",
+    evidencia: "TODO",
+  },
+  {
+    output: "TODO — Ej.: borrador interno de uso propio",
+    revision: "TODO",
+    aprobador: "TODO",
+    evidencia: "TODO",
+  },
+];
+
+const procesoIncidentes = [
+  {
+    paso: "01",
+    label: "Detección",
+    detail: "TODO — Cómo se identifica que ha habido un incidente",
+  },
+  {
+    paso: "02",
+    label: "Notificación",
+    detail: "TODO — A quién y en qué plazo",
+  },
+  {
+    paso: "03",
+    label: "Contención",
+    detail: "TODO — Qué hacer inmediatamente",
+  },
+  { paso: "04", label: "Análisis y registro", detail: "TODO" },
+  {
+    paso: "05",
+    label: "Comunicación a cliente / regulador",
+    detail: "TODO — Si aplica",
+  },
+  {
+    paso: "06",
+    label: "Aprendizaje y actualización de la política",
+    detail: "TODO",
+  },
+];
+
+const checklistDecision = [
+  "TODO — Ej.: ¿Sé en qué nivel de riesgo cae lo que voy a hacer?",
+  "TODO — Ej.: ¿La herramienta que voy a usar está aprobada para este tipo de dato?",
+  "TODO — Ej.: ¿Sé quién tiene que revisar el output antes de que salga?",
+  "TODO — Ej.: ¿Sé qué hacer si algo sale mal?",
+];
+
+function TodoCell({
+  value,
+  className = "",
+}: {
+  value: string;
+  className?: string;
+}) {
+  const isTodo = value === "TODO" || value.startsWith("TODO");
+  return (
+    <p
+      className={`text-sm leading-relaxed md:text-base ${
+        isTodo
+          ? "font-mono text-xs uppercase tracking-[0.14em] text-foreground/40"
+          : "text-foreground/85"
+      } ${className}`}
+    >
+      {value}
+    </p>
+  );
+}
 
 export function PoliticaUsoSection() {
   return (
@@ -88,139 +157,321 @@ export function PoliticaUsoSection() {
             Bloque 4
           </span>
           <h2 className="mb-8 text-4xl font-bold text-balance text-foreground md:text-5xl lg:text-6xl">
-            La política, punto por punto
+            La política interna, punto por punto
           </h2>
           <p className="mx-auto max-w-3xl text-xl leading-relaxed text-foreground/76 md:text-2xl">
-            Un documento accionable. Cuatro preguntas que responderse antes de
-            usar cualquier IA.
+            Hasta aquí hemos hablado del marco. Ahora entramos en el documento
+            real: la política interna que aplica desde mañana.
           </p>
         </motion.div>
 
-        <div className="grid gap-6">
-          {policyPoints.map((p, index) => (
-            <motion.div
-              key={p.number}
-              className="rounded-[2rem] border border-border/60 bg-card/70 p-8 md:p-10"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: index * 0.08 }}
-            >
-              <div className="flex flex-col gap-4 md:flex-row md:items-baseline md:gap-6">
-                <p className="font-mono text-3xl font-bold text-primary md:text-4xl">
-                  {p.number}
+        {/* 4.1 Escenarios permitidos por fase */}
+        <motion.div
+          className="rounded-[2rem] border border-border/60 bg-card/70 p-8 md:p-10"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="flex flex-col gap-4 md:flex-row md:items-baseline md:gap-6">
+            <p className="font-mono text-3xl font-bold text-primary md:text-4xl">
+              4.1
+            </p>
+            <h3 className="text-2xl font-semibold leading-snug text-foreground md:text-3xl">
+              Escenarios permitidos por fase de trabajo
+            </h3>
+          </div>
+
+          <div className="mt-8 overflow-hidden rounded-[1.5rem] border border-border/50">
+            <div className="grid grid-cols-[1.6fr_1fr_1fr_1fr] gap-0 bg-background/40 px-5 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-foreground/70">
+              <p>Fase / Actividad</p>
+              <p>Permitido</p>
+              <p>Condicionado</p>
+              <p>Prohibido</p>
+            </div>
+            {escenariosFases.map((row, i) => (
+              <div
+                key={row.fase}
+                className={`grid grid-cols-[1.6fr_1fr_1fr_1fr] gap-0 px-5 py-4 ${
+                  i % 2 === 0 ? "bg-card/50" : "bg-card/30"
+                }`}
+              >
+                <p className="text-sm text-foreground/85 md:text-base">
+                  {row.fase}
                 </p>
-                <h3 className="text-2xl font-semibold leading-snug text-foreground md:text-3xl">
-                  {p.title}
-                </h3>
+                <TodoCell value={row.permitido} />
+                <TodoCell value={row.condicionado} />
+                <TodoCell value={row.prohibido} />
               </div>
+            ))}
+          </div>
 
-              {p.number === "01" && (
-                <div className="mt-8 overflow-hidden rounded-[1.5rem] border border-border/50">
-                  <div className="grid grid-cols-[1.5fr_1fr_1fr] gap-0 bg-background/40 px-5 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-foreground/70">
-                    <p>Tipo de dato</p>
-                    <p>IA pública</p>
-                    <p>IA corporativa</p>
-                  </div>
-                  {dataPolicy.map((row, i) => (
-                    <div
-                      key={row.dataType}
-                      className={`grid grid-cols-[1.5fr_1fr_1fr] gap-0 px-5 py-4 text-sm md:text-base ${
-                        i % 2 === 0 ? "bg-card/50" : "bg-card/30"
-                      }`}
-                    >
-                      <p className="text-foreground/85">{row.dataType}</p>
-                      <p
-                        className={
-                          row.publicAI === "Nunca"
-                            ? "font-semibold text-destructive"
-                            : row.publicAI === "Sí"
-                              ? "font-semibold text-primary"
-                              : "font-mono text-xs uppercase tracking-[0.14em] text-foreground/50"
-                        }
-                      >
-                        {row.publicAI}
-                      </p>
-                      <p
-                        className={
-                          row.corpAI === "Nunca"
-                            ? "font-semibold text-destructive"
-                            : row.corpAI === "Sí"
-                              ? "font-semibold text-primary"
-                              : "font-mono text-xs uppercase tracking-[0.14em] text-foreground/50"
-                        }
-                      >
-                        {row.corpAI}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              )}
+          <p className="mt-6 rounded-[1.25rem] border border-primary/20 bg-primary/8 px-5 py-4 text-base leading-relaxed text-foreground/85 md:text-lg">
+            «Condicionado» no es una casilla decorativa. Significa: sí, pero con
+            estos requisitos. La responsabilidad de comprobar que se cumplen es
+            tuya.
+          </p>
+        </motion.div>
 
-              {p.number === "02" && (
-                <div className="mt-8 rounded-[1.5rem] border border-border/50 bg-background/40 px-5 py-5">
-                  <p className="font-mono text-xs font-semibold uppercase tracking-[0.14em] text-foreground/50">
-                    Herramientas aprobadas
-                  </p>
-                  <p className="mt-3 text-lg leading-relaxed text-foreground/85">
-                    TODO: listar aquí las herramientas de IA oficialmente
-                    aprobadas en la empresa (Copilot 365, Copilot Studio,
-                    Claude corporativo si aplica, etc.).
-                  </p>
-                </div>
-              )}
+        {/* 4.2 Datos permitidos y restringidos */}
+        <motion.div
+          className="mt-6 rounded-[2rem] border border-border/60 bg-card/70 p-8 md:p-10"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="flex flex-col gap-4 md:flex-row md:items-baseline md:gap-6">
+            <p className="font-mono text-3xl font-bold text-primary md:text-4xl">
+              4.2
+            </p>
+            <h3 className="text-2xl font-semibold leading-snug text-foreground md:text-3xl">
+              Datos permitidos y restringidos
+            </h3>
+          </div>
 
-              {p.number === "03" && (
-                <div className="mt-8 overflow-hidden rounded-[1.5rem] border border-border/50">
-                  <div className="grid grid-cols-[1.5fr_1fr] gap-0 bg-background/40 px-5 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-foreground/70">
-                    <p>Tipo de output</p>
-                    <p>Revisión humana</p>
-                  </div>
-                  {reviewMatrix.map((row, i) => (
-                    <div
-                      key={row.output}
-                      className={`grid grid-cols-[1.5fr_1fr] gap-0 px-5 py-4 text-sm md:text-base ${
-                        i % 2 === 0 ? "bg-card/50" : "bg-card/30"
-                      }`}
-                    >
-                      <p className="text-foreground/85">{row.output}</p>
-                      <p
-                        className={
-                          row.review.startsWith("Sí")
-                            ? "font-semibold text-primary"
-                            : "text-foreground/70"
-                        }
-                      >
-                        {row.review}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              )}
-
-              <div className="mt-6 space-y-4">
-                <div className="rounded-[1.25rem] border border-primary/20 bg-primary/8 px-5 py-4">
-                  <p className="font-mono text-xs font-semibold uppercase tracking-[0.14em] text-primary">
-                    Caso aplicado
-                  </p>
-                  <p className="mt-3 text-base leading-relaxed text-foreground/85 md:text-lg">
-                    {p.caseApplied}
-                  </p>
-                </div>
-                {p.caseApplied2 && (
-                  <div className="rounded-[1.25rem] border border-primary/20 bg-primary/8 px-5 py-4">
-                    <p className="font-mono text-xs font-semibold uppercase tracking-[0.14em] text-primary">
-                      Segundo caso
-                    </p>
-                    <p className="mt-3 text-base leading-relaxed text-foreground/85 md:text-lg">
-                      {p.caseApplied2}
-                    </p>
-                  </div>
-                )}
+          <div className="mt-8 overflow-hidden rounded-[1.5rem] border border-border/50">
+            <div className="grid grid-cols-[1.6fr_1fr_1fr_1.3fr] gap-0 bg-background/40 px-5 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-foreground/70">
+              <p>Clase de dato</p>
+              <p>Público / no homologado</p>
+              <p>Cliente aprobado / dedicado</p>
+              <p>Condiciones mínimas</p>
+            </div>
+            {datosPermitidos.map((row, i) => (
+              <div
+                key={row.clase}
+                className={`grid grid-cols-[1.6fr_1fr_1fr_1.3fr] gap-0 px-5 py-4 ${
+                  i % 2 === 0 ? "bg-card/50" : "bg-card/30"
+                }`}
+              >
+                <TodoCell value={row.clase} />
+                <TodoCell value={row.publico} />
+                <TodoCell value={row.cliente} />
+                <TodoCell value={row.condiciones} />
               </div>
-            </motion.div>
-          ))}
-        </div>
+            ))}
+          </div>
+
+          <div className="mt-6 space-y-4">
+            <div className="rounded-[1.25rem] border border-primary/20 bg-primary/8 px-5 py-4">
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.14em] text-primary">
+                Caso aplicado
+              </p>
+              <p className="mt-3 text-base leading-relaxed text-foreground/85 md:text-lg">
+                Un compañero pide a una IA que le ayude a mejorar el tono de un
+                email para un cliente. El texto que ha escrito él, sí. El nombre
+                y los datos bancarios del cliente para «que quede más
+                personalizado», no.
+              </p>
+            </div>
+            <div className="rounded-[1.25rem] border border-primary/20 bg-primary/8 px-5 py-4">
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.14em] text-primary">
+                Segundo caso
+              </p>
+              <p className="mt-3 text-base leading-relaxed text-foreground/85 md:text-lg">
+                Una persona de RRHH quiere que una IA le ayude a redactar el
+                feedback de una evaluación. El texto genérico sobre feedback
+                constructivo, sin problema. Pegar el historial de rendimiento
+                real del empleado para que «lo resuma», ya es otra cosa.
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* 4.3 Revisión humana obligatoria */}
+        <motion.div
+          className="mt-6 rounded-[2rem] border border-border/60 bg-card/70 p-8 md:p-10"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="flex flex-col gap-4 md:flex-row md:items-baseline md:gap-6">
+            <p className="font-mono text-3xl font-bold text-primary md:text-4xl">
+              4.3
+            </p>
+            <h3 className="text-2xl font-semibold leading-snug text-foreground md:text-3xl">
+              Revisión humana obligatoria
+            </h3>
+          </div>
+
+          <div className="mt-8 overflow-hidden rounded-[1.5rem] border border-border/50">
+            <div className="grid grid-cols-[1.6fr_1.2fr_1fr_1.2fr] gap-0 bg-background/40 px-5 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-foreground/70">
+              <p>Output / acción</p>
+              <p>Revisión mínima</p>
+              <p>Aprobador / owner</p>
+              <p>Evidencia esperada</p>
+            </div>
+            {revisionHumana.map((row, i) => (
+              <div
+                key={row.output}
+                className={`grid grid-cols-[1.6fr_1.2fr_1fr_1.2fr] gap-0 px-5 py-4 ${
+                  i % 2 === 0 ? "bg-card/50" : "bg-card/30"
+                }`}
+              >
+                <TodoCell value={row.output} />
+                <TodoCell value={row.revision} />
+                <TodoCell value={row.aprobador} />
+                <TodoCell value={row.evidencia} />
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-6 rounded-[1.25rem] border border-primary/20 bg-primary/8 px-5 py-4 text-base leading-relaxed text-foreground/85 md:text-lg">
+            La columna de «evidencia» es la que suele faltar en políticas mal
+            hechas. Sin evidencia — un log, un firmante, una traza — la revisión
+            no existe a efectos de auditoría, aunque haya ocurrido.
+          </p>
+        </motion.div>
+
+        {/* 4.4 Herramientas */}
+        <motion.div
+          className="mt-6 rounded-[2rem] border border-border/60 bg-card/70 p-8 md:p-10"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="flex flex-col gap-4 md:flex-row md:items-baseline md:gap-6">
+            <p className="font-mono text-3xl font-bold text-primary md:text-4xl">
+              4.4
+            </p>
+            <h3 className="text-2xl font-semibold leading-snug text-foreground md:text-3xl">
+              Herramientas: corporativas y restricciones con cliente
+            </h3>
+          </div>
+
+          <div className="mt-8 rounded-[1.5rem] border border-border/50 bg-background/40 px-6 py-8">
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.14em] text-foreground/50">
+              Listado pendiente
+            </p>
+            <p className="mt-4 text-lg leading-relaxed text-foreground/85">
+              TODO — Juan pondrá aquí el listado real de herramientas
+              corporativas aprobadas con su estado y las restricciones con
+              cliente aplicables.
+            </p>
+          </div>
+
+          <div className="mt-6 space-y-4">
+            <div className="rounded-[1.25rem] border border-primary/20 bg-primary/8 px-5 py-4">
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.14em] text-primary">
+                Caso aplicado
+              </p>
+              <p className="mt-3 text-base leading-relaxed text-foreground/85 md:text-lg">
+                Instalarse una extensión de IA de una tienda de navegador porque
+                parece útil, sin pasar por el canal oficial — eso es Shadow AI,
+                aunque la intención sea buena.
+              </p>
+            </div>
+            <div className="rounded-[1.25rem] border border-primary/20 bg-primary/8 px-5 py-4">
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.14em] text-primary">
+                Segundo caso
+              </p>
+              <p className="mt-3 text-base leading-relaxed text-foreground/85 md:text-lg">
+                Un equipo descubre una herramienta gratuita para transcribir
+                reuniones y la usa en llamadas con clientes sin consultar. La
+                grabación puede estar pasando por servidores fuera de cualquier
+                control de la empresa.
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* 4.5 Proceso de incidentes */}
+        <motion.div
+          className="mt-6 rounded-[2rem] border border-border/60 bg-card/70 p-8 md:p-10"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="flex flex-col gap-4 md:flex-row md:items-baseline md:gap-6">
+            <p className="font-mono text-3xl font-bold text-primary md:text-4xl">
+              4.5
+            </p>
+            <h3 className="text-2xl font-semibold leading-snug text-foreground md:text-3xl">
+              Proceso de incidentes relacionados con IA
+            </h3>
+          </div>
+
+          <ol className="mt-8 grid gap-4 md:grid-cols-2">
+            {procesoIncidentes.map((step, index) => (
+              <li
+                key={step.paso}
+                className="flex gap-4 rounded-[1.25rem] border border-border/50 bg-background/35 px-5 py-4"
+              >
+                <span className="mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-primary/40 bg-primary/10 font-mono text-sm font-semibold text-primary">
+                  {step.paso}
+                </span>
+                <div>
+                  <p className="text-lg font-semibold text-foreground">
+                    {step.label}
+                  </p>
+                  <p
+                    className={`mt-1 text-sm leading-relaxed md:text-base ${
+                      step.detail.startsWith("TODO")
+                        ? "font-mono text-xs uppercase tracking-[0.14em] text-foreground/40"
+                        : "text-foreground/75"
+                    }`}
+                  >
+                    {step.detail}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ol>
+
+          <p className="mt-6 rounded-[1.25rem] border border-primary/20 bg-primary/8 px-5 py-4 text-base leading-relaxed text-foreground/85 md:text-lg">
+            Un incidente reportado a tiempo es un problema resuelto. Un
+            incidente escondido es un problema que crece. Y no venimos aquí a
+            señalar culpables — venimos a evitar el segundo caso.
+          </p>
+        </motion.div>
+
+        {/* 4.6 Checklist rápido */}
+        <motion.div
+          className="mt-6 rounded-[2rem] border border-primary/25 bg-primary/10 p-8 md:p-10"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="flex flex-col gap-4 md:flex-row md:items-baseline md:gap-6">
+            <p className="font-mono text-3xl font-bold text-primary md:text-4xl">
+              4.6
+            </p>
+            <h3 className="text-2xl font-semibold leading-snug text-foreground md:text-3xl">
+              Checklist rápido de decisión
+            </h3>
+          </div>
+
+          <p className="mt-5 text-lg leading-relaxed text-foreground/80 md:text-xl">
+            Antes de usar una IA para algo real, cuatro preguntas. Si respondes
+            «no» a alguna, para y consulta.
+          </p>
+
+          <ul className="mt-8 grid gap-3">
+            {checklistDecision.map((q, index) => (
+              <li
+                key={index}
+                className="flex items-start gap-4 rounded-[1.25rem] border border-primary/20 bg-background/40 px-5 py-4"
+              >
+                <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-primary/40 bg-primary/10 font-mono text-xs font-semibold text-primary">
+                  {index + 1}
+                </span>
+                <p
+                  className={`text-base leading-relaxed md:text-lg ${
+                    q.startsWith("TODO")
+                      ? "font-mono text-sm uppercase tracking-[0.12em] text-foreground/50"
+                      : "text-foreground/85"
+                  }`}
+                >
+                  {q}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
 
         <motion.div
           className="mt-10 rounded-[2rem] border border-primary/20 bg-primary/8 p-8 text-center md:p-10"

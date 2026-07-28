@@ -16,13 +16,6 @@ const finalIdeas = [
   "Esto no es solo cosa de developers. Todos decidimos cada semana qué compartir con una IA.",
 ];
 
-const checklist = [
-  "Antes de pegar algo en una IA, pregúntate: ¿esto tiene datos de cliente o información confidencial?",
-  "Usa solo herramientas de la lista aprobada.",
-  "Toda comunicación a cliente asistida por IA, revisión humana antes de enviar.",
-  "Si algo ya ha pasado, no lo escondas — usa el canal de escalado.",
-];
-
 export function ClosingSectionGovernance() {
   return (
     <section className="relative overflow-hidden py-28 lg:py-32">
@@ -144,33 +137,6 @@ export function ClosingSectionGovernance() {
         </motion.div>
 
         <motion.div
-          className="mt-10 rounded-[2rem] border border-border/60 bg-card/70 p-8 md:p-10"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <p className="font-mono text-sm font-semibold uppercase tracking-[0.18em] text-primary">
-            Checklist accionable
-          </p>
-          <ul className="mt-6 grid gap-4">
-            {checklist.map((item, index) => (
-              <li
-                key={index}
-                className="flex items-start gap-4 rounded-[1.25rem] border border-border/50 bg-background/35 px-5 py-4"
-              >
-                <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-primary/40 bg-primary/10 font-mono text-xs font-semibold text-primary">
-                  {index + 1}
-                </span>
-                <p className="text-base leading-relaxed text-foreground/85 md:text-lg">
-                  {item}
-                </p>
-              </li>
-            ))}
-          </ul>
-        </motion.div>
-
-        <motion.div
           className="mt-14 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -181,6 +147,10 @@ export function ClosingSectionGovernance() {
             La semana pasada aprendimos a medir.
             <br />
             Hoy hemos aprendido a poner las reglas.
+          </p>
+          <p className="mt-6 text-lg text-foreground/60">
+            El checklist rápido del Bloque 4.6 es lo que os lleváis a la mesa
+            mañana.
           </p>
         </motion.div>
       </div>
