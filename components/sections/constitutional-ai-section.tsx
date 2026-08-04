@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const approaches = [
   {
-    name: "RLHF",
+    name: "RLHF - Reinforcement Learning with Human Feedback",
     detail: "Humanos evalúan qué respuesta es mejor, y el modelo aprende de esas preferencias.",
   },
   {

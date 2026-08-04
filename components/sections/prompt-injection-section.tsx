@@ -109,7 +109,7 @@ export function PromptInjectionSection() {
             Marco de referencia
           </p>
           <h3 className="mt-4 text-2xl font-semibold text-foreground md:text-3xl">
-            OWASP Top 10 para aplicaciones LLM
+            OWASP (Open Web Application Security Project) Top 10 para aplicaciones LLM
           </h3>
           <div className="mt-6 flex flex-wrap gap-3">
             {owaspCategories.map((c, i) => (
@@ -125,10 +125,7 @@ export function PromptInjectionSection() {
               </span>
             ))}
           </div>
-          <p className="mt-6 text-base text-foreground/60">
-            Prompt Injection encabeza la lista. Verificar en owasp.org la
-            versión más reciente antes de proyectarla.
-          </p>
+        
         </motion.div>
 
         <motion.div

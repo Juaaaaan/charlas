@@ -37,7 +37,7 @@ export function HeroSectionSecurity() {
       <div className="absolute inset-0 bg-[linear-gradient(rgba(100,150,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(100,150,255,0.03)_1px,transparent_1px)] bg-[size:88px_88px]" />
       <div className="absolute left-1/2 top-20 h-[28rem] w-[28rem] -translate-x-1/2 rounded-full bg-primary/12 blur-3xl" />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col px-6 py-24 lg:py-32">
+      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col px-2 py-24 lg:py-32">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -68,7 +68,7 @@ export function HeroSectionSecurity() {
         </motion.p>
 
         <motion.div
-          className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-5"
+          className="mt-14 grid gap-2 md:grid-cols-2 xl:grid-cols-5"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.24, ease: "easeOut" }}
@@ -81,7 +81,7 @@ export function HeroSectionSecurity() {
               <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-primary/90">
                 Bloque {index + 1}
               </p>
-              <h2 className="mt-5 text-2xl font-semibold leading-tight text-balance text-foreground md:text-3xl">
+              <h2 className="mt-5 text-xl font-semibold leading-tight text-balance text-foreground md:text-2xl">
                 {item.label}
               </h2>
               <p className="mt-4 text-base leading-relaxed text-foreground/72">

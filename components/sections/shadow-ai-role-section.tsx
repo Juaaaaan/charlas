@@ -3,28 +3,47 @@
 import { motion } from "framer-motion";
 
 const steps = [
-  { title: "No borres nada", detail: "Ni intentes arreglarlo tú solo. La primera reacción define si se puede investigar bien después." },
-  { title: "Repórtalo", detail: "A tu responsable directo y/o al canal de compliance/seguridad interno, cuanto antes mejor." },
-  { title: "Documenta qué pasó", detail: "Qué herramienta, qué datos, cuándo — sin especular sobre causas." },
-  { title: "No lo escondas", detail: "El objetivo es que la próxima persona lo reporte también, no que lo tape por miedo." },
+  {
+    title: "No borres nada",
+    detail:
+      "Ni intentes arreglarlo tú solo. La primera reacción define si se puede investigar bien después.",
+  },
+  {
+    title: "Repórtalo",
+    detail:
+      "A tu responsable directo y/o al canal de compliance/seguridad interno, cuanto antes mejor.",
+  },
+  {
+    title: "Documenta qué pasó",
+    detail: "Qué herramienta, qué datos, cuándo — sin especular sobre causas.",
+  },
+  {
+    title: "No lo escondas",
+    detail:
+      "El objetivo es que la próxima persona lo reporte también, no que lo tape por miedo.",
+  },
 ];
 
 const roles = [
   {
     role: "Developer",
-    detail: "Revisa qué servidores MCP y qué modelos instalas antes de confiar en ellos.",
+    detail:
+      "Revisa qué servidores MCP y qué modelos instalas antes de confiar en ellos.",
   },
   {
     role: "PM",
-    detail: "El checklist de la Charla 14 es la capa «humano en el bucle» que falló en media docena de casos de hoy.",
+    detail:
+      "El checklist de la Charla 14 es la capa «humano en el bucle» que falló en media docena de casos de hoy.",
   },
   {
     role: "Comercial",
-    detail: "Un chatbot mal configurado puede comprometer a la empresa legalmente — caso Chevrolet.",
+    detail:
+      "Un chatbot mal configurado puede comprometer a la empresa legalmente — caso Chevrolet.",
   },
   {
     role: "RRHH / Management",
-    detail: "Samsung no fue un ataque. Fue gente sin alternativa segura. Se previene dando herramientas, no prohibiendo.",
+    detail:
+      "Samsung no fue un ataque. Fue gente sin alternativa segura. Se previene dando herramientas, no prohibiendo.",
   },
 ];
 
@@ -47,10 +66,6 @@ export function ShadowAIRoleSection() {
           <h2 className="mb-8 text-4xl font-bold text-balance text-foreground md:text-5xl lg:text-6xl">
             Shadow AI: qué hacer si algo se tuerce
           </h2>
-          <p className="mx-auto max-w-3xl text-xl leading-relaxed text-foreground/76 md:text-2xl">
-            No se resuelve prohibiendo — ya lo vimos en la Charla 14. Se
-            resuelve dando alternativas seguras y sabiendo reaccionar.
-          </p>
         </motion.div>
 
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
