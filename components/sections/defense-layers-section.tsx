@@ -5,7 +5,8 @@ import { motion } from "framer-motion";
 const layers = [
   {
     name: "Sanitización de entrada",
-    detail: "Filtrar patrones sospechosos conocidos antes de que lleguen al modelo.",
+    detail:
+      "Filtrar patrones sospechosos conocidos antes de que lleguen al modelo.",
   },
   {
     name: "Separación de contexto",
@@ -21,11 +22,13 @@ const layers = [
   },
   {
     name: "Humano en el bucle",
-    detail: "Una persona revisa y aprueba antes de una acción sensible — el checklist de la Charla 14, aplicado.",
+    detail:
+      "Una persona revisa y aprueba antes de una acción sensible — el checklist de la Charla 14, aplicado.",
   },
   {
     name: "Guardrails",
-    detail: "Reglas de fondo que limitan el comportamiento del modelo, pase lo que pase.",
+    detail:
+      "Reglas de fondo que limitan el comportamiento del modelo, pase lo que pase.",
   },
 ];
 
@@ -78,23 +81,6 @@ export function DefenseLayersSection() {
         </div>
 
         <motion.div
-          className="mt-8 rounded-[2rem] border border-border/60 bg-card/70 p-8 md:p-10"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-primary/90">
-            Conexión con vuestro framework
-          </p>
-          <p className="mt-4 text-lg leading-relaxed text-foreground/85 md:text-xl">
-            Estas 6 capas son, en la práctica, la Dimensión 3 (Testing,
-            Calidad y Seguridad) y la Dimensión 7 (Gobierno, Riesgo y
-            Compliance) de vuestra escala de madurez 0–4.
-          </p>
-        </motion.div>
-
-        <motion.div
           className="mt-10 rounded-[2rem] border border-primary/20 bg-primary/8 p-8 text-center md:p-10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -102,8 +88,8 @@ export function DefenseLayersSection() {
           transition={{ duration: 0.5 }}
         >
           <p className="mx-auto max-w-4xl text-3xl font-semibold leading-relaxed text-balance text-foreground md:text-4xl">
-            No estáis aquí para eliminar el riesgo. Estáis aquí para
-            reducirlo, capa a capa.
+            No estáis aquí para eliminar el riesgo. Estáis aquí para reducirlo,
+            capa a capa.
           </p>
         </motion.div>
       </div>
