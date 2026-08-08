@@ -1,27 +1,40 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { CheckCheck, FileSearch, ShieldCheck } from "lucide-react"
 
-const localLimits = [
-  "No esperes la misma calidad que en los mejores modelos cloud.",
-  "El hardware manda: RAM, VRAM y CPU/GPU cambian completamente la experiencia.",
-  "Ejecutar en local da más control, pero la seguridad depende de accesos, registros y ficheros.",
-  "Los modelos locales también inventan, se equivocan y necesitan revisión.",
-  "Mantener modelos, versiones y configuración tiene coste operativo.",
+const checklist = [
+  "Cuál es la tarea real.",
+  "Qué instrucciones son reglas.",
+  "Qué datos necesita ver.",
+  "Qué fuentes son fiables y recientes.",
+  "Qué límites de seguridad aplican.",
+  "Cómo vamos a validar la respuesta.",
 ]
 
-const adoptionQuestions = [
-  "¿Quién instala, actualiza y mantiene el modelo?",
-  "¿Dónde quedan prompts, documentos, respuestas y registros?",
-  "¿Qué calidad mínima hace aceptable el caso?",
-  "¿Qué pasa si el modelo va lento, falla o inventa?",
-  "¿Cuándo se escala a cloud o a revisión humana?",
+const contextSignals = [
+  {
+    title: "Relevancia",
+    description: "Entra lo que ayuda a resolver la tarea, no todo lo disponible.",
+  },
+  {
+    title: "Autoridad",
+    description: "Las fuentes importantes están claras y tienen prioridad sobre el ruido.",
+  },
+  {
+    title: "Vigencia",
+    description: "Lo obsoleto se retira, se actualiza o se marca para no confundir.",
+  },
+  {
+    title: "Validación",
+    description: "La respuesta se comprueba antes de convertirla en decisión o cambio.",
+  },
 ]
 
 const finalIdeas = [
-  "Local significa control del entorno.",
-  "El modelo se elige por tarea, datos y máquina.",
-  "La decisión no es local contra cloud: es qué necesita el caso de uso.",
+  "Primero la intención; después la información.",
+  "Mejor contexto es contexto seleccionado, ordenado y validado.",
+  "Si el repositorio no habla claro, la IA rellena huecos.",
 ]
 
 export function ClosingSection() {
@@ -30,7 +43,7 @@ export function ClosingSection() {
       <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
       <div className="absolute bottom-0 left-1/2 h-[500px] w-[1000px] -translate-x-1/2 rounded-full bg-primary/5 blur-3xl" />
 
-      <div className="relative z-10 mx-auto w-full max-w-6xl px-6">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-6">
         <motion.div
           className="mb-16 text-center"
           initial={{ opacity: 0, y: 30 }}
@@ -38,65 +51,81 @@ export function ClosingSection() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <span className="mb-4 block text-sm font-medium uppercase tracking-[0.2em] text-primary">Bloque 4</span>
+          <span className="mb-4 block text-sm font-medium uppercase tracking-[0.2em] text-primary">Cierre</span>
           <h2 className="mb-8 text-4xl font-bold text-balance text-foreground md:text-5xl lg:text-6xl">
-            Límites para decidir con criterio
+            Qué nos llevamos
           </h2>
-          <p className="mx-auto max-w-3xl text-xl leading-relaxed text-foreground/76 md:text-2xl">
-            La IA local tiene valor cuando encaja con una tarea, unos datos y una máquina concreta. Antes de adoptarla,
-            conviene saber qué puede resolver, qué exige y dónde empieza a quedarse corta.
+          <p className="mx-auto max-w-4xl text-xl leading-relaxed text-foreground/76 md:text-2xl">
+            Preparar contexto es decidir qué debe saber la IA antes de pedirle trabajo. No se trata de escribir más, sino
+            de darle una base útil, mantenible y segura.
           </p>
         </motion.div>
 
-        <motion.div
-          className="grid gap-6 lg:grid-cols-2 lg:items-start"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="rounded-[2rem] border border-primary/25 bg-primary/10 p-8 md:p-10">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Límites</p>
-            <div className="mt-6 grid gap-3">
-              {localLimits.map((item, index) => (
-                <div
+        <div className="grid gap-6 lg:grid-cols-[1fr_0.95fr] lg:items-start">
+          <motion.div
+            className="rounded-[2rem] border border-primary/25 bg-primary/10 p-8 md:p-10"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-background/35">
+              <CheckCheck className="h-6 w-6 text-primary" />
+            </div>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Checklist práctica</p>
+            <div className="mt-8 grid gap-4 md:grid-cols-2">
+              {checklist.map((item, index) => (
+                <p
                   key={item}
-                  className={`rounded-[1.25rem] border px-5 py-4 text-lg text-foreground ${
-                    index === 0 || index === 4 ? "border-primary/25 bg-background/35" : "border-primary/20 bg-primary/8"
+                  className={`rounded-[1.25rem] border px-5 py-4 text-lg font-semibold leading-snug ${
+                    index === 0 || index === 5 ? "border-primary/30 bg-background/35" : "border-primary/20 bg-primary/8"
                   }`}
                 >
                   {item}
-                </div>
+                </p>
               ))}
             </div>
-            <p className="mt-6 rounded-[1.5rem] border border-primary/20 bg-background/35 p-5 text-xl font-semibold leading-relaxed text-foreground">
-              Ejecutar en local reduce dependencias, pero no elimina el criterio humano.
+            <p className="mt-8 text-3xl font-semibold leading-tight text-balance text-foreground">
+              El buen contexto tiene propósito, límites y mantenimiento.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="rounded-[2rem] border border-border/70 bg-card/90 p-8 md:p-10">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Antes de adoptarlo</p>
-            <div className="mt-6 grid gap-3">
-              {adoptionQuestions.map((item, index) => (
+          <motion.div
+            className="rounded-[2rem] border border-border/70 bg-card/90 p-8 md:p-10"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, delay: 0.08 }}
+          >
+            <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/12">
+              <FileSearch className="h-6 w-6 text-primary" />
+            </div>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Señales de buen contexto</p>
+            <h3 className="mt-4 text-4xl font-semibold leading-tight text-balance text-foreground md:text-5xl">
+              No es meter más información. Es meter mejor información.
+            </h3>
+            <div className="mt-8 grid gap-4">
+              {contextSignals.map((item, index) => (
                 <div
-                  key={item}
-                  className={`rounded-[1.25rem] border px-5 py-4 text-lg text-foreground ${
-                    index === 2 ? "border-primary/25 bg-primary/8" : "border-border/60 bg-background/35"
+                  key={item.title}
+                  className={`rounded-[1.35rem] border p-5 ${
+                    index === 1 ? "border-primary/25 bg-primary/8" : "border-border/60 bg-background/35"
                   }`}
                 >
-                  {item}
+                  <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-xl bg-primary/12">
+                    {index === 0 || index === 1 ? (
+                      <FileSearch className="h-5 w-5 text-primary" />
+                    ) : (
+                      <ShieldCheck className="h-5 w-5 text-primary" />
+                    )}
+                  </div>
+                  <p className="text-lg font-semibold leading-snug text-primary">{item.title}</p>
+                  <p className="mt-2 text-lg leading-relaxed text-foreground/78">{item.description}</p>
                 </div>
               ))}
             </div>
-            <div className="mt-6 rounded-[1.5rem] border border-primary/20 bg-primary/8 p-5">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Aterrizaje</p>
-              <p className="mt-3 text-xl leading-relaxed text-foreground">
-                El límite no es solo técnico. También es operativo: responsabilidades, trazabilidad, soporte y criterio
-                para parar o escalar.
-              </p>
-            </div>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
 
         <motion.div
           className="mt-8 rounded-[2rem] border border-primary/25 bg-primary/10 p-8 text-center md:p-10"
@@ -105,7 +134,7 @@ export function ClosingSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.45 }}
         >
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Cierre</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Ideas clave</p>
           <div className="mt-8 grid gap-4 lg:grid-cols-3">
             {finalIdeas.map((idea, index) => (
               <div
@@ -118,11 +147,6 @@ export function ClosingSection() {
               </div>
             ))}
           </div>
-          <p className="mx-auto mt-10 max-w-4xl text-3xl font-semibold leading-relaxed text-balance text-foreground md:text-4xl">
-            El valor no está en ejecutar IA en local por defecto.
-            <br />
-            Está en saber cuándo debe estar cerca de tus datos, cuándo conviene usar cloud y cómo sostener la decisión.
-          </p>
         </motion.div>
       </div>
     </section>

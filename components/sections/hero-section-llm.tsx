@@ -4,38 +4,38 @@ import { motion } from "framer-motion"
 
 const agenda = [
   {
-    label: "Más allá del prompt",
-    detail: "Entender que el prompt es una pieza del sistema, no todo el sistema.",
+    label: "Qué es un Wiki LLM",
+    detail: "Del LLM que olvida todo al vault que recuerda: qué cambia cuando el conocimiento persiste.",
   },
   {
-    label: "Diseñar contexto útil",
-    detail: "Decidir qué entra, qué no entra, con qué autoridad y cómo se valida.",
+    label: "La herramienta",
+    detail: "Obsidian + GitHub como base de conocimiento compartida, versionada y lista para la IA.",
   },
   {
-    label: "Contexto en proyectos",
-    detail: "Usar el repositorio para que Copilot y los agentes no tengan que improvisar.",
+    label: "Demo: Proyecto",
+    detail: "Decisiones de arquitectura, dead ends y contexto técnico que la IA consulta sola.",
   },
   {
-    label: "Cierre",
-    detail: "Quedarnos con criterios simples para preparar contexto sin meter ruido.",
+    label: "Demo: Equipo",
+    detail: "Perfiles de madurez IA generados y consultados sin tocar un Excel.",
   },
 ]
 
-export function HeroSection() {
+export function HeroSectionLLM() {
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(74,145,255,0.22),transparent_30%),linear-gradient(180deg,rgba(7,10,18,1)_0%,rgba(9,13,21,0.98)_54%,rgba(12,16,26,1)_100%)]" />
       <div className="absolute inset-0 bg-[linear-gradient(rgba(100,150,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(100,150,255,0.03)_1px,transparent_1px)] bg-[size:88px_88px]" />
       <div className="absolute left-1/2 top-20 h-[28rem] w-[28rem] -translate-x-1/2 rounded-full bg-primary/12 blur-3xl" />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col px-6 py-24 lg:py-32">
+      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col px-6 py-24 lg:py-32">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <span className="inline-flex rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium uppercase tracking-[0.18em] text-primary">
-            Charla 6 - Context Engineering
+            Charla 11 — Wiki LLM
           </span>
         </motion.div>
 
@@ -45,7 +45,7 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.08, ease: "easeOut" }}
         >
-          Context Engineering
+          La IA que recuerda a tu equipo
         </motion.h1>
 
         <motion.p
@@ -54,8 +54,8 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.16, ease: "easeOut" }}
         >
-          La IA no responde solo a lo que escribimos en el chat. Responde a todo lo que puede ver: instrucciones,
-          historial, documentos, ejemplos, archivos del proyecto y reglas persistentes.
+          Cada conversación nueva empieza desde cero. Hoy vamos a ver cómo cambiar eso: un vault de conocimiento
+          en markdown que la IA consulta, actualiza y mantiene por ti.
         </motion.p>
 
         <motion.div
@@ -70,7 +70,7 @@ export function HeroSection() {
               className="rounded-[1.75rem] border border-border/70 bg-card/70 px-6 py-7 backdrop-blur"
             >
               <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-primary/90">
-                Bloque {index + 1}
+                {index < 2 ? `Bloque ${index + 1}` : `Demo ${index - 1}`}
               </p>
               <h2 className="mt-5 text-3xl font-semibold leading-tight text-balance text-foreground">
                 {item.label}
@@ -87,8 +87,8 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.28, ease: "easeOut" }}
         >
           <p className="text-2xl font-semibold leading-snug text-balance text-foreground md:text-3xl">
-            La idea de hoy es sencilla: preparar buen contexto para que la IA entienda mejor la tarea, el proyecto y los
-            límites antes de pedirle trabajo.
+            El conocimiento más valioso de tu empresa no está en los documentos. Está en las cabezas.
+            Y las cabezas no se indexan.
           </p>
         </motion.div>
       </div>

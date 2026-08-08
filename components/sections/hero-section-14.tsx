@@ -1,41 +1,45 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
 const agenda = [
   {
-    label: "Más allá del prompt",
-    detail: "Entender que el prompt es una pieza del sistema, no todo el sistema.",
+    label: "Casos reales",
+    detail:
+      "Empresas que aprendieron lo que cuesta la falta de gobernanza. Ninguna quiso equivocarse.",
   },
   {
-    label: "Diseñar contexto útil",
-    detail: "Decidir qué entra, qué no entra, con qué autoridad y cómo se valida.",
+    label: "Niveles de riesgo",
+    detail:
+      "El EU AI Act traducido a nuestro día a día. No toda IA pesa igual.",
   },
   {
-    label: "Contexto en proyectos",
-    detail: "Usar el repositorio para que Copilot y los agentes no tengan que improvisar.",
+    label: "Según tu rol",
+    detail:
+      "Developer, comercial, RRHH, management. La gobernanza no es igual para todos.",
   },
   {
-    label: "Cierre",
-    detail: "Quedarnos con criterios simples para preparar contexto sin meter ruido.",
+    label: "Política de uso",
+    detail:
+      "Un documento accionable. Qué compartir, qué herramientas, quién revisa, qué hacer si algo sale mal.",
   },
-]
+];
 
-export function HeroSection() {
+export function HeroSectionGovernance() {
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(74,145,255,0.22),transparent_30%),linear-gradient(180deg,rgba(7,10,18,1)_0%,rgba(9,13,21,0.98)_54%,rgba(12,16,26,1)_100%)]" />
       <div className="absolute inset-0 bg-[linear-gradient(rgba(100,150,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(100,150,255,0.03)_1px,transparent_1px)] bg-[size:88px_88px]" />
       <div className="absolute left-1/2 top-20 h-[28rem] w-[28rem] -translate-x-1/2 rounded-full bg-primary/12 blur-3xl" />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col px-6 py-24 lg:py-32">
+      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col px-6 py-24 lg:py-32">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <span className="inline-flex rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium uppercase tracking-[0.18em] text-primary">
-            Charla 6 - Context Engineering
+            Charla 14
           </span>
         </motion.div>
 
@@ -45,7 +49,7 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.08, ease: "easeOut" }}
         >
-          Context Engineering
+          Gobernanza de IA
         </motion.h1>
 
         <motion.p
@@ -54,8 +58,9 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.16, ease: "easeOut" }}
         >
-          La IA no responde solo a lo que escribimos en el chat. Responde a todo lo que puede ver: instrucciones,
-          historial, documentos, ejemplos, archivos del proyecto y reglas persistentes.
+          La semana pasada aprendimos a medir si la IA funciona. Hoy vamos un
+          paso más allá: las reglas para usarla de forma segura. Las que casi
+          nadie os ha explicado.
         </motion.p>
 
         <motion.div
@@ -75,7 +80,9 @@ export function HeroSection() {
               <h2 className="mt-5 text-3xl font-semibold leading-tight text-balance text-foreground">
                 {item.label}
               </h2>
-              <p className="mt-4 text-base leading-relaxed text-foreground/72 md:text-lg">{item.detail}</p>
+              <p className="mt-4 text-base leading-relaxed text-foreground/72 md:text-lg">
+                {item.detail}
+              </p>
             </div>
           ))}
         </motion.div>
@@ -87,11 +94,11 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.28, ease: "easeOut" }}
         >
           <p className="text-2xl font-semibold leading-snug text-balance text-foreground md:text-3xl">
-            La idea de hoy es sencilla: preparar buen contexto para que la IA entienda mejor la tarea, el proyecto y los
-            límites antes de pedirle trabajo.
+            El Shadow AI no es mala fe. Es falta de reglas claras. Hoy las
+            damos.
           </p>
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

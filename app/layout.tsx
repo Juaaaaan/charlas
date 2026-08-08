@@ -1,15 +1,15 @@
-﻿import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
-import "./globals.css"
+﻿import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import "./globals.css";
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+const _geist = Geist({ subsets: ["latin"] });
+const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Charla 5 | IA en local",
+  title: "Charla 14 | Gobernanza de IA",
   description:
-    "Charla interna sobre IA en local, modelos, casos de uso, límites y criterios para decidir entre ejecución local y cloud.",
+    "Charla interna sobre gobernanza de IA: casos reales, niveles de riesgo del EU AI Act, política de uso y autoevaluación del nivel de madurez.",
   generator: "v0.app",
   icons: {
     icon: [
@@ -28,12 +28,12 @@ export const metadata: Metadata = {
     ],
     apple: "/apple-icon.png",
   },
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="es">
@@ -42,6 +42,5 @@ export default function RootLayout({
         {process.env.NODE_ENV === "production" && <Analytics />}
       </body>
     </html>
-  )
+  );
 }
-
