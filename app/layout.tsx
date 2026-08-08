@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
@@ -7,9 +7,9 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Charla 14 | Gobernanza de IA",
+  title: "Charlas de IA",
   description:
-    "Charla interna sobre gobernanza de IA: casos reales, niveles de riesgo del EU AI Act, política de uso y autoevaluación del nivel de madurez.",
+    "Serie interna de charlas sobre IA generativa orientada a negocio y tecnología. Cada charla, su propia página.",
   generator: "v0.app",
   icons: {
     icon: [
