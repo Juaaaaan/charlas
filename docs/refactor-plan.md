@@ -1,7 +1,6 @@
 # Plan de refactor — serie de charlas
 
-> Documento de trabajo en la rama `refactor-talks`. Se puede borrar cuando el refactor esté cerrado.
-> `refactor-talks` parte de `main` y no la toca hasta que se abra el PR.
+> Documento de trabajo. Se puede borrar cuando el refactor esté cerrado.
 
 ## Decisión
 
@@ -15,39 +14,38 @@
 app/
   page.tsx                     -> home / índice (lee lib/charlas.ts)
   layout.tsx                   -> shell compartido
-  charla-15-seguridad/
-    page.tsx                   -> ruta de la charla
+  charla-NN-tema/
+    page.tsx                   -> ruta de la charla (con metadata propia)
     AGENTS.md                  -> contexto de ESTA charla
-    sections/                  -> secciones de la charla (colocadas junto a la ruta)
-  charla-02-copilot/
-    page.tsx
-    AGENTS.md
-    sections/
-  ...
+    sections/                  -> secciones (objetivo: colocadas aquí)
 components/
-  ui/                          -> shadcn (compartido, se queda)
+  ui/                          -> shadcn (compartido)
   section-divider.tsx          -> compartido entre charlas
 lib/
-  charlas.ts                   -> metadatos: titulo, slug, fecha, resumen, ruta
+  charlas.ts                   -> metadatos de cada charla (la home lee este array)
 AGENTS.md                      -> global (destilado)
 ```
 
-## AGENTS.md
+## Progreso
 
-- El `AGENTS.md` actual es, en realidad, el de la charla 15 (contexto especifico de esa charla).
-- Se parte en dos: un global destilado (stack, comandos, criterios de diseno/editoriales, como
-  se anade una charla nueva, reglas de ramas/PR) + un `AGENTS.md` por charla con su contexto congelado.
-- Charla 15: su `AGENTS.md` por charla sale casi tal cual del `AGENTS.md` actual.
-- Charlas antiguas (2, 13, 14, y las de sufijo tematico -llm/-concept/-mcp): su contexto se fue
-  sobrescribiendo, asi que hara falta su guion para reconstruirlo con fidelidad.
-
-## Quick-wins
-
+### Quick-wins (refactor-talks)
 - [x] Ignorar `*.tsbuildinfo` y dejar de trackear `tsconfig.tsbuildinfo`
-- [x] Borrar `b_ngRYSNmjpRs.zip` (export viejo de v0 de abril 2026, redundante: ya estaba todo en el repo)
+- [x] Borrar `b_ngRYSNmjpRs.zip` (export viejo de v0)
 - [ ] Sacar los `.md` sueltos al Vault (los mueve el autor a mano)
 
-## Pendiente antes de construir
+### Rutas migradas
+- [x] Charla 15 — Seguridad en IA → `/charla-15-seguridad` (refactor-talks)
+- [x] Charla 14 — Gobernanza de IA → `/charla-14-gobernanza` (second-refactor-talks)
+- [x] Charla 13 — Copilot Studio → `/charla-13-copilot-studio` (second-refactor-talks)
+- [x] Charla 12 — El mapa de la IA → `/charla-12-mapa-ia` (second-refactor-talks)
 
-- Confirmar la lista de charlas a incluir en la home + nombres de carpeta/slug.
-- Pasar los guiones de cada charla (viven en el Vault) para reconstruir rutas y `AGENTS.md` por charla.
+### AGENTS.md por charla
+- [x] Charla 15 (del AGENTS.md original)
+- [x] Charla 14 (de su rama feat/charla-14)
+- [x] Charla 13 (reconstruido desde guion del Vault)
+- [x] Charla 12 (de su rama feat/charla-12)
+
+### Pendiente
+- [ ] Colocar secciones dentro de `app/charla-NN-tema/sections/` (requiere `git rm` de las viejas)
+- [ ] Limpiar el cementerio de `components/sections/` una vez todas las charlas estén migradas
+- [ ] Migrar charlas anteriores (¿existen ramas feat/charla-11, -8, etc.?)
