@@ -11,7 +11,6 @@ export type Charla = {
 };
 
 // Índice de la serie. La home (app/page.tsx) lee este array.
-// Se va completando a medida que se migra cada charla al nuevo formato.
 export const charlas: Charla[] = [
   {
     numero: 15,
@@ -51,6 +50,26 @@ export const charlas: Charla[] = [
     fecha: "Julio 2026",
     resumen:
       "Un marco de cuatro niveles de madurez que conecta todo lo visto en charlas anteriores: fundamentos, diez conceptos intermedios, el momento wow y hacia dónde va la IA a 12-18 meses.",
+    estado: "publicada",
+  },
+  {
+    numero: 11,
+    slug: "charla-11-wiki-llm",
+    titulo: "Wiki LLM",
+    tema: "La IA que recuerda a tu equipo",
+    fecha: "Julio 2026",
+    resumen:
+      "Convertir el conocimiento que solo existe en las cabezas en memoria persistente: Wiki LLM con Obsidian y GitHub, formato OKF, y dos demos desde perspectiva developer y gestión.",
+    estado: "publicada",
+  },
+  {
+    numero: 10,
+    slug: "charla-10-instrucciones-ia",
+    titulo: "Instruyendo a la IA",
+    tema: ".github/ y .claude/ — instrucciones persistentes",
+    fecha: "Julio 2026",
+    resumen:
+      "El onboarding que le harías a un developer nuevo, escrito una vez en un fichero: copilot-instructions.md, AGENTS.md, agentes developer + reviewer y cómo construir confianza en capas.",
     estado: "publicada",
   },
 ];
