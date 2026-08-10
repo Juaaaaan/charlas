@@ -35,7 +35,7 @@ export function HeroSectionCopilot() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <span className="inline-flex rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium uppercase tracking-[0.18em] text-primary">
-            Charla 8 — Instruyendo a la IA
+            Charla 10 — Instruyendo a la IA
           </span>
         </motion.div>
 
