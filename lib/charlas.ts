@@ -12,13 +12,6 @@ export type Charla = {
 
 // Índice de la serie. La home (app/page.tsx) lee este array.
 // Se va completando a medida que se migra cada charla al nuevo formato.
-//
-// TODO (pendiente de datos reales): charlas anteriores que existen en ramas
-// feat/charla-N pero aún no migradas a ruta propia. Conocidas por ahora:
-//   - Charla 14 — Gobernanza de IA
-//   - Charla 5  — IA en local
-//   - Charla 2  — Agentes de IA / Microsoft 365 Copilot
-//   (+ otras: LLMs, conceptos, MCP... por confirmar número y título)
 export const charlas: Charla[] = [
   {
     numero: 15,
@@ -28,6 +21,36 @@ export const charlas: Charla[] = [
     fecha: "Agosto 2026",
     resumen:
       "Por qué la seguridad en IA es distinta: dato e instrucción por el mismo canal, prompt injection, seis capas de defensa, nueve casos reales en producción y riesgo de cadena de suministro.",
+    estado: "publicada",
+  },
+  {
+    numero: 14,
+    slug: "charla-14-gobernanza",
+    titulo: "Gobernanza de IA",
+    tema: "EU AI Act, política de uso y madurez en gobernanza",
+    fecha: "Julio 2026",
+    resumen:
+      "Shadow AI, niveles de riesgo del EU AI Act, qué le toca vigilar a cada rol, una política de uso accionable y autoevaluación del nivel de madurez con el framework de 8 dimensiones.",
+    estado: "publicada",
+  },
+  {
+    numero: 13,
+    slug: "charla-13-copilot-studio",
+    titulo: "De saber a medir: Copilot Studio",
+    tema: "Construir un agente y medir si la IA funciona",
+    fecha: "Julio 2026",
+    resumen:
+      "Construir un agente en Copilot Studio sin código, desplegarlo en Teams con conocimiento corporativo y medir si funciona de verdad: engagement, resolution y deflection rate.",
+    estado: "publicada",
+  },
+  {
+    numero: 12,
+    slug: "charla-12-mapa-ia",
+    titulo: "El mapa de la IA",
+    tema: "Cuatro niveles de madurez y diez conceptos clave",
+    fecha: "Julio 2026",
+    resumen:
+      "Un marco de cuatro niveles de madurez que conecta todo lo visto en charlas anteriores: fundamentos, diez conceptos intermedios, el momento wow y hacia dónde va la IA a 12-18 meses.",
     estado: "publicada",
   },
 ];
