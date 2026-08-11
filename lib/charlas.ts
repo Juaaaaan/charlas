@@ -13,6 +13,16 @@ export type Charla = {
 // Índice de la serie. La home (app/page.tsx) lee este array.
 export const charlas: Charla[] = [
   {
+    numero: 16,
+    slug: "charla-16-del-prompt-al-blueprint",
+    titulo: "Del prompt al blueprint",
+    tema: "SDD con herramientas: spec manual vs OpenSpec",
+    fecha: "Agosto 2026",
+    resumen:
+      "Cuando el agente ya escribe el código, el cuello de botella se mueve a saber pedir. Refresco de SDD, anatomía del spec manual, el ecosistema 2026 (OpenSpec / Spec Kit / Kiro) y una demo en directo de un issue de Jira a código con OpenSpec sobre RCA.",
+    estado: "publicada",
+  },
+  {
     numero: 15,
     slug: "charla-15-seguridad",
     titulo: "Seguridad en IA",
@@ -62,16 +72,17 @@ export const charlas: Charla[] = [
       "Convertir el conocimiento que solo existe en las cabezas en memoria persistente: Wiki LLM con Obsidian y GitHub, formato OKF, y dos demos desde perspectiva developer y gestión.",
     estado: "publicada",
   },
-  {
-    numero: 10,
-    slug: "charla-10-instrucciones-ia",
-    titulo: "Instruyendo a la IA",
-    tema: ".github/ y .claude/ — instrucciones persistentes",
-    fecha: "Julio 2026",
-    resumen:
-      "El onboarding que le harías a un developer nuevo, escrito una vez en un fichero: copilot-instructions.md, AGENTS.md, agentes developer + reviewer y cómo construir confianza en capas.",
-    estado: "publicada",
-  },
+  // TODO: añadir charla 10 cuando esté lista. Por ahora la dejamos comentada para que no aparezca en la home.
+  // {
+  //   numero: 10,
+  //   slug: "charla-10-instrucciones-ia",
+  //   titulo: "Instruyendo a la IA",
+  //   tema: ".github/ y .claude/ — instrucciones persistentes",
+  //   fecha: "Julio 2026",
+  //   resumen:
+  //     "El onboarding que le harías a un developer nuevo, escrito una vez en un fichero: copilot-instructions.md, AGENTS.md, agentes developer + reviewer y cómo construir confianza en capas.",
+  //   estado: "publicada",
+  // },
 ];
 
 // Charlas ordenadas de más reciente a más antigua (para la home).
