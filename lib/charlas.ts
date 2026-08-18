@@ -13,6 +13,16 @@ export type Charla = {
 // Índice de la serie. La home (app/page.tsx) lee este array.
 export const charlas: Charla[] = [
   {
+    numero: 17,
+    slug: "charla-17-elegir-bien-ia",
+    titulo: "Elegir bien la IA",
+    tema: "Herramienta, modelo y modo de trabajo: un método de decisión en 4 capas",
+    fecha: "Agosto 2026",
+    resumen:
+      "Vuelta al público general tras el bloque técnico. De usuario ingenuo a usuario con criterio: un método que no caduca en cuatro capas — qué IA abrir, qué modelo elegir (el dial rápido/razonador y el mapa de proveedores), en qué modo de trabajo ponerla (preguntar/investigar/recordar/actuar) y cuánto verificar.",
+    estado: "publicada",
+  },
+  {
     numero: 16,
     slug: "charla-16-del-prompt-al-blueprint",
     titulo: "Del prompt al blueprint",
