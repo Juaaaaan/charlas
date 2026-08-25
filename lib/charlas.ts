@@ -13,6 +13,16 @@ export type Charla = {
 // Índice de la serie. La home (app/page.tsx) lee este array.
 export const charlas: Charla[] = [
   {
+    numero: 18,
+    slug: "charla-18-como-piensa-ia",
+    titulo: "Abriendo la caja",
+    tema: "Cómo piensa la IA por dentro: cuatro mecanismos, vistos ocurrir sobre datos reales",
+    fecha: "Agosto 2026",
+    resumen:
+      "Un peldaño más adentro tras aprender a elegir bien la IA (Charla 17): abrimos la tapa, sin una línea de código. Sobre un Excel de proyecto real afloran cuatro mecanismos internos — predice el patrón, busca por significado (embeddings), alucina sin fuente (el peligro se ha movido en 2026) y su ventana de contexto se llena — cada uno visto en directo y cerrado con un «y por eso, cuando la uses, haz X». Demo en vivo con Copilot en Excel y un chatbot general.",
+    estado: "publicada",
+  },
+  {
     numero: 17,
     slug: "charla-17-elegir-bien-ia",
     titulo: "Elegir bien la IA",
