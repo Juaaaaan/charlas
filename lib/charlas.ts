@@ -13,6 +13,16 @@ export type Charla = {
 // Índice de la serie. La home (app/page.tsx) lee este array.
 export const charlas: Charla[] = [
   {
+    numero: 19,
+    slug: "charla-19-agentes-que-colaboran",
+    titulo: "De responder a actuar",
+    tema: "Varios agentes que colaboran en Copilot Studio: coordinador, especialistas y checkpoint humano",
+    fecha: "Septiembre 2026",
+    resumen:
+      "El salto desde el agente que respondía (Charla 13) a un equipo que actúa. Recorrido guiado del agente multiagente «Analista de RFP» en Copilot Studio: un coordinador reparte el trabajo entre tres especialistas — extraer requisitos, detectar riesgos y estimar esfuerzo — que se coordinan con lenguaje, no con código. Analiza un pliego de licitación sintético, caza sus trampas (una fecha imposible, un requisito escondido) y vuelca el resultado a un Excel real vía Power Automate. Antes de escribir nada, se para y te pide la última palabra: el checkpoint humano es el corazón. Parte 1 de 2.",
+    estado: "publicada",
+  },
+  {
     numero: 18,
     slug: "charla-18-como-piensa-ia",
     titulo: "Abriendo la caja",
