@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 const propiedades = [
   {
     numero: "01",
-    titulo: "Es abierto",
+    titulo: "Es abierto de verdad",
     detalle:
-      "El código está a la vista y cualquiera lo puede auditar. No es una caja negra.",
-    frenteA: "Frente a: no puedes ver por dentro cómo está hecho",
+      "Licencia MIT y el código entero público: más de 900 personas contribuyendo y 27.000 copias —forks— circulando. Podéis ver cada línea, cambiarla y montarlo en vuestra propia casa.",
+    frenteA: "Frente a: con Claude Code o Copilot no veis ni una línea",
   },
   {
     numero: "02",
@@ -24,6 +24,14 @@ const propiedades = [
       "Si el motor es interno o local, vuestro código nunca viaja a un tercero. Puede funcionar incluso en entornos aislados, sin internet.",
     frenteA: "Frente a: vuestro código sale a un servidor de fuera",
   },
+];
+
+// Cifras verificadas en septiembre de 2026. Revisar antes de reutilizarlas.
+const cifras = [
+  { dato: "MIT", que: "Licencia libre: código público y modificable" },
+  { dato: "75+", que: "Proveedores de modelo, incluidos locales (Ollama, LM Studio)" },
+  { dato: "900+", que: "Personas contribuyendo al proyecto" },
+  { dato: "~7,5M", que: "Desarrolladores al mes" },
 ];
 
 export function OpenCodeSection20() {
@@ -89,10 +97,49 @@ export function OpenCodeSection20() {
             Y no es un experimento de garaje
           </p>
           <p className="mt-4 max-w-4xl text-lg leading-relaxed text-foreground/80">
-            Es una de las herramientas de su tipo más usadas del mundo, y se
-            conecta con decenas de proveedores distintos, incluidos modelos
-            locales. Vive en la terminal, pero también tiene app de escritorio y
-            extensión para el editor: no es solo para gente muy técnica.
+            Es una de las herramientas de su tipo más usadas del mundo. Vive en
+            la terminal, pero también tiene app de escritorio y extensión para el
+            editor: no es solo para gente muy técnica.
+          </p>
+          <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {cifras.map((c, index) => (
+              <motion.div
+                key={c.dato}
+                className="rounded-[1.5rem] border border-border/60 bg-background/40 px-5 py-5"
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-20px" }}
+                transition={{ duration: 0.4, delay: index * 0.06 }}
+              >
+                <p className="text-2xl font-semibold text-foreground">
+                  {c.dato}
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-foreground/65">
+                  {c.que}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        <motion.div
+          className="mt-8 rounded-[1.75rem] border border-border/70 bg-card/70 px-6 py-8 md:px-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-30px" }}
+          transition={{ duration: 0.5 }}
+        >
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">
+            «Pero esto se parece muchísimo a Claude Code o a Copilot»
+          </p>
+          <p className="mt-5 text-lg leading-relaxed text-foreground/82">
+            Y tiene toda la razón quien lo piense: se usa parecido y hacen el
+            mismo trabajo. La diferencia no está en cómo se usa — está en{" "}
+            <span className="font-semibold text-foreground">de quién es</span>.
+            Uno lo puedes abrir, cambiar y traer a casa. El otro no.{" "}
+            <span className="font-semibold text-foreground">
+              Misma cara, dueño distinto.
+            </span>
           </p>
         </motion.div>
 
