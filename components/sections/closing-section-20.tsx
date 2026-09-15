@@ -77,7 +77,9 @@ export function ClosingSection20() {
               está aquí. Quiero que la conozcáis, aunque no la toquéis, por si os
               llega la oportunidad de trabajar con ella. Mejor que os pille
               sabiendo lo que es. Y quién sabe: igual la semana que viene, con
-              más tiempo, dejamos de hablar y montamos algo de verdad.
+              más tiempo, dejamos de hablar y montamos algo de verdad — un
+              frontal propio para crear y lanzar agentes, con OpenCode de motor
+              por debajo.
             </p>
           </motion.div>
         </div>
