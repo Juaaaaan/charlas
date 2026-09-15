@@ -89,6 +89,27 @@ export function PorQueImportaSection20() {
         </motion.div>
 
         <motion.div
+          className="mt-8 rounded-[1.75rem] border border-border/70 bg-card/70 px-6 py-8 md:px-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-30px" }}
+          transition={{ duration: 0.5 }}
+        >
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-foreground/60">
+            Y un paso más · porque es abierto, se construye encima
+          </p>
+          <p className="mt-4 max-w-4xl text-lg leading-relaxed text-foreground/80">
+            Como el motor es abierto, la gente monta sus propias aplicaciones
+            usándolo por debajo: interfaces web, apps de escritorio, de móvil.
+            OpenCode hace de motor, y tú le pones la cara que quieras. Eso con
+            una caja cerrada es imposible.{" "}
+            <span className="font-semibold text-foreground">
+              Guardad esta idea para el final.
+            </span>
+          </p>
+        </motion.div>
+
+        <motion.div
           className="mt-10 rounded-[2rem] border border-primary/20 bg-primary/8 p-8 text-center md:p-10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
