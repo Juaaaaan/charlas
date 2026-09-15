@@ -13,6 +13,16 @@ export type Charla = {
 // Índice de la serie. La home (app/page.tsx) lee este array.
 export const charlas: Charla[] = [
   {
+    numero: 20,
+    slug: "charla-20-opencode",
+    titulo: "La otra correa del arnés",
+    tema: "El ejecutor abierto: quién controla la IA que usa tu empresa y dónde viven tus datos",
+    fecha: "Septiembre 2026",
+    resumen:
+      "Charla de criterio, sin demo: el arnés tiene dos correas y hasta ahora solo habíamos mirado una. Especificar (la 16) no es lo mismo que ejecutar. El ejecutor cerrado —Claude Code, GitHub Copilot— es potente, pero viene con una decisión ya tomada por el proveedor: un único motor, una caja que no se abre y tu código saliendo fuera. Enfrente, un ejecutor abierto como OpenCode hace el mismo trabajo con el motor que tú elijas y sin que los datos salgan de casa. Por qué eso aparece en soluciones internas, qué cambia para una aseguradora que no puede sacar sus datos, y las tres preguntas que permiten entender —y pedir cuentas sobre— una decisión que otros están tomando por ti.",
+    estado: "publicada",
+  },
+  {
     numero: 19,
     slug: "charla-19-agentes-que-colaboran",
     titulo: "De responder a actuar",
