@@ -13,6 +13,16 @@ export type Charla = {
 // Índice de la serie. La home (app/page.tsx) lee este array.
 export const charlas: Charla[] = [
   {
+    numero: 22,
+    slug: "charla-22-ia-first",
+    titulo: "IA-first: pregúntale primero",
+    tema: "La mentalidad IA-first y el ciclo de seis paradas que ya conocíais, con ejemplos de toda la serie",
+    fecha: "Octubre 2026",
+    resumen:
+      "Charla de hábito, no de adopción: la IA ya se usa, falta el reflejo de usarla por defecto. Define la mentalidad IA-first —la IA como primera pregunta, no como solución automática— con un antes/después, y recorre el ciclo de cualquier trabajo (idea → especificar → construir → comprobar → publicar → mantener) repitiendo esa pregunta seis veces, cada parada anclada a un ejemplo ya visto en la serie: RRHH, el SDD de la 16, el menú de OpenCode de la 20, el checkpoint del Analista de RFP de la 19, y la memoria persistente de las charlas 11 y 8. Incluye un ejercicio en vivo con una tarea real de cada asistente.",
+    estado: "publicada",
+  },
+  {
     numero: 20,
     slug: "charla-20-opencode",
     titulo: "La otra correa del arnés",
