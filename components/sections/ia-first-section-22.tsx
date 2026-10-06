@@ -16,14 +16,15 @@ export function IaFirstSection22() {
           transition={{ duration: 0.6 }}
         >
           <span className="mb-4 block text-sm font-medium uppercase tracking-[0.2em] text-primary">
-            Bloque 3 · El giro
+            Bloque 2 · El giro
           </span>
           <h2 className="mb-6 text-4xl font-bold text-balance text-foreground md:text-5xl lg:text-6xl">
             La mentalidad IA-first
           </h2>
           <p className="mx-auto max-w-3xl text-xl leading-relaxed text-foreground/76 md:text-2xl">
-            No significa que la IA sea siempre la solución. Significa que es
-            siempre la primera pregunta.
+            «Primero» no significa apagar la cabeza. Primero entendéis el
+            problema y pensáis una solución; antes de ejecutarla, le hacéis
+            una segunda pregunta a la IA.
           </p>
         </motion.div>
 
@@ -35,13 +36,84 @@ export function IaFirstSection22() {
           transition={{ duration: 0.5 }}
         >
           <p className="mx-auto max-w-3xl text-2xl font-semibold leading-snug text-balance text-foreground md:text-3xl">
-            Antes de decidir cómo lo hacéis, antes de poneros con ello
-            vosotros solos, la primera parada es ella.
+            La IA es la primera conversación sobre tu solución, no la última
+            decisión.
           </p>
         </motion.div>
 
         <motion.p
           className="mb-6 text-sm font-semibold uppercase tracking-[0.16em] text-foreground/60"
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+        >
+          Un concepto real, bajado de escala
+        </motion.p>
+
+        <div className="grid gap-4 md:grid-cols-2">
+          <motion.div
+            className="flex flex-col rounded-[1.75rem] border border-border/70 bg-card/70 px-6 py-8 md:px-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-30px" }}
+            transition={{ duration: 0.5 }}
+          >
+            <span className="inline-flex w-fit rounded-full border border-border/70 bg-background/40 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-foreground/60">
+              AI-enabled
+            </span>
+            <h3 className="mt-5 text-xl font-semibold leading-tight text-foreground">
+              Usarla de vez en cuando
+            </h3>
+            <p className="mt-4 text-base leading-relaxed text-foreground/78">
+              Recurrir a la IA para una tarea suelta, cuando os acordáis. Es
+              un complemento que se añade al final, no el punto de partida.
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="flex flex-col rounded-[1.75rem] border border-primary/25 bg-primary/8 px-6 py-8 md:px-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-30px" }}
+            transition={{ duration: 0.5, delay: 0.08 }}
+          >
+            <span className="inline-flex w-fit rounded-full border border-primary/30 bg-primary/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-primary">
+              AI-first
+            </span>
+            <h3 className="mt-5 text-xl font-semibold leading-tight text-foreground">
+              El punto de partida
+            </h3>
+            <p className="mt-4 text-base leading-relaxed text-foreground/82">
+              Normalmente se habla de esto a nivel de empresa entera — cómo
+              rediseña sus procesos y su forma de decidir. Hoy lo bajamos de
+              escala: no la empresa, vosotros. El mismo principio, aplicado a
+              cada tarea de vuestro día a día.
+            </p>
+          </motion.div>
+        </div>
+
+        <motion.div
+          className="mt-6 rounded-[1.75rem] border border-border/70 bg-card/70 px-6 py-8 md:px-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-30px" }}
+          transition={{ duration: 0.5 }}
+        >
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">
+            IA-first no es IA-only ni IA-always
+          </p>
+          <p className="mt-5 text-lg leading-relaxed text-foreground/82">
+            No significa que la IA sea siempre la solución, que haga todo el
+            trabajo o que decida por vosotros. Una vez entendido el problema
+            y antes de ejecutar vuestra solución, comprobáis si puede
+            aportar opciones, preguntas, velocidad o contraste. A veces la
+            respuesta será sí; otras veces, no merece la pena usarla.
+          </p>
+        </motion.div>
+
+        <motion.p
+          className="mb-6 mt-14 text-sm font-semibold uppercase tracking-[0.16em] text-foreground/60"
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -59,16 +131,18 @@ export function IaFirstSection22() {
             transition={{ duration: 0.5 }}
           >
             <span className="inline-flex w-fit rounded-full border border-border/70 bg-background/40 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-foreground/60">
-              Modelo antiguo
+              Modelo tradicional
             </span>
             <h3 className="mt-5 text-xl font-semibold leading-tight text-foreground">
-              Abrir el Word y empezar solos
+              Entender, pensar y ejecutar seguido
             </h3>
             <p className="mt-4 text-base leading-relaxed text-foreground/78">
-              Os ponéis a escribir el guion de la reunión desde cero. Media
-              hora después tenéis algo. Y puede que se os haya olvidado algo
-              importante, porque lo habéis pensado solos, con vuestra cabeza y
-              nada más.
+              Entendéis que necesitáis preparar la reunión, pensáis los
+              objetivos y abrís un Word para escribir el guion. Esa primera
+              reflexión es necesaria — el problema es recorrer todo el camino
+              sin una segunda pregunta: ¿en qué puede ayudarme aquí la IA?
+              Quizá os falte un riesgo, una objeción o una pregunta que no
+              habíais considerado.
             </p>
           </motion.div>
 
@@ -83,13 +157,15 @@ export function IaFirstSection22() {
               Modelo IA-first
             </span>
             <h3 className="mt-5 text-xl font-semibold leading-tight text-foreground">
-              Preguntar antes de abrir el Word
+              Una segunda pregunta antes de redactar
             </h3>
             <p className="mt-4 text-base leading-relaxed text-foreground/82">
-              «Mañana tengo una reunión con un cliente nuevo sobre esto, ¿qué
-              debería cubrir, y qué le preguntaría yo si estuviera en su
-              lugar?». Diez segundos después tenéis un primer borrador — con
-              cosas en las que ni habíais caído. Y ahora decidís.
+              Después de aclarar qué reunión tenéis y qué resultado buscáis,
+              pero antes de redactarlo todo, le preguntáis: «mañana tengo una
+              reunión con un cliente nuevo sobre esto, ¿qué debería cubrir, y
+              qué le preguntaría yo si estuviera en su lugar?». Diez segundos
+              después tenéis un primer borrador — con cosas en las que ni
+              habíais caído. Y ahora decidís.
             </p>
           </motion.div>
         </div>
@@ -106,10 +182,11 @@ export function IaFirstSection22() {
           </p>
           <p className="mt-5 text-lg leading-relaxed text-foreground/82">
             Puede que al final el guion lo escribáis enteramente vosotros. La
-            diferencia está en qué es lo primero que hacéis: antes, poneros a
-            ello directamente; ahora, preguntar antes de poneros a ello. Esa
-            es la primera puerta que tocáis, siempre — se note o no se note
-            después en el resultado.
+            diferencia está en no pasar directamente de entender el problema
+            a ejecutar la primera solución: entre ambas cosas abrís una
+            exploración con IA, y luego aplicáis vuestro criterio. Eso es
+            IA-first — incorporar la IA temprano, no obedecerla
+            automáticamente.
           </p>
           <p className="mt-6 text-base leading-relaxed text-foreground/70">
             <span className="font-semibold text-foreground">
@@ -130,7 +207,7 @@ export function IaFirstSection22() {
           transition={{ duration: 0.6 }}
         >
           <p className="mx-auto max-w-4xl text-3xl font-semibold leading-relaxed text-balance text-foreground md:text-4xl lg:text-[2.6rem]">
-            Antes de hacerlo tú, pregúntale primero.
+            Antes de invertir esfuerzo, pregúntale primero.
           </p>
         </motion.div>
       </div>

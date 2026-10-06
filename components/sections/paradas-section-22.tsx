@@ -8,6 +8,7 @@ type Parada = {
   fuente: string;
   concepto: string;
   ejemplo: string;
+  nota?: string;
   aplicado: string;
 };
 
@@ -37,11 +38,11 @@ const paradas: Parada[] = [
   {
     numero: "03",
     nombre: "Construir",
-    fuente: "El menú de OpenCode (Charla 20) · 9Router y Hermes Agent",
+    fuente: "El menú de OpenCode (Charla 20)",
     concepto:
       "A la hora de ejecutar, hay quien decide el motor por vosotros y hay quien os deja elegirlo. Antes de hacerlo vosotros, preguntadle quién —o qué— lo hace mejor.",
     ejemplo:
-      "¿Os acordáis del menú de OpenCode, donde elegíais qué IA hacía el trabajo? Esto no se ha parado ni una semana: han salido un primo de OpenCode, Hermes Agent, y una herramienta nueva, 9Router, que aplican el mismo reflejo a elegir herramienta — antes de usarla, preguntadle qué pasa con vuestros datos.",
+      "¿Os acordáis del menú de OpenCode, donde elegíais qué IA hacía el trabajo? El ejemplo no depende de que una herramienta concreta sobreviva — Hermes Agent o 9Router pueden servir como apunte de actualidad si siguen vigentes. La idea duradera es otra: antes de elegir herramienta, preguntad qué hace mejor, qué contexto necesita, cuánto control os deja y qué ocurre con vuestros datos.",
     aplicado:
       "La parte de «hacerlo» de vuestra tarea — ¿la ibais a hacer entera vosotros, o le habéis dejado sitio a la IA?",
   },
@@ -53,8 +54,9 @@ const paradas: Parada[] = [
       "Antes de dar algo por bueno vosotros solos, pregúntale que lo ponga a prueba.",
     ejemplo:
       "¿Os acordáis de aquel fichero de la 16, con las frases «dado que el usuario está en el catálogo, cuando selecciona una categoría, entonces solo se muestran esos productos»? Eso, sin que lo supierais entonces, ya era BDD: contarle el resultado esperado como una historia, para poder comprobar si se cumple.",
+    nota: "Esto no es solo para código. Antes de enviar un correo delicado, una propuesta o una presentación, podéis pedirle: actúa como el destinatario; busca ambigüedades, objeciones y cosas que podrían entenderse mal. La IA no valida la verdad ni sustituye una revisión experta: hace de segundo par de ojos.",
     aplicado:
-      "Antes de dar vuestra tarea por terminada, ¿le habéis pedido que la revise, o la vais a dar por buena solo porque os lo parece a vosotros?",
+      "Antes de dar vuestra tarea por terminada, ¿le habéis pedido que la revise desde otro punto de vista?",
   },
   {
     numero: "05",
@@ -132,6 +134,11 @@ export function ParadasSection22() {
               <p className="mt-4 text-base leading-relaxed text-foreground/70">
                 {parada.ejemplo}
               </p>
+              {parada.nota ? (
+                <p className="mt-4 text-base leading-relaxed text-foreground/70">
+                  {parada.nota}
+                </p>
+              ) : null}
 
               <div className="mt-5 rounded-[1.25rem] border border-primary/15 bg-primary/5 px-5 py-4">
                 <p className="text-sm font-semibold uppercase tracking-[0.12em] text-primary/80">

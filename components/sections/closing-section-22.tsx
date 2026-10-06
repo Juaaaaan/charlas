@@ -52,7 +52,11 @@ export function ClosingSection22() {
           transition={{ duration: 0.6 }}
         >
           <p className="mx-auto max-w-4xl text-3xl font-semibold leading-relaxed text-balance text-foreground md:text-4xl lg:text-[2.6rem]">
-            Antes de hacerlo tú, pregúntale primero.
+            Antes de invertir esfuerzo, pregúntale primero.
+          </p>
+          <p className="mx-auto mt-5 max-w-3xl text-lg leading-relaxed text-balance text-foreground/75 md:text-xl">
+            IA-first no es IA-only ni IA-always: la IA abre opciones; vuestro
+            criterio decide.
           </p>
         </motion.div>
 
@@ -68,8 +72,9 @@ export function ClosingSection22() {
           </p>
           <p className="mt-5 text-lg leading-relaxed text-foreground/82">
             El arnés que llevamos meses montando para la IA, podéis
-            ponéroslo también a vosotros mismos. La IA como primer borrador.
-            Vuestro criterio, la rienda.
+            ponéroslo también a vosotros mismos. Primero entendéis el
+            camino. La IA os ayuda a explorarlo y a recorrerlo mejor.
+            Vuestro criterio sigue llevando la rienda.
           </p>
         </motion.div>
       </div>

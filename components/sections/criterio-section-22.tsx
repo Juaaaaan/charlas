@@ -16,7 +16,7 @@ export function CriterioSection22() {
           transition={{ duration: 0.6 }}
         >
           <span className="mb-4 block text-sm font-medium uppercase tracking-[0.2em] text-primary">
-            Bloque 2 · ¿Construir o ya existe?
+            Bloque 3 · ¿Construir o ya existe?
           </span>
           <h2 className="mb-8 text-4xl font-bold text-balance text-foreground md:text-5xl lg:text-6xl">
             No todo necesita un agente
@@ -87,6 +87,25 @@ export function CriterioSection22() {
             repetitivo es como contratar un arquitecto para colgar un cuadro.
             Camino claro y pasos fijos, PowerApps. Hay que pensar y decidir en
             cada caso, agente.
+          </p>
+        </motion.div>
+
+        <motion.div
+          className="mt-6 rounded-[1.75rem] border border-border/70 bg-card/70 px-6 py-8 md:px-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-30px" }}
+          transition={{ duration: 0.5 }}
+        >
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">
+            Micro-ejemplo de límite
+          </p>
+          <p className="mt-5 text-lg leading-relaxed text-foreground/82">
+            Y a veces la conclusión será todavía más sencilla: no hace falta
+            IA. Si solo vais a corregir una fecha, confirmar un dato conocido
+            o responder un sí o un no, introducir un modelo puede añadir más
+            fricción que valor. IA-first significa evaluar pronto si aporta
+            algo — y descartarla pronto cuando no lo aporta.
           </p>
         </motion.div>
 

@@ -3,8 +3,8 @@ import Link from "next/link";
 
 import { SectionDivider } from "@/components/section-divider";
 import { HeroSection22 } from "@/components/sections/hero-section-22";
-import { CriterioSection22 } from "@/components/sections/criterio-section-22";
 import { IaFirstSection22 } from "@/components/sections/ia-first-section-22";
+import { CriterioSection22 } from "@/components/sections/criterio-section-22";
 import { EjercicioSection22 } from "@/components/sections/ejercicio-section-22";
 import { CicloSection22 } from "@/components/sections/ciclo-section-22";
 import { ParadasSection22 } from "@/components/sections/paradas-section-22";
@@ -13,7 +13,7 @@ import { ClosingSection22 } from "@/components/sections/closing-section-22";
 export const metadata: Metadata = {
   title: "Charla 22 · IA-first: pregúntale primero",
   description:
-    "Charla de hábito, no de adopción: la mentalidad IA-first y el ciclo que ya conocíais sin saberlo — idea, especificar, construir, comprobar, publicar, mantener — cada parada anclada a un ejemplo ya visto en la serie.",
+    "Charla de hábito, no de adopción: la mentalidad IA-first —la IA como primera conversación, no como última decisión— y el ciclo que ya conocíais sin saberlo: idea, especificar, construir, comprobar, publicar, mantener, cada parada anclada a un ejemplo ya visto en la serie.",
 };
 
 export default function Charla22Page() {
@@ -27,10 +27,10 @@ export default function Charla22Page() {
       </Link>
 
       <HeroSection22 />
-      <SectionDivider label="Bloque 2 · ¿Construir o ya existe?" />
-      <CriterioSection22 />
-      <SectionDivider label="Bloque 3 · El giro" />
+      <SectionDivider label="Bloque 2 · El giro" />
       <IaFirstSection22 />
+      <SectionDivider label="Bloque 3 · ¿Construir o ya existe?" />
+      <CriterioSection22 />
       <SectionDivider label="Bloque 4 · Ejercicio en vivo" />
       <EjercicioSection22 />
       <SectionDivider label="Bloque 5 · El hilo" />
