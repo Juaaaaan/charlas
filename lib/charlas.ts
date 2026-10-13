@@ -13,6 +13,16 @@ export type Charla = {
 // Índice de la serie. La home (app/page.tsx) lee este array.
 export const charlas: Charla[] = [
   {
+    numero: 23,
+    slug: "charla-23-bdd-odd-arnes",
+    titulo: "Comprobar antes de construir",
+    tema: "BDD, ODD y el arnés con nombre: quién decide qué significa correcto",
+    fecha: "Octubre 2026",
+    resumen:
+      "Charla con demo real sobre RCA. Cierra la mitad 'antes de construir' de la etapa Comprobar, introducida en la charla 22: la IA no debería decidir por sí sola qué significa correcto. Para lo importante, el criterio de éxito se escribe primero en BDD/Gherkin y se demuestra con una demo en vivo sobre el carrito de RCA. Para lo pequeño, un comportamiento proporcional por defecto —ODD— explora, clasifica y actúa sin convertir cada cambio en un proceso pesado. Cierra poniendo nombre, por primera vez en la serie, al sistema completo que rodea al modelo: AI harness engineering.",
+    estado: "publicada",
+  },
+  {
     numero: 22,
     slug: "charla-22-ia-first",
     titulo: "IA-first: pregúntale primero",
