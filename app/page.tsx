@@ -42,6 +42,30 @@ export default function Home() {
           Cada charla, su propia página.
         </motion.p>
 
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.22, ease: "easeOut" }}
+        >
+          <Link
+            href="/biblioteca"
+            className="group mt-12 inline-flex w-fit items-center gap-3 rounded-2xl border border-primary/30 bg-primary/10 px-5 py-4 transition-colors hover:border-primary/50 hover:bg-primary/15"
+          >
+            <span className="text-sm">
+              <span className="font-semibold text-primary">Biblioteca</span>
+              <span className="ml-2 text-foreground/70">
+                — todas las charlas y conceptos, navegables y conectados
+              </span>
+            </span>
+            <span
+              aria-hidden="true"
+              className="text-primary transition-transform group-hover:translate-x-1"
+            >
+              →
+            </span>
+          </Link>
+        </motion.div>
+
         <div className="mt-16 grid gap-5 md:grid-cols-2">
           {charlasOrdenadas.map((charla, index) => {
             const contenido = (
