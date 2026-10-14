@@ -22,7 +22,26 @@ components/
   section-divider.tsx       -> separador entre bloques (compartido)
 lib/
   charlas.ts                -> índice de la serie: metadatos de cada charla
+  biblioteca/               -> datos de la Biblioteca (data.json se genera en prebuild)
+scripts/
+  generate-biblioteca-data.mjs -> prebuild: vuelca el vault IAs-talks a lib/biblioteca/data.json
+docs/
+  guiones/                  -> guiones, guías de ponente e informes de charlas pasadas
+  refactor-plan.md          -> plan de la migración de secciones
+.github/
+  copilot-instructions.md   -> puntero a este AGENTS.md para Copilot
+  pull_request_template.md  -> plantilla de PR
+  workflows/ci.yml          -> lint + comprobación de tipos en cada PR
+.claude/
+  settings.json             -> permisos compartidos de Claude Code (los locales no se commitean)
+eslint.config.mjs           -> flat config de ESLint (eslint-config-next)
+AGENTS.md                   -> este fichero: fuente de verdad de las instrucciones
+CLAUDE.md                   -> puntero a este AGENTS.md para Claude Code
 ```
+
+> Instrucciones en un solo sitio: `AGENTS.md`. `CLAUDE.md` y `.github/copilot-instructions.md` solo apuntan aquí; si una regla cambia, se cambia en este fichero.
+
+> Nada de markdown suelto en la raíz: los guiones y el material de apoyo de cada charla van a `docs/guiones/` con el prefijo `charla-NN-`.
 
 > Migración en curso: algunas secciones todavía viven en `components/sections/` (formato antiguo: un archivo plano por sección, con nombres inconsistentes acumulados de varias charlas). Se van colocando dentro de `app/charla-NN-tema/sections/` a medida que se migra cada charla.
 
