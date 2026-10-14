@@ -20,3 +20,6 @@ node_modules
 # Datos de la Biblioteca: generados en cada build por scripts/generate-biblioteca-data.mjs
 # (prebuild) a partir de Juaaaaan/IAs-talks — nunca se commitea, siempre fresco.
 lib/biblioteca/data.json
+
+# Claude Code: ajustes locales de cada persona
+.claude/settings.local.json
