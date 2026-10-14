@@ -13,6 +13,66 @@ export type Charla = {
 // Índice de la serie. La home (app/page.tsx) lee este array.
 export const charlas: Charla[] = [
   {
+    numero: 23,
+    slug: "charla-23-bdd-odd-arnes",
+    titulo: "Comprobar antes de construir",
+    tema: "BDD, ODD y el arnés con nombre: quién decide qué significa correcto",
+    fecha: "Octubre 2026",
+    resumen:
+      "Charla con demo real sobre RCA. Cierra la mitad 'antes de construir' de la etapa Comprobar, introducida en la charla 22: la IA no debería decidir por sí sola qué significa correcto. Para lo importante, el criterio de éxito se escribe primero en BDD/Gherkin y se demuestra con una demo en vivo sobre el carrito de RCA. Para lo pequeño, un comportamiento proporcional por defecto —ODD— explora, clasifica y actúa sin convertir cada cambio en un proceso pesado. Cierra poniendo nombre, por primera vez en la serie, al sistema completo que rodea al modelo: AI harness engineering.",
+    estado: "publicada",
+  },
+  {
+    numero: 22,
+    slug: "charla-22-ia-first",
+    titulo: "IA-first: pregúntale primero",
+    tema: "La mentalidad IA-first y el ciclo de seis paradas que ya conocíais, con ejemplos de toda la serie",
+    fecha: "Octubre 2026",
+    resumen:
+      "Charla de hábito, no de adopción: la IA ya se usa, falta el reflejo de incorporarla de forma consciente. Define la mentalidad IA-first como una segunda mirada temprana —entender el problema y pensar una solución propia primero; antes de ejecutarla, preguntar dónde puede ayudar la IA—, apoyada en la distinción real AI-enabled vs AI-first y un antes/después. Luego recorre el ciclo de cualquier trabajo (idea → especificar → construir → comprobar → publicar → mantener) repitiendo esa pregunta seis veces, cada parada anclada a un ejemplo ya visto en la serie: RRHH, el SDD de la 16, el menú de OpenCode de la 20, el checkpoint del Analista de RFP de la 19, y la memoria persistente de las charlas 11 y 8. Incluye un ejercicio en vivo con una tarea real de cada asistente.",
+    estado: "publicada",
+  },
+  {
+    numero: 20,
+    slug: "charla-20-opencode",
+    titulo: "La otra correa del arnés",
+    tema: "El ejecutor abierto: quién controla la IA que usa tu empresa y dónde viven tus datos",
+    fecha: "Septiembre 2026",
+    resumen:
+      "Charla de criterio, sin demo: el arnés tiene dos correas y hasta ahora solo habíamos mirado una. Especificar (la 16) no es lo mismo que ejecutar. El ejecutor cerrado —Claude Code, GitHub Copilot— es potente, pero viene con una decisión ya tomada por el proveedor: un único motor, una caja que no se abre y tu código saliendo fuera. Enfrente, un ejecutor abierto como OpenCode hace el mismo trabajo con el motor que tú elijas y sin que los datos salgan de casa. Por qué eso aparece en soluciones internas, qué cambia para una aseguradora que no puede sacar sus datos, y las tres preguntas que permiten entender —y pedir cuentas sobre— una decisión que otros están tomando por ti.",
+    estado: "publicada",
+  },
+  {
+    numero: 19,
+    slug: "charla-19-agentes-que-colaboran",
+    titulo: "De responder a actuar",
+    tema: "Varios agentes que colaboran en Copilot Studio: coordinador, especialistas y checkpoint humano",
+    fecha: "Septiembre 2026",
+    resumen:
+      "El salto desde el agente que respondía (Charla 13) a un equipo que actúa. Recorrido guiado del agente multiagente «Analista de RFP» en Copilot Studio: un coordinador reparte el trabajo entre tres especialistas — extraer requisitos, detectar riesgos y estimar esfuerzo — que se coordinan con lenguaje, no con código. Analiza un pliego de licitación sintético, caza sus trampas (una fecha imposible, un requisito escondido) y vuelca el resultado a un Excel real vía Power Automate. Antes de escribir nada, se para y te pide la última palabra: el checkpoint humano es el corazón. Parte 1 de 2.",
+    estado: "publicada",
+  },
+  {
+    numero: 18,
+    slug: "charla-18-como-piensa-ia",
+    titulo: "Abriendo la caja",
+    tema: "Cómo piensa la IA por dentro: cuatro mecanismos, vistos ocurrir sobre datos reales",
+    fecha: "Agosto 2026",
+    resumen:
+      "Un peldaño más adentro tras aprender a elegir bien la IA (Charla 17): abrimos la tapa, sin una línea de código. Sobre un Excel de proyecto real afloran cuatro mecanismos internos — predice el patrón, busca por significado (embeddings), alucina sin fuente (el peligro se ha movido en 2026) y su ventana de contexto se llena — cada uno visto en directo y cerrado con un «y por eso, cuando la uses, haz X». Demo en vivo con Copilot en Excel y un chatbot general.",
+    estado: "publicada",
+  },
+  {
+    numero: 17,
+    slug: "charla-17-elegir-bien-ia",
+    titulo: "Elegir bien la IA",
+    tema: "Herramienta, modelo y modo de trabajo: un método de decisión en 4 capas",
+    fecha: "Agosto 2026",
+    resumen:
+      "Vuelta al público general tras el bloque técnico. De usuario ingenuo a usuario con criterio: un método que no caduca en cuatro capas — qué IA abrir, qué modelo elegir (el dial rápido/razonador y el mapa de proveedores), en qué modo de trabajo ponerla (preguntar/investigar/recordar/actuar) y cuánto verificar.",
+    estado: "publicada",
+  },
+  {
     numero: 16,
     slug: "charla-16-del-prompt-al-blueprint",
     titulo: "Del prompt al blueprint",
