@@ -34,6 +34,7 @@ docs/
   workflows/ci.yml          -> lint + comprobación de tipos en cada PR
 .claude/
   settings.json             -> permisos compartidos de Claude Code (los locales no se commitean)
+eslint.config.mjs           -> flat config de ESLint (eslint-config-next)
 AGENTS.md                   -> este fichero: fuente de verdad de las instrucciones
 CLAUDE.md                   -> puntero a este AGENTS.md para Claude Code
 ```

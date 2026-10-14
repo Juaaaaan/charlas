@@ -18,11 +18,8 @@ jobs:
 
       - run: npm ci
 
-      # Nota: "npm run lint" no se ejecuta aquí porque eslint no está en las
-      # dependencias del proyecto (el script falla con "eslint: command not found").
-      # Cuando se añada eslint, descomentar:
-      # - name: Lint
-      #   run: npm run lint
+      - name: Lint
+        run: npm run lint
 
       - name: Comprobar tipos
         run: npx tsc --noEmit

@@ -395,7 +395,7 @@ export function PoliticaUsoSection() {
           </div>
 
           <ol className="mt-8 grid gap-4 md:grid-cols-2">
-            {procesoIncidentes.map((step, index) => (
+            {procesoIncidentes.map((step, _index) => (
               <li
                 key={step.paso}
                 className="flex gap-4 rounded-[1.25rem] border border-border/50 bg-background/35 px-5 py-4"

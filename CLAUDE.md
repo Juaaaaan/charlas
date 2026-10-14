@@ -13,6 +13,6 @@ No dupliques aquí esas reglas: si algo cambia, se cambia en `AGENTS.md`.
 - Contexto de una charla concreta: `app/charla-NN-tema/AGENTS.md`.
 - Índice de la serie: `lib/charlas.ts` (la home lo lee sola).
 - Guiones y material de apoyo de charlas pasadas: `docs/guiones/`.
-- Verificación antes de dar algo por hecho: `npx tsc --noEmit` (y `npm run build`
-  si el cambio toca layout o datos). Ojo: `npm run lint` falla hoy porque `eslint`
-  no está instalado como dependencia.
+- Verificación antes de dar algo por hecho: `npm run lint` y `npx tsc --noEmit`
+  (y `npm run build` si el cambio toca layout o datos). `npm run lint:fix` arregla
+  lo autocorregible.

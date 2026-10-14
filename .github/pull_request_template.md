@@ -11,6 +11,7 @@
 
 ## Verificación
 
+- [ ] `npm run lint`
 - [ ] `npx tsc --noEmit`
 - [ ] Revisado en local si afecta a layout, animaciones o copy visible
 - [ ] Sin mojibake; contenido en español y en UTF-8

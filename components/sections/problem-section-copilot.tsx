@@ -41,7 +41,7 @@ export function ProblemSectionCopilot() {
           </h2>
           <p className="mt-8 text-xl leading-relaxed text-muted-foreground">
             Imaginad que contratáis a un desarrollador nuevo. El primer día llega, le dais acceso al repo y le decís:
-            "implementa el navbar". Sin más.
+            «implementa el navbar». Sin más.
           </p>
         </motion.div>
 
