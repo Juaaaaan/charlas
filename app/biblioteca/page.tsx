@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 import { getTodasLasNotas, getMetaBiblioteca } from "@/lib/biblioteca";
 import { BibliotecaExplorer, type NotaResumen } from "@/components/biblioteca/biblioteca-explorer";
@@ -25,6 +26,13 @@ export default function BibliotecaPage() {
 
   return (
     <main className="relative min-h-screen overflow-x-hidden bg-background text-foreground">
+      <Link
+        href="/"
+        className="fixed left-4 top-4 z-50 inline-flex items-center gap-2 rounded-full border border-border/70 bg-card/70 px-4 py-2 text-sm text-foreground/80 backdrop-blur transition-colors hover:border-primary/40 hover:text-foreground"
+      >
+        <span aria-hidden="true">←</span> Charlas
+      </Link>
+
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(74,145,255,0.18),transparent_32%),linear-gradient(180deg,rgba(7,10,18,1)_0%,rgba(9,13,21,0.98)_54%,rgba(12,16,26,1)_100%)]" />
       <div className="absolute inset-0 bg-[linear-gradient(rgba(100,150,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(100,150,255,0.03)_1px,transparent_1px)] bg-[size:88px_88px]" />
 
