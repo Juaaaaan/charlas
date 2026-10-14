@@ -16,3 +16,7 @@ node_modules
 .DS_Store
 # Build artifacts
 *.tsbuildinfo
+
+# Datos de la Biblioteca: generados en cada build por scripts/generate-biblioteca-data.mjs
+# (prebuild) a partir de Juaaaaan/IAs-talks — nunca se commitea, siempre fresco.
+lib/biblioteca/data.json
