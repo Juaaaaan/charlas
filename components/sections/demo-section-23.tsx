@@ -34,7 +34,7 @@ const pasos = [
 export function DemoSection23() {
   return (
     <section className="relative overflow-hidden py-28 lg:py-36">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(74,145,255,0.16),transparent_32%),linear-gradient(180deg,rgba(9,13,21,0.98)_0%,rgba(12,16,26,1)_100%)]" />
+      <div className="absolute inset-0 bg-aura-seccion" />
 
       <div className="relative z-10 mx-auto w-full max-w-6xl px-6">
         <motion.div

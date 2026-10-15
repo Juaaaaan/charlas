@@ -48,7 +48,7 @@ export function McpsSection() {
   return (
     <section className="relative overflow-hidden py-28 lg:py-32">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/10 to-background" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(100,150,255,0.08),transparent_70%)]" />
+      <div className="absolute inset-0 bg-glow-centro" />
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6">
         <motion.div

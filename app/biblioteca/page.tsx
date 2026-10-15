@@ -33,8 +33,8 @@ export default function BibliotecaPage() {
         <span aria-hidden="true">←</span> Charlas
       </Link>
 
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(74,145,255,0.18),transparent_32%),linear-gradient(180deg,rgba(7,10,18,1)_0%,rgba(9,13,21,0.98)_54%,rgba(12,16,26,1)_100%)]" />
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(100,150,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(100,150,255,0.03)_1px,transparent_1px)] bg-[size:88px_88px]" />
+      <div className="absolute inset-0 bg-aura-pagina" />
+      <div className="absolute inset-0 bg-grid-fino" />
 
       <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col px-4 py-20 lg:py-28">
         <span className="inline-flex w-fit rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium uppercase tracking-[0.18em] text-primary">

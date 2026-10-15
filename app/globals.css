@@ -3,40 +3,82 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/*
+ * Tema claro. Es el valor por defecto a propósito: si por cualquier motivo no
+ * llega la clase de tema a <html>, la página cae en claro, que se lee sobre el
+ * fondo blanco del navegador. El oscuro vive en .dark, que es lo que espera el
+ * @custom-variant de arriba y lo que escribe next-themes.
+ *
+ * Luminosidades fijadas contra WCAG 2.1 AA, no a ojo (ver tasks.md 2.3).
+ */
 :root {
-  --background: oklch(0.08 0.01 250);
-  --foreground: oklch(0.95 0 0);
-  --card: oklch(0.14 0.012 250);
-  --card-foreground: oklch(0.95 0 0);
-  --popover: oklch(0.14 0.012 250);
-  --popover-foreground: oklch(0.95 0 0);
-  --primary: oklch(0.65 0.18 220);
-  --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.18 0.012 250);
-  --secondary-foreground: oklch(0.9 0 0);
-  --muted: oklch(0.2 0.012 250);
-  --muted-foreground: oklch(0.76 0.01 250);
-  --accent: oklch(0.65 0.18 220);
-  --accent-foreground: oklch(0.98 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.28 0.014 250);
-  --input: oklch(0.28 0.014 250);
-  --ring: oklch(0.65 0.18 220);
-  --chart-1: oklch(0.65 0.18 220);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
+  --background: oklch(0.965 0.005 250);
+  --foreground: oklch(0.22 0.015 250);
+  --card: oklch(0.995 0.002 250);
+  --card-foreground: oklch(0.22 0.015 250);
+  --popover: oklch(0.995 0.002 250);
+  --popover-foreground: oklch(0.22 0.015 250);
+  --primary: oklch(0.45 0.16 220);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.94 0.008 250);
+  --secondary-foreground: oklch(0.3 0.015 250);
+  --muted: oklch(0.945 0.008 250);
+  --muted-foreground: oklch(0.45 0.02 250);
+  --accent: oklch(0.45 0.16 220);
+  --accent-foreground: oklch(0.99 0 0);
+  --destructive: oklch(0.48 0.17 27);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.84 0.014 250);
+  --input: oklch(0.84 0.014 250);
+  --ring: oklch(0.45 0.16 220);
+  --chart-1: oklch(0.45 0.16 220);
+  --chart-2: oklch(0.5 0.11 185);
+  --chart-3: oklch(0.4 0.09 227);
+  --chart-4: oklch(0.62 0.15 84);
+  --chart-5: oklch(0.58 0.16 70);
   --radius: 0.75rem;
-  --sidebar: oklch(0.1 0.01 250);
-  --sidebar-foreground: oklch(0.95 0 0);
-  --sidebar-primary: oklch(0.65 0.18 220);
-  --sidebar-primary-foreground: oklch(0.98 0 0);
-  --sidebar-accent: oklch(0.16 0.01 250);
-  --sidebar-accent-foreground: oklch(0.9 0 0);
-  --sidebar-border: oklch(0.22 0.01 250);
-  --sidebar-ring: oklch(0.65 0.18 220);
+  --sidebar: oklch(0.955 0.007 250);
+  --sidebar-foreground: oklch(0.22 0.015 250);
+  --sidebar-primary: oklch(0.45 0.16 220);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.93 0.008 250);
+  --sidebar-accent-foreground: oklch(0.3 0.015 250);
+  --sidebar-border: oklch(0.84 0.014 250);
+  --sidebar-ring: oklch(0.45 0.16 220);
+
+  /* Fondos decorativos: los consumen las @utility del final del fichero. */
+  --aura-body: radial-gradient(circle at top, rgba(74, 145, 255, 0.1), transparent 28%);
+  --aura-hero: radial-gradient(circle at top, rgba(74, 145, 255, 0.16), transparent 30%),
+    linear-gradient(
+      180deg,
+      rgb(249, 251, 253) 0%,
+      rgba(243, 247, 252, 0.98) 54%,
+      rgb(236, 241, 248) 100%
+    );
+  --aura-pagina: radial-gradient(circle at top, rgba(74, 145, 255, 0.16), transparent 32%),
+    linear-gradient(
+      180deg,
+      rgb(249, 251, 253) 0%,
+      rgba(243, 247, 252, 0.98) 54%,
+      rgb(236, 241, 248) 100%
+    );
+  --aura-cierre: radial-gradient(circle at bottom, rgba(74, 145, 255, 0.14), transparent 36%),
+    linear-gradient(
+      180deg,
+      rgb(236, 241, 248) 0%,
+      rgba(243, 247, 252, 0.98) 50%,
+      rgb(249, 251, 253) 100%
+    );
+  --aura-seccion: radial-gradient(circle at top, rgba(74, 145, 255, 0.13), transparent 32%),
+    linear-gradient(180deg, rgba(243, 247, 252, 0.98) 0%, rgb(236, 241, 248) 100%);
+  --grid-fino: linear-gradient(rgba(40, 90, 170, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(40, 90, 170, 0.07) 1px, transparent 1px);
+  --glow-centro: radial-gradient(ellipse at center, rgba(40, 90, 170, 0.07), transparent 70%);
+
+  /* Paleta categórica de los diagramas que se pintan solos (azul / verde agua / violeta). */
+  --dato-1: rgb(23, 92, 191);
+  --dato-2: rgb(16, 118, 99);
+  --dato-3: rgb(112, 58, 196);
 }
 
 .dark {
@@ -54,8 +96,10 @@
   --muted-foreground: oklch(0.76 0.01 250);
   --accent: oklch(0.65 0.18 220);
   --accent-foreground: oklch(0.98 0 0);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
+  /* Subido desde oklch(0.396 0.141 25.723): como texto daba 2.07:1 sobre --background,
+     por debajo de AA. Ahora 5.26:1. Los paneles bg-destructive/8..15 apenas cambian. */
+  --destructive: oklch(0.62 0.17 25);
+  --destructive-foreground: oklch(0.98 0 0);
   --border: oklch(0.28 0.014 250);
   --input: oklch(0.28 0.014 250);
   --ring: oklch(0.65 0.18 220);
@@ -72,6 +116,38 @@
   --sidebar-accent-foreground: oklch(0.9 0 0);
   --sidebar-border: oklch(0.22 0.01 250);
   --sidebar-ring: oklch(0.65 0.18 220);
+
+  --aura-body: radial-gradient(circle at top, rgba(74, 145, 255, 0.09), transparent 28%);
+  --aura-hero: radial-gradient(circle at top, rgba(74, 145, 255, 0.22), transparent 30%),
+    linear-gradient(
+      180deg,
+      rgba(7, 10, 18, 1) 0%,
+      rgba(9, 13, 21, 0.98) 54%,
+      rgba(12, 16, 26, 1) 100%
+    );
+  --aura-pagina: radial-gradient(circle at top, rgba(74, 145, 255, 0.18), transparent 32%),
+    linear-gradient(
+      180deg,
+      rgba(7, 10, 18, 1) 0%,
+      rgba(9, 13, 21, 0.98) 54%,
+      rgba(12, 16, 26, 1) 100%
+    );
+  --aura-cierre: radial-gradient(circle at bottom, rgba(74, 145, 255, 0.18), transparent 36%),
+    linear-gradient(
+      180deg,
+      rgba(12, 16, 26, 1) 0%,
+      rgba(9, 13, 21, 0.98) 50%,
+      rgba(7, 10, 18, 1) 100%
+    );
+  --aura-seccion: radial-gradient(circle at top, rgba(74, 145, 255, 0.16), transparent 32%),
+    linear-gradient(180deg, rgba(9, 13, 21, 0.98) 0%, rgba(12, 16, 26, 1) 100%);
+  --grid-fino: linear-gradient(rgba(100, 150, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(100, 150, 255, 0.03) 1px, transparent 1px);
+  --glow-centro: radial-gradient(ellipse at center, rgba(100, 150, 255, 0.08), transparent 70%);
+
+  --dato-1: rgb(74, 145, 255);
+  --dato-2: rgb(120, 205, 185);
+  --dato-3: rgb(198, 160, 255);
 }
 
 @theme inline {
@@ -115,6 +191,36 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+/*
+ * Fondos decorativos como utilidades con nombre. Antes eran la misma cadena de
+ * rgba(...) copiada byte a byte en 24 ficheros, lo que los dejaba clavados al
+ * tema oscuro. Ahora la decisión de color vive una sola vez, arriba, por tema.
+ */
+@utility bg-aura-hero {
+  background-image: var(--aura-hero);
+}
+
+@utility bg-aura-pagina {
+  background-image: var(--aura-pagina);
+}
+
+@utility bg-aura-cierre {
+  background-image: var(--aura-cierre);
+}
+
+@utility bg-aura-seccion {
+  background-image: var(--aura-seccion);
+}
+
+@utility bg-grid-fino {
+  background-image: var(--grid-fino);
+  background-size: 88px 88px;
+}
+
+@utility bg-glow-centro {
+  background-image: var(--glow-centro);
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -124,6 +230,6 @@
   }
   body {
     @apply bg-background text-foreground selection:bg-primary/30 selection:text-foreground;
-    background-image: radial-gradient(circle at top, rgba(74, 145, 255, 0.09), transparent 28%);
+    background-image: var(--aura-body);
   }
 }

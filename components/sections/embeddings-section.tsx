@@ -20,12 +20,6 @@ const comoLeer = [
   },
 ];
 
-const islas = [
-  { nombre: "Dependencias de terceros", color: "rgba(74,145,255,0.9)", bg: "rgba(74,145,255,0.10)" },
-  { nombre: "Disponibilidad del equipo", color: "rgba(120,205,185,0.9)", bg: "rgba(120,205,185,0.10)" },
-  { nombre: "Alcance poco definido", color: "rgba(198,160,255,0.9)", bg: "rgba(198,160,255,0.10)" },
-];
-
 export function EmbeddingsSection() {
   return (
     <section className="relative overflow-hidden py-28 lg:py-32">
@@ -100,9 +94,9 @@ export function EmbeddingsSection() {
             aria-label="Mapa de riesgos agrupados por significado en tres islas temáticas"
           >
             {/* islas (regiones translúcidas) */}
-            <ellipse cx="215" cy="150" rx="150" ry="105" fill="rgba(74,145,255,0.08)" />
-            <ellipse cx="255" cy="335" rx="140" ry="80" fill="rgba(120,205,185,0.08)" />
-            <ellipse cx="600" cy="230" rx="150" ry="110" fill="rgba(198,160,255,0.08)" />
+            <ellipse cx="215" cy="150" rx="150" ry="105" fill="var(--dato-1)" fillOpacity={0.08} />
+            <ellipse cx="255" cy="335" rx="140" ry="80" fill="var(--dato-2)" fillOpacity={0.08} />
+            <ellipse cx="600" cy="230" rx="150" ry="110" fill="var(--dato-3)" fillOpacity={0.08} />
 
             {/* Isla A — dependencias de terceros (azul) */}
             {[
@@ -112,7 +106,7 @@ export function EmbeddingsSection() {
               [130, 190],
               [300, 165],
             ].map(([cx, cy], i) => (
-              <circle key={`a-${i}`} cx={cx} cy={cy} r="7" fill="rgba(74,145,255,0.9)" />
+              <circle key={`a-${i}`} cx={cx} cy={cy} r="7" fill="var(--dato-1)" fillOpacity={0.9} />
             ))}
 
             {/* par resaltado: misma idea, otras palabras */}
@@ -121,12 +115,13 @@ export function EmbeddingsSection() {
               y1="120"
               x2="270"
               y2="105"
-              stroke="rgba(74,145,255,0.55)"
+              stroke="var(--dato-1)"
+              strokeOpacity={0.55}
               strokeWidth="1.5"
               strokeDasharray="4 4"
             />
-            <circle cx="150" cy="120" r="15" fill="none" stroke="rgba(74,145,255,0.9)" strokeWidth="2" />
-            <circle cx="270" cy="105" r="15" fill="none" stroke="rgba(74,145,255,0.9)" strokeWidth="2" />
+            <circle cx="150" cy="120" r="15" fill="none" stroke="var(--dato-1)" strokeOpacity={0.9} strokeWidth="2" />
+            <circle cx="270" cy="105" r="15" fill="none" stroke="var(--dato-1)" strokeOpacity={0.9} strokeWidth="2" />
 
             {/* Isla B — disponibilidad del equipo (teal) */}
             {[
@@ -136,7 +131,7 @@ export function EmbeddingsSection() {
               [320, 345],
               [180, 365],
             ].map(([cx, cy], i) => (
-              <circle key={`b-${i}`} cx={cx} cy={cy} r="7" fill="rgba(120,205,185,0.9)" />
+              <circle key={`b-${i}`} cx={cx} cy={cy} r="7" fill="var(--dato-2)" fillOpacity={0.9} />
             ))}
 
             {/* Isla C — alcance poco definido (violeta) */}
@@ -148,34 +143,53 @@ export function EmbeddingsSection() {
               [530, 250],
               [620, 320],
             ].map(([cx, cy], i) => (
-              <circle key={`c-${i}`} cx={cx} cy={cy} r="7" fill="rgba(198,160,255,0.9)" />
+              <circle key={`c-${i}`} cx={cx} cy={cy} r="7" fill="var(--dato-3)" fillOpacity={0.9} />
             ))}
 
             {/* etiquetas de isla */}
-            <text x="215" y="70" textAnchor="middle" fill="rgba(74,145,255,0.95)" fontSize="15" fontWeight="600" fontFamily="ui-monospace, monospace">
+            <text x="215" y="70" textAnchor="middle" fill="var(--dato-1)" fillOpacity={0.95} fontSize="15" fontWeight="600" fontFamily="ui-monospace, monospace">
               Dependencias de terceros
             </text>
-            <text x="255" y="418" textAnchor="middle" fill="rgba(120,205,185,0.95)" fontSize="15" fontWeight="600" fontFamily="ui-monospace, monospace">
+            <text x="255" y="418" textAnchor="middle" fill="var(--dato-2)" fillOpacity={0.95} fontSize="15" fontWeight="600" fontFamily="ui-monospace, monospace">
               Disponibilidad del equipo
             </text>
-            <text x="600" y="140" textAnchor="middle" fill="rgba(198,160,255,0.95)" fontSize="15" fontWeight="600" fontFamily="ui-monospace, monospace">
+            <text x="600" y="140" textAnchor="middle" fill="var(--dato-3)" fillOpacity={0.95} fontSize="15" fontWeight="600" fontFamily="ui-monospace, monospace">
               Alcance poco definido
             </text>
 
             {/* recuadro: misma idea, otras palabras */}
             <g>
-              <rect x="360" y="70" width="300" height="86" rx="14" fill="rgba(9,13,21,0.85)" stroke="rgba(74,145,255,0.35)" />
-              <text x="376" y="98" fill="rgba(74,145,255,0.95)" fontSize="12" fontWeight="700" fontFamily="ui-monospace, monospace" letterSpacing="1.5">
+              <rect
+                x="360"
+                y="70"
+                width="300"
+                height="86"
+                rx="14"
+                fill="var(--card)"
+                fillOpacity={0.85}
+                stroke="var(--primary)"
+                strokeOpacity={0.35}
+              />
+              <text x="376" y="98" fill="var(--dato-1)" fillOpacity={0.95} fontSize="12" fontWeight="700" fontFamily="ui-monospace, monospace" letterSpacing="1.5">
                 MISMA IDEA · OTRAS PALABRAS
               </text>
-              <text x="376" y="122" fill="rgba(230,236,245,0.88)" fontSize="13" fontFamily="ui-sans-serif, system-ui">
+              <text x="376" y="122" fill="var(--foreground)" fillOpacity={0.88} fontSize="13" fontFamily="ui-sans-serif, system-ui">
                 «esperando las credenciales del ERP»
               </text>
-              <text x="376" y="142" fill="rgba(230,236,245,0.88)" fontSize="13" fontFamily="ui-sans-serif, system-ui">
+              <text x="376" y="142" fill="var(--foreground)" fillOpacity={0.88} fontSize="13" fontFamily="ui-sans-serif, system-ui">
                 «bloqueado por la API del proveedor»
               </text>
             </g>
-            <line x1="360" y1="113" x2="285" y2="106" stroke="rgba(74,145,255,0.45)" strokeWidth="1.5" strokeDasharray="4 4" />
+            <line
+              x1="360"
+              y1="113"
+              x2="285"
+              y2="106"
+              stroke="var(--primary)"
+              strokeOpacity={0.45}
+              strokeWidth="1.5"
+              strokeDasharray="4 4"
+            />
           </svg>
 
           <figcaption className="mt-4 text-sm leading-relaxed text-muted-foreground">
