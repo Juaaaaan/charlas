@@ -8,8 +8,8 @@ import { charlasOrdenadas } from "@/lib/charlas";
 export default function Home() {
   return (
     <main className="relative min-h-screen overflow-x-hidden bg-background text-foreground">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(74,145,255,0.18),transparent_32%),linear-gradient(180deg,rgba(7,10,18,1)_0%,rgba(9,13,21,0.98)_54%,rgba(12,16,26,1)_100%)]" />
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(100,150,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(100,150,255,0.03)_1px,transparent_1px)] bg-[size:88px_88px]" />
+      <div className="absolute inset-0 bg-aura-pagina" />
+      <div className="absolute inset-0 bg-grid-fino" />
       <div className="absolute left-1/2 top-16 h-[26rem] w-[26rem] -translate-x-1/2 rounded-full bg-primary/12 blur-3xl" />
 
       <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col px-4 py-24 lg:py-32">

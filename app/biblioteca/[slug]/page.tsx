@@ -34,7 +34,7 @@ export default async function NotaPage({ params }: PaginaProps) {
 
   return (
     <main className="relative min-h-screen overflow-x-hidden bg-background text-foreground">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(74,145,255,0.14),transparent_32%),linear-gradient(180deg,rgba(7,10,18,1)_0%,rgba(9,13,21,0.98)_54%,rgba(12,16,26,1)_100%)]" />
+      <div className="absolute inset-0 bg-aura-pagina" />
 
       <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col px-4 py-16 lg:py-24">
         <Link

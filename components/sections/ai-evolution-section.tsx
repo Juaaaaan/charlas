@@ -75,9 +75,11 @@ export function AIEvolutionSection() {
                 <div 
                   className="absolute inset-0"
                   style={{ 
-                    background: index === layers.length - 1 
-                      ? 'linear-gradient(135deg, rgba(100, 150, 255, 0.15) 0%, rgba(100, 150, 255, 0.05) 100%)'
-                      : `rgba(255, 255, 255, ${layer.opacity * 0.03})`
+                    background: index === layers.length - 1
+                      ? 'linear-gradient(135deg, color-mix(in oklch, var(--primary) 15%, transparent) 0%, color-mix(in oklch, var(--primary) 5%, transparent) 100%)'
+                      // El velo se mezcla con --foreground, así que se invierte con el
+                      // tema: aclara sobre fondo oscuro y oscurece sobre fondo claro.
+                      : `color-mix(in oklch, var(--foreground) ${layer.opacity * 3}%, transparent)`
                   }}
                 />
                 

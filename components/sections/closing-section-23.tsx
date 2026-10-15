@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export function ClosingSection23() {
   return (
     <section className="relative overflow-hidden py-28 lg:py-36">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(74,145,255,0.18),transparent_36%),linear-gradient(180deg,rgba(12,16,26,1)_0%,rgba(9,13,21,0.98)_50%,rgba(7,10,18,1)_100%)]" />
+      <div className="absolute inset-0 bg-aura-cierre" />
       <div className="absolute left-1/2 bottom-10 h-[24rem] w-[24rem] -translate-x-1/2 rounded-full bg-primary/12 blur-3xl" />
 
       <div className="relative z-10 mx-auto w-full max-w-5xl px-6">
