@@ -18,6 +18,9 @@ jobs:
 
       - run: npm ci
 
+      - name: Generar datos de la Biblioteca
+        run: npm run biblioteca:data
+
       - name: Lint
         run: npm run lint
 
