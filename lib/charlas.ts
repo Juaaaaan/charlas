@@ -13,6 +13,16 @@ export type Charla = {
 // Índice de la serie. La home (app/page.tsx) lee este array.
 export const charlas: Charla[] = [
   {
+    numero: 24,
+    slug: "charla-24-ai-code-review-rdd",
+    titulo: "Comprobar después de construir",
+    tema: "ai-code-review y RDD: qué evidencia exige un candidato de código antes de aceptarlo",
+    fecha: "Octubre 2026",
+    resumen:
+      "Cierra la mitad 'después de construir' de la etapa Comprobar, abierta en la charla 22 y preparada en la 23. Con dos PR ya generadas y abiertas sobre las mismas peticiones de la charla anterior —el color de un botón y el stock a cero—, contrasta en vivo dos profundidades de revisión: checks deterministas, revisión agéntica proporcional al riesgo y evidencia vinculada a un candidato concreto. Pone nombre al enfoque: Receipt-Driven Development (RDD), con sus cuatro lentes —Risk, Resilience, Readability, Reliability— y cierra el arco completo de Comprobar.",
+    estado: "publicada",
+  },
+  {
     numero: 23,
     slug: "charla-23-bdd-odd-arnes",
     titulo: "Comprobar antes de construir",
