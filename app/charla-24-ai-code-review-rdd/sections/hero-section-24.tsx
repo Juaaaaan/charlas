@@ -1,0 +1,76 @@
+"use client";
+
+import { motion } from "framer-motion";
+
+export function HeroSection24() {
+  return (
+    <section className="relative flex min-h-screen items-center overflow-hidden">
+      <div className="absolute inset-0 bg-aura-hero" />
+      <div className="absolute inset-0 bg-grid-fino" />
+      <div className="absolute left-1/2 top-20 h-[28rem] w-[28rem] -translate-x-1/2 rounded-full bg-primary/12 blur-3xl" />
+
+      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col px-2 py-24 lg:py-32">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="flex flex-wrap items-center gap-3"
+        >
+          <span className="inline-flex rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium uppercase tracking-[0.18em] text-primary">
+            Charla 24
+          </span>
+          <span className="inline-flex rounded-full border border-border/70 bg-card/70 px-4 py-2 text-sm font-medium uppercase tracking-[0.18em] text-foreground/70 backdrop-blur">
+            Comprobar después de construir
+          </span>
+          <span className="inline-flex rounded-full border border-border/70 bg-card/70 px-4 py-2 text-sm font-medium uppercase tracking-[0.18em] text-foreground/70 backdrop-blur">
+            ai-code-review + RDD
+          </span>
+        </motion.div>
+
+        <motion.h1
+          className="mt-10 max-w-5xl text-5xl font-bold tracking-tight text-balance text-foreground md:text-7xl lg:text-[5.1rem]"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.08, ease: "easeOut" }}
+        >
+          Queda la otra mitad
+        </motion.h1>
+
+        <motion.p
+          className="mt-6 max-w-4xl text-2xl font-medium leading-snug text-balance text-foreground/85 md:text-3xl"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.12, ease: "easeOut" }}
+        >
+          La charla 23 cerró cómo decidir qué significa correcto, antes de
+          construir. Hoy el candidato ya existe. La pregunta cambia.
+        </motion.p>
+
+        <motion.p
+          className="mt-8 max-w-4xl text-xl leading-relaxed text-balance text-foreground/78 md:text-2xl"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.16, ease: "easeOut" }}
+        >
+          Definir qué es correcto y demostrar que un resultado lo cumple son
+          dos momentos diferentes.
+        </motion.p>
+
+        <motion.div
+          className="mt-10 max-w-4xl rounded-[1.75rem] border border-primary/20 bg-primary/8 px-6 py-6"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+        >
+          <p className="text-2xl font-semibold leading-snug text-balance text-foreground md:text-3xl">
+            Antes definimos qué significa correcto.
+          </p>
+          <p className="mt-3 text-lg leading-relaxed text-foreground/75">
+            Después exigimos evidencia de que un candidato concreto lo
+            cumple.
+          </p>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
