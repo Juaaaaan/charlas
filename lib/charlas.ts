@@ -13,6 +13,16 @@ export type Charla = {
 // Índice de la serie. La home (app/page.tsx) lee este array.
 export const charlas: Charla[] = [
   {
+    numero: 26,
+    slug: "charla-26-retrospectiva",
+    titulo: "Retrospectiva",
+    tema: "Qué hemos visto y para qué sirve cada cosa: 38 piezas ordenadas en diez preguntas de trabajo",
+    fecha: "Noviembre 2026",
+    resumen:
+      "Charla de repaso, sin herramienta nueva: la tesis es que no hace falta recordar veinticinco charlas, sino qué pregunta responde cada cosa. Las 38 piezas vistas en la serie —básicas y avanzadas, de desarrollo y generales— se agrupan en cuatro tramos (darle contexto, fiarse con cabeza, que haga cosas, comprobar) y diez preguntas. Cada pieza aparece con su explicación difuminada y la sala responde por el chat antes de que se revele. Después, una consulta preparada al vault con GitHub Copilot Desktop y un primer vistazo a la Biblioteca web, y una chuleta final de diez preguntas con una sola acción para la semana.",
+    estado: "publicada",
+  },
+  {
     numero: 24,
     slug: "charla-24-ai-code-review-rdd",
     titulo: "Comprobar después de construir",
