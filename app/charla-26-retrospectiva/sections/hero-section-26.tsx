@@ -42,8 +42,8 @@ export function HeroSection26() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.12, ease: "easeOut" }}
         >
-          Hoy no hay nada nuevo. Ponemos las piezas en una mesa, una al lado
-          de otra, y jugamos.
+          Hoy no añadimos otra herramienta a la lista. Ponemos las piezas en
+          una mesa, una al lado de otra, para ver para qué sirve cada una.
         </motion.p>
 
         <motion.p
@@ -64,10 +64,10 @@ export function HeroSection26() {
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
         >
           <p className="text-2xl font-semibold leading-snug text-balance text-foreground md:text-3xl">
-            Hoy no aprendéis nada nuevo.
+            Hoy no añadimos otra herramienta.
           </p>
           <p className="mt-3 text-lg leading-relaxed text-foreground/75">
-            Hoy ponéis orden a lo que ya sabéis.
+            Hoy ponemos orden a lo que ya sabemos.
           </p>
         </motion.div>
       </div>
