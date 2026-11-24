@@ -12,7 +12,7 @@ import { ClosingSection26 } from "./sections/closing-section-26";
 export const metadata: Metadata = {
   title: "Charla 26 · Retrospectiva",
   description:
-    "Qué hemos visto y para qué sirve cada cosa: 38 piezas de la serie ordenadas en diez preguntas de trabajo, con una dinámica de texto difuminado para que la sala responda.",
+    "Qué hemos visto y para qué sirve cada cosa: 32 piezas de la serie ordenadas en diez preguntas de trabajo, con una dinámica de texto difuminado para que la sala responda.",
 };
 
 export default function Charla26Page() {

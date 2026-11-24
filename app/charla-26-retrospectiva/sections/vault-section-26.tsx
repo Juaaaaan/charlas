@@ -2,7 +2,12 @@
 
 import { motion } from "framer-motion";
 
-const pasos = ["Pregunta en lenguaje normal", "Respuesta", "Comprobada contra la ficha"];
+const pasos = [
+  "Pregunta",
+  "Respuesta",
+  "Fichas utilizadas",
+  "Frase exacta de respaldo",
+];
 
 const consultas = [
   {
@@ -16,12 +21,6 @@ const consultas = [
       "Quiero que la IA haga un trabajo repetitivo de varios pasos. ¿Qué piezas necesito y en qué orden?",
     lleva: "Preguntas 9 y 10",
     piezas: "Encargar un trabajo grande y comprobarlo",
-  },
-  {
-    pregunta:
-      "¿Por qué la IA se inventa cosas con tanta seguridad y qué hago?",
-    lleva: "Pregunta 4",
-    piezas: "Predicción del siguiente token, alucinaciones",
   },
 ];
 
@@ -75,7 +74,7 @@ export function VaultSection26() {
           ))}
         </motion.div>
 
-        <div className="grid gap-4 lg:grid-cols-3">
+        <div className="grid gap-4 lg:grid-cols-2">
           {consultas.map((c, index) => (
             <motion.div
               key={c.pregunta}
@@ -108,10 +107,11 @@ export function VaultSection26() {
           transition={{ duration: 0.5 }}
         >
           <p className="mx-auto max-w-4xl text-2xl font-semibold leading-relaxed text-balance text-foreground md:text-3xl">
-            La IA no sustituye al vault: lo lee.
+            Sobre nuestro trabajo, lo que no está escrito no puede conocerlo de
+            forma fiable.
           </p>
           <p className="mx-auto mt-3 max-w-3xl text-xl leading-relaxed text-balance text-foreground/78 md:text-2xl">
-            Lo que no está escrito, no lo sabe.
+            Lo que está en el vault puede encontrarlo, citarlo y contrastarlo.
           </p>
         </motion.div>
       </div>

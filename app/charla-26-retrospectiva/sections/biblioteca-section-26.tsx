@@ -29,8 +29,9 @@ export function BibliotecaSection26() {
             Dónde va a vivir todo esto
           </h2>
           <p className="mx-auto max-w-3xl text-xl leading-relaxed text-foreground/76 md:text-2xl">
-            Una web donde se navegan las charlas y los conceptos, con
-            buscador y enlaces entre ellos.
+            El vault guarda el conocimiento estructurado. La Biblioteca es una
+            forma más cómoda de navegarlo: permite localizar charlas y
+            conceptos sin recorrer las carpetas.
           </p>
         </motion.div>
 

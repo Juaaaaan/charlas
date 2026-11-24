@@ -1,6 +1,6 @@
 // Datos de la retrospectiva (charla 26).
 //
-// Fuente: tablas del Bloque 3 de `Charlas/guiones/guion-charla-26.md` (Vault).
+// Fuente: tablas del Bloque 3 (v3) de `Charlas/guiones/guion-charla-26.md` (Vault).
 // Si cambia el guion, se cambia aquí: la web no lee el Vault.
 //
 // `verificar: true` marca las piezas cuyo texto el guion todavía pide contrastar
@@ -33,7 +33,7 @@ export type Pieza = {
   charla?: string;
   /** Texto que se difumina. */
   queSirve: string;
-  /** true = se pregunta a la sala antes de revelar (las 17 con «❓» del guion). */
+  /** true = se pregunta a la sala antes de revelar (las 12 con «❓» del guion). */
   preguntar: boolean;
   /** Contenido adicional que se muestra al revelar. */
   extra?: "ciclo";
@@ -59,8 +59,8 @@ export const preguntas: Pregunta[] = [
   {
     numero: 2,
     tramo: "A",
-    titulo: "¿Cómo hago que conozca mi trabajo y lo recuerde?",
-    corta: "¿Cómo conoce mi trabajo y lo recuerda?",
+    titulo: "¿Cómo le doy contexto estable sobre mi trabajo?",
+    corta: "¿Cómo le doy contexto estable sobre mi trabajo?",
     ancla: "Contexto: que no empiece de cero.",
   },
   {
@@ -116,15 +116,16 @@ export const preguntas: Pregunta[] = [
   {
     numero: 10,
     tramo: "D",
-    titulo: "¿Cómo sé que está bien?",
-    corta: "¿Cómo sé que está bien?",
+    titulo: "¿Cómo defino y compruebo que está bien?",
+    corta: "¿Cómo defino y compruebo que está bien?",
     ancla:
       "Definir qué es correcto y comprobar que se cumple son dos momentos distintos.",
   },
 ];
 
 export const piezas: Pieza[] = [
-  // ── Pregunta 1 · ¿Cómo le pido las cosas para que me entienda? ──────────
+
+  // ── Pregunta 1 · ¿Cómo le pido las cosas para que me entienda? ───────────────
   {
     id: "hablar-su-idioma",
     pregunta: 1,
@@ -143,32 +144,8 @@ export const piezas: Pieza[] = [
       "Un ejemplo de lo que quieres vale más que tres frases describiéndolo.",
     preguntar: true,
   },
-  {
-    id: "paso-a-paso",
-    pregunta: 1,
-    nombre: "Pídele que piense paso a paso",
-    queSirve:
-      "En tareas con varios pasos o lógica mejora el resultado; en tareas simples no hace falta.",
-    preguntar: false,
-  },
-  {
-    id: "pedir-fuente",
-    pregunta: 1,
-    nombre: "Pedir la fuente",
-    charla: "Charla 17",
-    queSirve: "Pedirle «cita la frase exacta»: si no puede, desconfía.",
-    preguntar: true,
-  },
-  {
-    id: "imagen-y-audio",
-    pregunta: 1,
-    nombre: "Más que texto: imagen y audio",
-    queSirve:
-      "Puede trabajar también con imágenes, audio o vídeo, no solo con texto.",
-    preguntar: false,
-  },
 
-  // ── Pregunta 2 · ¿Cómo hago que conozca mi trabajo y lo recuerde? ───────
+  // ── Pregunta 2 · ¿Cómo le doy contexto estable sobre mi trabajo? ─────────────
   {
     id: "instrucciones-persistentes",
     pregunta: 2,
@@ -176,7 +153,7 @@ export const piezas: Pieza[] = [
     charla: "Charla 8",
     queSirve:
       "Dejar escritas tus reglas para que la IA las siga en cada conversación sin repetírselas.",
-    preguntar: true,
+    preguntar: false,
   },
   {
     id: "skills",
@@ -196,16 +173,8 @@ export const piezas: Pieza[] = [
       "Una carpeta de ficheros de texto ordenados que la IA lee y ayuda a mantener, como memoria de largo plazo.",
     preguntar: false,
   },
-  {
-    id: "memoria-de-agentes",
-    pregunta: 2,
-    nombre: "Memoria de agentes",
-    queSirve:
-      "Mecanismos para que un agente recuerde entre sesiones; sin ellos, cada conversación empieza de cero.",
-    preguntar: false,
-  },
 
-  // ── Pregunta 3 · ¿Cómo encuentra lo que necesita en tanta información? ──
+  // ── Pregunta 3 · ¿Cómo encuentra lo que necesita en tanta información? ───────
   {
     id: "fuente-delante",
     pregunta: 3,
@@ -229,7 +198,8 @@ export const piezas: Pieza[] = [
     pregunta: 3,
     nombre: "RAG",
     charla: "Charla 12",
-    queSirve: "Buscar primero en tus documentos y responder después usándolos.",
+    queSirve:
+      "Buscar primero en tus documentos y responder después usándolos.",
     preguntar: true,
   },
   {
@@ -243,7 +213,7 @@ export const piezas: Pieza[] = [
     verificar: true,
   },
 
-  // ── Pregunta 4 · ¿Me puedo fiar de lo que dice? ─────────────────────────
+  // ── Pregunta 4 · ¿Me puedo fiar de lo que dice? ──────────────────────────────
   {
     id: "prediccion-siguiente-token",
     pregunta: 4,
@@ -251,7 +221,7 @@ export const piezas: Pieza[] = [
     charla: "Charla 18",
     queSirve:
       "Por dentro solo completa el patrón más probable: predecir no es saber.",
-    preguntar: true,
+    preguntar: false,
   },
   {
     id: "alucinaciones",
@@ -263,6 +233,15 @@ export const piezas: Pieza[] = [
     preguntar: true,
   },
   {
+    id: "pedir-fuente",
+    pregunta: 4,
+    nombre: "Pedir la fuente",
+    charla: "Charla 17",
+    queSirve:
+      "Pedir la fuente o la frase exacta ayuda a comprobar si la respuesta está apoyada o solo suena convincente.",
+    preguntar: false,
+  },
+  {
     id: "verificar-segun-coste",
     pregunta: 4,
     nombre: "Verificar según lo que cuesta equivocarse",
@@ -272,7 +251,7 @@ export const piezas: Pieza[] = [
     preguntar: false,
   },
 
-  // ── Pregunta 5 · ¿Qué puedo usar y con qué riesgos? ─────────────────────
+  // ── Pregunta 5 · ¿Qué puedo usar y con qué riesgos? ──────────────────────────
   {
     id: "shadow-ai",
     pregunta: 5,
@@ -280,7 +259,7 @@ export const piezas: Pieza[] = [
     charla: "Charla 14",
     queSirve:
       "Usar IA sin reglas claras ni aprobación; casi nunca es rebeldía: aparece cuando faltan reglas claras.",
-    preguntar: true,
+    preguntar: false,
   },
   {
     id: "gobernanza-de-ia",
@@ -301,7 +280,7 @@ export const piezas: Pieza[] = [
     preguntar: true,
   },
 
-  // ── Pregunta 6 · ¿Qué modelo y qué modo uso para cada cosa? ─────────────
+  // ── Pregunta 6 · ¿Qué modelo y qué modo uso para cada cosa? ──────────────────
   {
     id: "elegir-bien",
     pregunta: 6,
@@ -323,14 +302,6 @@ export const piezas: Pieza[] = [
     verificar: true,
   },
   {
-    id: "modelos-abiertos-y-cerrados",
-    pregunta: 6,
-    nombre: "Modelos abiertos y cerrados",
-    queSirve:
-      "Dos familias de modelos; en la empresa pesa también dónde acaban los datos, así que se usa lo aprobado.",
-    preguntar: false,
-  },
-  {
     id: "modelos-que-razonan",
     pregunta: 6,
     nombre: "Modelos que razonan (rápido o razonador)",
@@ -341,7 +312,7 @@ export const piezas: Pieza[] = [
     verificar: true,
   },
 
-  // ── Pregunta 7 · ¿Cómo la conecto con mis herramientas? ─────────────────
+  // ── Pregunta 7 · ¿Cómo la conecto con mis herramientas? ──────────────────────
   {
     id: "mcp",
     pregunta: 7,
@@ -361,22 +332,15 @@ export const piezas: Pieza[] = [
     preguntar: false,
     verificar: true,
   },
-  {
-    id: "computer-use",
-    pregunta: 7,
-    nombre: "Computer use",
-    queSirve:
-      "La IA ve la pantalla y maneja una aplicación como lo haría una persona, incluso sin API; es más lento y frágil.",
-    preguntar: false,
-  },
 
-  // ── Pregunta 8 · ¿Cómo creo un asistente para mi equipo? ────────────────
+  // ── Pregunta 8 · ¿Cómo creo un asistente para mi equipo? ─────────────────────
   {
     id: "agente-de-ia",
     pregunta: 8,
     nombre: "Agente de IA",
     charla: "Charla 13",
-    queSirve: "No sigue un guion: razona, y cuando no sabe algo, lo dice.",
+    queSirve:
+      "No sigue un guion: razona, usa herramientas y, cuando no sabe algo, lo dice.",
     preguntar: true,
   },
   {
@@ -384,8 +348,9 @@ export const piezas: Pieza[] = [
     pregunta: 8,
     nombre: "Copilot Studio",
     charla: "Charla 13",
-    queSirve: "Plataforma de Microsoft para crear agentes propios.",
-    preguntar: true,
+    queSirve:
+      "Plataforma de Microsoft para crear agentes propios.",
+    preguntar: false,
     verificar: true,
   },
   {
@@ -394,27 +359,20 @@ export const piezas: Pieza[] = [
     nombre: "Métricas de IA",
     charla: "Charla 13",
     queSirve:
-      "Datos para saber si el agente funciona: resolución y uso.",
+      "Datos para saber si el agente funciona: cuánto se usa, cuánto resuelve y cuánto resuelve sin ayuda de una persona.",
     preguntar: false,
     verificar: true,
   },
 
-  // ── Pregunta 9 · ¿Cómo le encargo un trabajo grande sin que se desvíe? ──
+  // ── Pregunta 9 · ¿Cómo le encargo un trabajo grande sin que se desvíe? ───────
   {
     id: "sdd-openspec",
     pregunta: 9,
     nombre: "SDD con OpenSpec",
     charla: "Charla 16",
-    queSirve: "Escribir primero qué quieres y construir después contra eso.",
-    preguntar: true,
-  },
-  {
-    id: "planificacion-y-razonamiento",
-    pregunta: 9,
-    nombre: "Planificación y razonamiento",
     queSirve:
-      "Descomponer el trabajo en pasos antes de actuar; con supervisión humana en lo crítico.",
-    preguntar: false,
+      "Escribir primero qué quieres y construir después contra eso.",
+    preguntar: true,
   },
   {
     id: "equipo-de-agentes",
@@ -436,7 +394,7 @@ export const piezas: Pieza[] = [
     verificar: true,
   },
 
-  // ── Pregunta 10 · ¿Cómo sé que está bien? ───────────────────────────────
+  // ── Pregunta 10 · ¿Cómo defino y compruebo que está bien? ─────────────────────
   {
     id: "ciclo-de-seis-paradas",
     pregunta: 10,
