@@ -36,10 +36,10 @@ export default async function NotaPage({ params }: PaginaProps) {
     <main className="relative min-h-screen overflow-x-hidden bg-background text-foreground">
       <div className="absolute inset-0 bg-aura-pagina" />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col px-4 py-16 lg:py-24">
+      <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col px-6 lg:px-4 py-16 lg:py-24">
         <Link
           href="/biblioteca"
-          className="inline-flex w-fit items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+          className="-my-2 inline-flex w-fit items-center gap-2 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
         >
           <ArrowLeft className="h-4 w-4" />
           Biblioteca
@@ -93,7 +93,8 @@ export default async function NotaPage({ params }: PaginaProps) {
               Notas relacionadas con esta, tal y como están enlazadas en el vault.
             </p>
 
-            <div className="mt-8">
+            {/* En móvil no caben los nodos en círculo: basta con la lista de enlaces de debajo. */}
+            <div className="mt-8 hidden sm:block">
               <EgoGraph
                 centro={{ slug: nota.slug, title: nota.title, tipo: nota.tipo }}
                 vecinos={conexiones.map((c) => ({
@@ -109,7 +110,7 @@ export default async function NotaPage({ params }: PaginaProps) {
                 <Link
                   key={c.slug}
                   href={`/biblioteca/${c.slug}`}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-border/70 bg-card/60 px-3 py-1.5 text-sm text-foreground/80 transition-colors hover:border-primary/40 hover:text-primary"
+                  className="inline-flex min-h-11 items-center gap-1.5 rounded-full border border-border/70 bg-card/60 px-3 py-1.5 text-sm lg:min-h-0 text-foreground/80 transition-colors hover:border-primary/40 hover:text-primary"
                 >
                   {c.title}
                 </Link>

@@ -12,7 +12,7 @@ export default function Home() {
       <div className="absolute inset-0 bg-grid-fino" />
       <div className="absolute left-1/2 top-16 h-[26rem] w-[26rem] -translate-x-1/2 rounded-full bg-primary/12 blur-3xl" />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col px-4 py-24 lg:py-32">
+      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col px-6 lg:px-4 py-24 lg:py-32">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -66,7 +66,7 @@ export default function Home() {
           </Link>
         </motion.div>
 
-        <div className="mt-16 grid gap-5 md:grid-cols-2">
+        <div className="mt-16 grid grid-cols-1 gap-5 md:grid-cols-2">
           {charlasOrdenadas.map((charla, index) => {
             const contenido = (
               <motion.article
@@ -83,7 +83,7 @@ export default function Home() {
                     : "border-border/40 bg-card/40"
                 }`}
               >
-                <div className="flex items-center justify-between gap-4">
+                <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
                   <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-primary/90">
                     Charla {charla.numero}
                   </p>
@@ -96,7 +96,7 @@ export default function Home() {
                   {charla.titulo}
                 </h2>
 
-                <p className="mt-4 text-base leading-relaxed text-foreground/72">
+                <p className="mt-4 text-base leading-relaxed text-foreground/72 wrap-break-word">
                   {charla.resumen}
                 </p>
 
@@ -118,12 +118,12 @@ export default function Home() {
               <Link
                 key={charla.slug}
                 href={`/${charla.slug}`}
-                className="block h-full"
+                className="block h-full min-w-0"
               >
                 {contenido}
               </Link>
             ) : (
-              <div key={charla.slug} className="h-full">
+              <div key={charla.slug} className="h-full min-w-0">
                 {contenido}
               </div>
             );

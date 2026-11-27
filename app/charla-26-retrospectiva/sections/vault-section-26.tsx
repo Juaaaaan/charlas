@@ -60,7 +60,7 @@ export function VaultSection26() {
           {pasos.map((paso, index) => (
             <div key={paso} className="flex items-center gap-3">
               <span className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-card/70 px-4 py-2 text-sm font-medium text-foreground/80">
-                <span className="flex h-5 w-5 items-center justify-center rounded-full border border-primary/40 bg-primary/10 font-mono text-[10px] font-semibold text-primary">
+                <span className="flex h-5 w-5 items-center justify-center rounded-full border border-primary/40 bg-primary/10 font-mono text-xs font-semibold text-primary">
                   {index + 1}
                 </span>
                 {paso}

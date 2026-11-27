@@ -108,7 +108,7 @@ export function BibliotecaExplorer({ notas }: { notas: NotaResumen[] }) {
                   {nota.tipo === "charla" ? nota.charla ?? "Charla" : "Concepto"}
                 </Badge>
                 {nota.nivel && (
-                  <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
+                  <span className="font-mono text-xs uppercase tracking-[0.14em] text-muted-foreground">
                     {NIVEL_LABEL[nota.nivel].split(" — ")[0]}
                   </span>
                 )}
@@ -127,7 +127,7 @@ export function BibliotecaExplorer({ notas }: { notas: NotaResumen[] }) {
                   {nota.tags.slice(0, 3).map((t) => (
                     <span
                       key={t}
-                      className="rounded-full bg-secondary/60 px-2 py-0.5 text-[11px] text-secondary-foreground"
+                      className="rounded-full bg-secondary/60 px-2 py-0.5 text-xs text-secondary-foreground"
                     >
                       {t}
                     </span>
@@ -173,7 +173,7 @@ function FiltroBoton({
     <button
       type="button"
       onClick={onClick}
-      className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-colors ${
+      className={`inline-flex min-h-11 items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs lg:min-h-0 font-medium transition-colors ${
         activo
           ? "border-primary/50 bg-primary/15 text-primary"
           : sutil

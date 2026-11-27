@@ -369,7 +369,7 @@ export function RepasoSection26() {
                   <Chip tono="primario">
                     <span
                       aria-hidden="true"
-                      className="flex h-4 w-4 items-center justify-center rounded-full bg-primary/20 text-[10px] font-bold leading-none"
+                      className="flex h-4 w-4 items-center justify-center rounded-full bg-primary/20 text-xs font-bold leading-none"
                     >
                       ?
                     </span>

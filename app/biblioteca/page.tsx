@@ -28,7 +28,7 @@ export default function BibliotecaPage() {
     <main className="relative min-h-screen overflow-x-hidden bg-background text-foreground">
       <Link
         href="/"
-        className="fixed left-4 top-4 z-50 inline-flex items-center gap-2 rounded-full border border-border/70 bg-card/70 px-4 py-2 text-sm text-foreground/80 backdrop-blur transition-colors hover:border-primary/40 hover:text-foreground"
+        className="absolute left-4 top-4 z-50 lg:fixed inline-flex items-center gap-2 rounded-full border border-border/70 bg-card/70 px-4 py-2 text-sm text-foreground/80 backdrop-blur transition-colors hover:border-primary/40 hover:text-foreground"
       >
         <span aria-hidden="true">←</span> Charlas
       </Link>
@@ -36,7 +36,7 @@ export default function BibliotecaPage() {
       <div className="absolute inset-0 bg-aura-pagina" />
       <div className="absolute inset-0 bg-grid-fino" />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col px-4 py-20 lg:py-28">
+      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col px-6 lg:px-4 py-20 lg:py-28">
         <span className="inline-flex w-fit rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium uppercase tracking-[0.18em] text-primary">
           Biblioteca
         </span>

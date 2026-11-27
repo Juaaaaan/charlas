@@ -37,16 +37,23 @@ export function MarkdownBody({ content }: { content: string }) {
           code: ({ className, ...props }) =>
             className ? (
               <code
-                className="block overflow-x-auto rounded-lg bg-secondary/60 px-4 py-3 font-mono text-sm text-foreground/90"
+                className="font-mono text-sm text-foreground/90"
                 {...props}
               />
             ) : (
               <code
-                className="rounded bg-secondary/70 px-1.5 py-0.5 font-mono text-[0.85em] text-foreground/90"
+                className="rounded bg-secondary/70 px-1.5 py-0.5 font-mono text-[0.85em] text-foreground/90 wrap-anywhere"
                 {...props}
               />
             ),
-          pre: (props) => <pre className="mt-4" {...props} />,
+          // Todo lo que va dentro de <pre> es un bloque, declare lenguaje o no: el scroll
+          // vive aquí y se anula el estilo de código en línea del <code> hijo.
+          pre: (props) => (
+            <pre
+              className="mt-4 overflow-x-auto rounded-lg bg-secondary/60 px-4 py-3 font-mono text-sm text-foreground/90 [&>code]:bg-transparent [&>code]:p-0 [&>code]:text-sm [&>code]:wrap-normal"
+              {...props}
+            />
+          ),
           a: ({ href = "", ...props }) =>
             href.startsWith("/") ? (
               <Link href={href} className="text-primary underline-offset-4 hover:underline" {...props} />

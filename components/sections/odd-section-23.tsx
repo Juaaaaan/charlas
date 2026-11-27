@@ -53,7 +53,7 @@ export function OddSection23() {
           </p>
         </motion.div>
 
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <motion.div
             className="flex flex-col rounded-[1.75rem] border border-border/70 bg-card/70 px-6 py-8 md:px-8"
             initial={{ opacity: 0, y: 20 }}
@@ -140,7 +140,7 @@ export function OddSection23() {
             agente no improvisa el proceso en cada conversación.
           </p>
 
-          <div className="mt-6 grid gap-2.5 sm:grid-cols-2">
+          <div className="mt-6 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
             {reglas.map((regla) => (
               <div
                 key={regla}

@@ -72,7 +72,7 @@ export function CorreasSection20() {
                 >
                   {c.etiqueta}
                 </span>
-                <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-foreground/50">
+                <span className="font-mono text-xs uppercase tracking-[0.18em] text-foreground/50">
                   {c.visto}
                 </span>
               </div>

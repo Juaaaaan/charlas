@@ -35,7 +35,7 @@ export function ClosingSection24() {
           </h2>
         </motion.div>
 
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <motion.div
             className="flex flex-col rounded-[1.75rem] border border-border/70 bg-card/70 px-6 py-8"
             initial={{ opacity: 0, y: 20 }}

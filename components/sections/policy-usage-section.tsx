@@ -122,19 +122,26 @@ const checklistDecision = [
 function TodoCell({
   value,
   className = "",
+  label,
 }: {
   value: string;
+  label?: string;
   className?: string;
 }) {
   const isTodo = value === "TODO" || value.startsWith("TODO");
   return (
     <p
-      className={`text-sm leading-relaxed md:text-base ${
+      className={`min-w-0 wrap-break-word text-sm leading-relaxed md:pr-3 md:text-base ${
         isTodo
           ? "font-mono text-xs uppercase tracking-[0.14em] text-foreground/40"
           : "text-foreground/85"
       } ${className}`}
     >
+      {label ? (
+        <span className="mb-1 block font-sans text-xs font-semibold uppercase tracking-[0.14em] text-foreground/60 md:hidden">
+          {label}
+        </span>
+      ) : null}
       {value}
     </p>
   );
@@ -183,7 +190,7 @@ export function PoliticaUsoSection() {
           </div>
 
           <div className="mt-8 overflow-hidden rounded-[1.5rem] border border-border/50">
-            <div className="grid grid-cols-[1.6fr_1fr_1fr_1fr] gap-0 bg-background/40 px-5 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-foreground/70">
+            <div className="hidden md:grid md:grid-cols-[1.6fr_1fr_1fr_1fr] gap-0 bg-background/40 px-5 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-foreground/70">
               <p>Fase / Actividad</p>
               <p>Permitido</p>
               <p>Condicionado</p>
@@ -192,16 +199,16 @@ export function PoliticaUsoSection() {
             {escenariosFases.map((row, i) => (
               <div
                 key={row.fase}
-                className={`grid grid-cols-[1.6fr_1fr_1fr_1fr] gap-0 px-5 py-4 ${
+                className={`grid grid-cols-1 gap-3 px-5 py-4 md:gap-0 md:grid-cols-[1.6fr_1fr_1fr_1fr] ${
                   i % 2 === 0 ? "bg-card/50" : "bg-card/30"
                 }`}
               >
-                <p className="text-sm text-foreground/85 md:text-base">
+                <p className="text-sm font-semibold text-foreground/85 md:text-base md:font-normal">
                   {row.fase}
                 </p>
-                <TodoCell value={row.permitido} />
-                <TodoCell value={row.condicionado} />
-                <TodoCell value={row.prohibido} />
+                <TodoCell value={row.permitido} label="Permitido" />
+                <TodoCell value={row.condicionado} label="Condicionado" />
+                <TodoCell value={row.prohibido} label="Prohibido" />
               </div>
             ))}
           </div>
@@ -231,7 +238,7 @@ export function PoliticaUsoSection() {
           </div>
 
           <div className="mt-8 overflow-hidden rounded-[1.5rem] border border-border/50">
-            <div className="grid grid-cols-[1.6fr_1fr_1fr_1.3fr] gap-0 bg-background/40 px-5 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-foreground/70">
+            <div className="hidden md:grid md:grid-cols-[1.6fr_1fr_1fr_1.3fr] gap-0 bg-background/40 px-5 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-foreground/70">
               <p>Clase de dato</p>
               <p>Público / no homologado</p>
               <p>Cliente aprobado / dedicado</p>
@@ -240,14 +247,14 @@ export function PoliticaUsoSection() {
             {datosPermitidos.map((row, i) => (
               <div
                 key={row.clase}
-                className={`grid grid-cols-[1.6fr_1fr_1fr_1.3fr] gap-0 px-5 py-4 ${
+                className={`grid grid-cols-1 gap-3 px-5 py-4 md:gap-0 md:grid-cols-[1.6fr_1fr_1fr_1.3fr] ${
                   i % 2 === 0 ? "bg-card/50" : "bg-card/30"
                 }`}
               >
                 <TodoCell value={row.clase} />
-                <TodoCell value={row.publico} />
-                <TodoCell value={row.cliente} />
-                <TodoCell value={row.condiciones} />
+                <TodoCell value={row.publico} label="Público / no homologado" />
+                <TodoCell value={row.cliente} label="Cliente aprobado / dedicado" />
+                <TodoCell value={row.condiciones} label="Condiciones mínimas" />
               </div>
             ))}
           </div>
@@ -296,7 +303,7 @@ export function PoliticaUsoSection() {
           </div>
 
           <div className="mt-8 overflow-hidden rounded-[1.5rem] border border-border/50">
-            <div className="grid grid-cols-[1.6fr_1.2fr_1fr_1.2fr] gap-0 bg-background/40 px-5 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-foreground/70">
+            <div className="hidden md:grid md:grid-cols-[1.6fr_1.2fr_1fr_1.2fr] gap-0 bg-background/40 px-5 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-foreground/70">
               <p>Output / acción</p>
               <p>Revisión mínima</p>
               <p>Aprobador / owner</p>
@@ -305,14 +312,14 @@ export function PoliticaUsoSection() {
             {revisionHumana.map((row, i) => (
               <div
                 key={row.output}
-                className={`grid grid-cols-[1.6fr_1.2fr_1fr_1.2fr] gap-0 px-5 py-4 ${
+                className={`grid grid-cols-1 gap-3 px-5 py-4 md:gap-0 md:grid-cols-[1.6fr_1.2fr_1fr_1.2fr] ${
                   i % 2 === 0 ? "bg-card/50" : "bg-card/30"
                 }`}
               >
                 <TodoCell value={row.output} />
-                <TodoCell value={row.revision} />
-                <TodoCell value={row.aprobador} />
-                <TodoCell value={row.evidencia} />
+                <TodoCell value={row.revision} label="Revisión mínima" />
+                <TodoCell value={row.aprobador} label="Aprobador / owner" />
+                <TodoCell value={row.evidencia} label="Evidencia esperada" />
               </div>
             ))}
           </div>

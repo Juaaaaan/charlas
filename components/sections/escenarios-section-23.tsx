@@ -74,7 +74,7 @@ export function EscenariosSection23() {
           BDD · Behavior-Driven Development, en Gherkin
         </motion.p>
 
-        <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
           {gherkinWords.map((row, index) => (
             <motion.div
               key={row.word}
@@ -105,7 +105,7 @@ export function EscenariosSection23() {
           mental: situación, acción y resultado observable.
         </motion.p>
 
-        <div className="mt-14 grid gap-4 md:grid-cols-2">
+        <div className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-2">
           <motion.div
             className="rounded-[1.75rem] border border-border/70 bg-card/70 px-6 py-7"
             initial={{ opacity: 0, y: 20 }}

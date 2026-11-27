@@ -83,7 +83,7 @@ export function SolutionSection() {
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/12">
                 <idea.icon className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="text-2xl font-semibold leading-tight text-foreground">{idea.title}</h3>
+              <h3 className="text-2xl font-semibold leading-tight text-foreground md:text-xl lg:text-2xl">{idea.title}</h3>
               <p className="mt-4 text-lg leading-relaxed text-foreground/76">{idea.description}</p>
             </motion.div>
           ))}
@@ -120,7 +120,7 @@ export function SolutionSection() {
           </h3>
 
           <div className="mt-8 overflow-hidden rounded-[1.5rem] border border-border/60">
-            <div className="grid grid-cols-3 bg-primary/10 text-sm font-semibold uppercase tracking-wide text-primary">
+            <div className="hidden grid-cols-3 bg-primary/10 lg:grid text-sm font-semibold uppercase tracking-wide text-primary">
               <div className="px-5 py-4">Concepto</div>
               <div className="px-5 py-4">GitHub Copilot</div>
               <div className="px-5 py-4">Claude Code</div>
@@ -128,13 +128,23 @@ export function SolutionSection() {
             {comparisonRows.map((row, index) => (
               <div
                 key={row.label}
-                className={`grid grid-cols-3 border-t border-border/60 ${
+                className={`grid grid-cols-1 border-t border-border/60 lg:grid-cols-3 ${
                   index % 2 === 0 ? "bg-background/35" : "bg-background/20"
-                }`}
+                } ${index === 0 ? "border-t-0 lg:border-t" : ""}`}
               >
-                <div className="px-5 py-4 text-base font-semibold text-foreground">{row.label}</div>
-                <div className="px-5 py-4 font-mono text-sm text-foreground/78">{row.copilot}</div>
-                <div className="px-5 py-4 font-mono text-sm text-foreground/78">{row.claude}</div>
+                <div className="min-w-0 px-5 pt-4 pb-2 text-base font-semibold text-foreground lg:py-4">{row.label}</div>
+                <div className="min-w-0 px-5 py-2 font-mono text-sm text-foreground/78 wrap-anywhere lg:py-4">
+                  <span className="mb-1 block font-sans text-xs font-semibold uppercase tracking-wide text-primary lg:hidden">
+                    GitHub Copilot
+                  </span>
+                  {row.copilot}
+                </div>
+                <div className="min-w-0 px-5 pt-2 pb-4 font-mono text-sm text-foreground/78 wrap-anywhere lg:py-4">
+                  <span className="mb-1 block font-sans text-xs font-semibold uppercase tracking-wide text-primary lg:hidden">
+                    Claude Code
+                  </span>
+                  {row.claude}
+                </div>
               </div>
             ))}
           </div>
