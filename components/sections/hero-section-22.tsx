@@ -9,7 +9,7 @@ export function HeroSection22() {
       <div className="absolute inset-0 bg-grid-fino" />
       <div className="absolute left-1/2 top-20 h-[28rem] w-[28rem] -translate-x-1/2 rounded-full bg-primary/12 blur-3xl" />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col px-2 py-24 lg:py-32">
+      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col px-6 lg:px-2 py-24 lg:py-32">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

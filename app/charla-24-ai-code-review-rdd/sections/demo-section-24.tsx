@@ -51,7 +51,7 @@ export function DemoSection24() {
           </p>
         </motion.div>
 
-        <div className="grid gap-4 lg:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
           {/* Caso A */}
           <motion.div
             className="flex flex-col rounded-[1.75rem] border border-border/70 bg-card/70 px-6 py-8 md:px-8"
@@ -192,7 +192,7 @@ export function DemoSection24() {
           </p>
         </motion.div>
 
-        <div className="mt-8 grid gap-4 md:grid-cols-2">
+        <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
           <motion.div
             className="rounded-[1.75rem] border border-primary/20 bg-primary/8 p-6 text-center md:p-8"
             initial={{ opacity: 0, y: 20 }}

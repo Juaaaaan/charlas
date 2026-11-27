@@ -103,7 +103,7 @@ export function RddSection24() {
           <div className="mt-6 flex flex-col gap-1.5">
             {flujo.map((paso, index) => (
               <div key={paso} className="flex items-start gap-3">
-                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-primary/40 bg-primary/10 font-mono text-[11px] font-semibold text-primary">
+                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-primary/40 bg-primary/10 font-mono text-xs font-semibold text-primary">
                   {index + 1}
                 </span>
                 <span className="text-sm leading-relaxed text-foreground/82 md:text-base">
@@ -145,7 +145,7 @@ export function RddSection24() {
           </p>
         </motion.div>
 
-        <div className="mt-6 grid gap-4 md:grid-cols-3">
+        <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-3">
           {profundidades.map((p, index) => (
             <motion.div
               key={p.nivel}
@@ -205,7 +205,7 @@ export function RddSection24() {
           </p>
         </motion.div>
 
-        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {lentes.map((l, index) => (
             <motion.div
               key={l.nombre}

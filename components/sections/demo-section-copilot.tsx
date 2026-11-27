@@ -87,7 +87,7 @@ export function DemoSectionCopilot() {
             {act1Files.map((file, index) => (
               <div
                 key={file.name}
-                className={`rounded-[1.25rem] border px-5 py-4 ${
+                className={`min-w-0 rounded-[1.25rem] border px-5 py-4 wrap-anywhere ${
                   index === 0 ? "border-primary/25 bg-primary/8" : "border-border/60 bg-background/35"
                 }`}
               >

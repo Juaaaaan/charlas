@@ -87,12 +87,12 @@ export function ContextoSection() {
                 >
                   {item.etiqueta}
                   {item.estado === "cayendo" ? (
-                    <span className="mt-2 block font-mono text-[10px] uppercase tracking-[0.16em]">
+                    <span className="mt-2 block font-mono text-xs uppercase tracking-[0.16em]">
                       ↓ se cae de la mesa
                     </span>
                   ) : null}
                   {item.estado === "nuevo" ? (
-                    <span className="mt-2 block font-mono text-[10px] uppercase tracking-[0.16em]">
+                    <span className="mt-2 block font-mono text-xs uppercase tracking-[0.16em]">
                       empuja lo viejo
                     </span>
                   ) : null}

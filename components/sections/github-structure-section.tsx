@@ -76,11 +76,11 @@ export function GithubStructureSection() {
         </motion.div>
 
         {/* Los tres ficheros */}
-        <div className="grid gap-5 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
           {githubFiles.map((file, index) => (
             <motion.div
               key={file.title}
-              className={`rounded-[1.75rem] border p-8 ${
+              className={`min-w-0 rounded-[1.75rem] border p-8 wrap-break-word ${
                 file.highlight ? "border-primary/30 bg-primary/10" : "border-border/70 bg-card/90"
               }`}
               initial={{ opacity: 0, y: 24 }}
@@ -96,7 +96,7 @@ export function GithubStructureSection() {
                 <file.icon className="h-6 w-6 text-primary" />
               </div>
               <h3 className="text-2xl font-semibold leading-tight text-foreground">{file.title}</h3>
-              <p className="mt-2 font-mono text-sm text-primary/80">{file.path}</p>
+              <p className="mt-2 font-mono text-sm text-primary/80 wrap-anywhere">{file.path}</p>
               <p className="mt-4 text-lg leading-relaxed text-foreground/76">{file.description}</p>
             </motion.div>
           ))}

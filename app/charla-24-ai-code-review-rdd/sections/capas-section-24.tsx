@@ -50,7 +50,7 @@ export function CapasSection24() {
           </p>
         </motion.div>
 
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {capas.map((capa, index) => (
             <motion.div
               key={capa.nombre}

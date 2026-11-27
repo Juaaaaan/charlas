@@ -17,7 +17,7 @@ export function SectionDivider({ label }: SectionDividerProps) {
     >
       <div className="flex flex-col items-center gap-3">
         {label ? (
-          <span className="rounded-full border border-primary/20 bg-primary/8 px-4 py-1 text-[11px] font-medium uppercase tracking-[0.22em] text-primary">
+          <span className="rounded-full border border-primary/20 bg-primary/8 px-4 py-1 text-xs font-medium uppercase tracking-[0.22em] text-primary">
             {label}
           </span>
         ) : null}

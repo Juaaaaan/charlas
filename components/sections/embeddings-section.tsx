@@ -82,115 +82,119 @@ export function EmbeddingsSection() {
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">
               El mapa · el significado convertido en distancia
             </p>
-            <span className="rounded-full border border-border/60 bg-card/60 px-3 py-1 font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+            <span className="rounded-full border border-border/60 bg-card/60 px-3 py-1 font-mono text-xs uppercase tracking-[0.16em] text-muted-foreground">
               ilustración del concepto
             </span>
           </div>
 
-          <svg
-            viewBox="0 0 800 430"
-            className="h-auto w-full"
-            role="img"
-            aria-label="Mapa de riesgos agrupados por significado en tres islas temáticas"
-          >
-            {/* islas (regiones translúcidas) */}
-            <ellipse cx="215" cy="150" rx="150" ry="105" fill="var(--dato-1)" fillOpacity={0.08} />
-            <ellipse cx="255" cy="335" rx="140" ry="80" fill="var(--dato-2)" fillOpacity={0.08} />
-            <ellipse cx="600" cy="230" rx="150" ry="110" fill="var(--dato-3)" fillOpacity={0.08} />
+          {/* En pantallas estrechas el mapa no se encoge: se desplaza, para que su texto se lea. */}
+          <p className="mb-2 text-xs text-muted-foreground lg:hidden">Desliza para ver el mapa completo →</p>
+          <div className="overflow-x-auto">
+            <svg
+              viewBox="0 0 800 430"
+              className="h-auto w-full min-w-[800px] lg:min-w-0"
+              role="img"
+              aria-label="Mapa de riesgos agrupados por significado en tres islas temáticas"
+            >
+              {/* islas (regiones translúcidas) */}
+              <ellipse cx="215" cy="150" rx="150" ry="105" fill="var(--dato-1)" fillOpacity={0.08} />
+              <ellipse cx="255" cy="335" rx="140" ry="80" fill="var(--dato-2)" fillOpacity={0.08} />
+              <ellipse cx="600" cy="230" rx="150" ry="110" fill="var(--dato-3)" fillOpacity={0.08} />
 
-            {/* Isla A — dependencias de terceros (azul) */}
-            {[
-              [150, 120],
-              [270, 105],
-              [230, 185],
-              [130, 190],
-              [300, 165],
-            ].map(([cx, cy], i) => (
-              <circle key={`a-${i}`} cx={cx} cy={cy} r="7" fill="var(--dato-1)" fillOpacity={0.9} />
-            ))}
+              {/* Isla A — dependencias de terceros (azul) */}
+              {[
+                [150, 120],
+                [270, 105],
+                [230, 185],
+                [130, 190],
+                [300, 165],
+              ].map(([cx, cy], i) => (
+                <circle key={`a-${i}`} cx={cx} cy={cy} r="7" fill="var(--dato-1)" fillOpacity={0.9} />
+              ))}
 
-            {/* par resaltado: misma idea, otras palabras */}
-            <line
-              x1="150"
-              y1="120"
-              x2="270"
-              y2="105"
-              stroke="var(--dato-1)"
-              strokeOpacity={0.55}
-              strokeWidth="1.5"
-              strokeDasharray="4 4"
-            />
-            <circle cx="150" cy="120" r="15" fill="none" stroke="var(--dato-1)" strokeOpacity={0.9} strokeWidth="2" />
-            <circle cx="270" cy="105" r="15" fill="none" stroke="var(--dato-1)" strokeOpacity={0.9} strokeWidth="2" />
-
-            {/* Isla B — disponibilidad del equipo (teal) */}
-            {[
-              [200, 320],
-              [280, 300],
-              [250, 360],
-              [320, 345],
-              [180, 365],
-            ].map(([cx, cy], i) => (
-              <circle key={`b-${i}`} cx={cx} cy={cy} r="7" fill="var(--dato-2)" fillOpacity={0.9} />
-            ))}
-
-            {/* Isla C — alcance poco definido (violeta) */}
-            {[
-              [560, 190],
-              [640, 200],
-              [590, 260],
-              [660, 275],
-              [530, 250],
-              [620, 320],
-            ].map(([cx, cy], i) => (
-              <circle key={`c-${i}`} cx={cx} cy={cy} r="7" fill="var(--dato-3)" fillOpacity={0.9} />
-            ))}
-
-            {/* etiquetas de isla */}
-            <text x="215" y="70" textAnchor="middle" fill="var(--dato-1)" fillOpacity={0.95} fontSize="15" fontWeight="600" fontFamily="ui-monospace, monospace">
-              Dependencias de terceros
-            </text>
-            <text x="255" y="418" textAnchor="middle" fill="var(--dato-2)" fillOpacity={0.95} fontSize="15" fontWeight="600" fontFamily="ui-monospace, monospace">
-              Disponibilidad del equipo
-            </text>
-            <text x="600" y="140" textAnchor="middle" fill="var(--dato-3)" fillOpacity={0.95} fontSize="15" fontWeight="600" fontFamily="ui-monospace, monospace">
-              Alcance poco definido
-            </text>
-
-            {/* recuadro: misma idea, otras palabras */}
-            <g>
-              <rect
-                x="360"
-                y="70"
-                width="300"
-                height="86"
-                rx="14"
-                fill="var(--card)"
-                fillOpacity={0.85}
-                stroke="var(--primary)"
-                strokeOpacity={0.35}
+              {/* par resaltado: misma idea, otras palabras */}
+              <line
+                x1="150"
+                y1="120"
+                x2="270"
+                y2="105"
+                stroke="var(--dato-1)"
+                strokeOpacity={0.55}
+                strokeWidth="1.5"
+                strokeDasharray="4 4"
               />
-              <text x="376" y="98" fill="var(--dato-1)" fillOpacity={0.95} fontSize="12" fontWeight="700" fontFamily="ui-monospace, monospace" letterSpacing="1.5">
-                MISMA IDEA · OTRAS PALABRAS
+              <circle cx="150" cy="120" r="15" fill="none" stroke="var(--dato-1)" strokeOpacity={0.9} strokeWidth="2" />
+              <circle cx="270" cy="105" r="15" fill="none" stroke="var(--dato-1)" strokeOpacity={0.9} strokeWidth="2" />
+
+              {/* Isla B — disponibilidad del equipo (teal) */}
+              {[
+                [200, 320],
+                [280, 300],
+                [250, 360],
+                [320, 345],
+                [180, 365],
+              ].map(([cx, cy], i) => (
+                <circle key={`b-${i}`} cx={cx} cy={cy} r="7" fill="var(--dato-2)" fillOpacity={0.9} />
+              ))}
+
+              {/* Isla C — alcance poco definido (violeta) */}
+              {[
+                [560, 190],
+                [640, 200],
+                [590, 260],
+                [660, 275],
+                [530, 250],
+                [620, 320],
+              ].map(([cx, cy], i) => (
+                <circle key={`c-${i}`} cx={cx} cy={cy} r="7" fill="var(--dato-3)" fillOpacity={0.9} />
+              ))}
+
+              {/* etiquetas de isla */}
+              <text x="215" y="70" textAnchor="middle" fill="var(--dato-1)" fillOpacity={0.95} fontSize="15" fontWeight="600" fontFamily="ui-monospace, monospace">
+                Dependencias de terceros
               </text>
-              <text x="376" y="122" fill="var(--foreground)" fillOpacity={0.88} fontSize="13" fontFamily="ui-sans-serif, system-ui">
-                «esperando las credenciales del ERP»
+              <text x="255" y="418" textAnchor="middle" fill="var(--dato-2)" fillOpacity={0.95} fontSize="15" fontWeight="600" fontFamily="ui-monospace, monospace">
+                Disponibilidad del equipo
               </text>
-              <text x="376" y="142" fill="var(--foreground)" fillOpacity={0.88} fontSize="13" fontFamily="ui-sans-serif, system-ui">
-                «bloqueado por la API del proveedor»
+              <text x="600" y="140" textAnchor="middle" fill="var(--dato-3)" fillOpacity={0.95} fontSize="15" fontWeight="600" fontFamily="ui-monospace, monospace">
+                Alcance poco definido
               </text>
-            </g>
-            <line
-              x1="360"
-              y1="113"
-              x2="285"
-              y2="106"
-              stroke="var(--primary)"
-              strokeOpacity={0.45}
-              strokeWidth="1.5"
-              strokeDasharray="4 4"
-            />
-          </svg>
+
+              {/* recuadro: misma idea, otras palabras */}
+              <g>
+                <rect
+                  x="360"
+                  y="70"
+                  width="300"
+                  height="86"
+                  rx="14"
+                  fill="var(--card)"
+                  fillOpacity={0.85}
+                  stroke="var(--primary)"
+                  strokeOpacity={0.35}
+                />
+                <text x="376" y="98" fill="var(--dato-1)" fillOpacity={0.95} fontSize="12" fontWeight="700" fontFamily="ui-monospace, monospace" letterSpacing="1.5">
+                  MISMA IDEA · OTRAS PALABRAS
+                </text>
+                <text x="376" y="122" fill="var(--foreground)" fillOpacity={0.88} fontSize="13" fontFamily="ui-sans-serif, system-ui">
+                  «esperando las credenciales del ERP»
+                </text>
+                <text x="376" y="142" fill="var(--foreground)" fillOpacity={0.88} fontSize="13" fontFamily="ui-sans-serif, system-ui">
+                  «bloqueado por la API del proveedor»
+                </text>
+              </g>
+              <line
+                x1="360"
+                y1="113"
+                x2="285"
+                y2="106"
+                stroke="var(--primary)"
+                strokeOpacity={0.45}
+                strokeWidth="1.5"
+                strokeDasharray="4 4"
+              />
+            </svg>
+          </div>
 
           <figcaption className="mt-4 text-sm leading-relaxed text-muted-foreground">
             Cada punto es un riesgo real de la hoja; la cercanía es cercanía de

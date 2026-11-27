@@ -77,13 +77,13 @@ export function EgoGraph({ centro, vecinos }: EgoGraphProps) {
         >
           <Link
             href={`/biblioteca/${vecino.slug}`}
-            className={`block rounded-xl border px-2.5 py-2 text-center text-[11px] font-medium leading-tight transition-colors ${
+            className={`block rounded-xl border px-2.5 py-2 text-center text-xs font-medium leading-tight transition-colors ${
               vecino.tipo === "charla"
                 ? "border-primary/30 bg-card/80 text-foreground hover:border-primary/60"
                 : "border-border/70 bg-secondary/60 text-foreground/85 hover:border-primary/40"
             }`}
           >
-            <span className="line-clamp-3">{vecino.title}</span>
+            <span className="line-clamp-4">{vecino.title}</span>
           </Link>
         </motion.div>
       ))}

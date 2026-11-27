@@ -79,7 +79,7 @@ export function DemoSection23() {
           </div>
         </motion.div>
 
-        <div className="mt-10 grid gap-4">
+        <div className="mt-10 grid grid-cols-1 gap-4">
           {pasos.map((paso, index) => (
             <motion.div
               key={paso.title}

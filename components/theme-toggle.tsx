@@ -22,7 +22,7 @@ export function ThemeToggle() {
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
       aria-label="Cambiar entre tema claro y oscuro"
       title="Cambiar entre tema claro y oscuro"
-      className="fixed right-4 top-4 z-50 inline-flex h-10 w-10 items-center justify-center rounded-full border border-border/70 bg-card/70 text-foreground/80 backdrop-blur transition-colors hover:border-primary/40 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+      className="absolute right-4 top-4 z-50 lg:fixed inline-flex h-10 w-10 items-center justify-center rounded-full border border-border/70 bg-card/70 text-foreground/80 backdrop-blur transition-colors hover:border-primary/40 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
     >
       <Sun className="hidden h-[1.1rem] w-[1.1rem] dark:block" aria-hidden="true" />
       <Moon className="h-[1.1rem] w-[1.1rem] dark:hidden" aria-hidden="true" />
